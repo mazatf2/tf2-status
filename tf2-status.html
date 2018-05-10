@@ -1,0 +1,153 @@
+<html>
+<body>
+<style>
+    table td {
+        padding: 0.5em;
+    }
+
+    table td:nth-child(odd) {
+        background-color: #abc;
+    }
+
+    .steamProfilePic {
+        width: 5em;
+        height: 5em;
+    }
+</style>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/hyperhtml@2.10.0/min.js"></script>
+<br>
+<textarea id="input" placeholder="test" rows="16" cols="80"></textarea>
+<br>
+<input type="button" onclick="main()" value="run">
+<br>
+<div id="container"></div>
+
+<script>
+	///
+	var api_request_rate_ms = 200
+	var wait = api_request_rate_ms,
+		players = []
+
+	function main() {
+		console.info('main()')
+		var logLines = document.querySelector('#input').value
+		logLines = logLines.split(/\r\n|\n/)
+
+		for (let i of logLines) {
+			if (i && i.charAt(0) === '#' && !i.match(/# userid name/)) {
+				var currentLine = i
+				var nameServer = currentLine.split('"')[1]
+				var steamID = currentLine.split('[')[1]
+
+				try {
+					steamID = steamID.split(']')[0]
+					players.push({
+						steamID: `[${steamID}]`,
+						nameServer: nameServer,
+						logstfLink: true
+					})
+				} catch (e) {
+					console.error(e)
+				}
+
+
+			}
+			renderTable()
+		}
+
+		//players = players
+		for (let i of players) {
+
+			let id = i.steamID //this needs to be 'let' because scope
+
+			setTimeout(() => {
+				axios.get(`http://api.etf2l.org/player/${id}.json`)
+					.then(function (response) {
+						if (response.data.status && response.data.player && response.data.status.message === 'OK') {
+							//console.info(players, id)
+							var nameETF2L = response.data.player.name
+							var country = response.data.player.country
+							i.nameETF2L = nameETF2L
+							i.country = country
+							i.ETF2LProfileID = response.data.player.id
+							i.steamProfilePic = response.data.player.steam.avatar
+							//i.response = response.data
+
+							renderTable()
+
+						}
+					})
+					.catch(function (error) {
+						console.log(error)
+					})
+			}, wait += api_request_rate_ms)
+		}
+	}
+
+	function renderTable() {
+		var tableContainer = document.querySelector('#container')
+		var table = getTable()
+		hyperHTML.bind(tableContainer)`${table}`
+	}
+
+	function getTable() {
+		return generateTable(players)
+	}
+
+	function generateTable(data) {
+		var html = ''
+		var rows = []
+		rows.push(hyperHTML.wire()`
+		<tr>
+			<td>nickname</td>
+			<td>Logs.tf</td>
+			<td>ETF2L</td>
+			<td>country</td>
+		</tr>`)
+
+		if (typeof data[0] === 'object') {
+
+
+			for (var row in data) {
+
+				var colums = []
+
+				for (var item in data[row]) {
+					var content = data[row][item]
+					//console.info(row, ' : ',item)
+					if (item === 'ETF2LProfileID') {
+						var url = `https://etf2l.org/forum/user/${content}`
+						colums.push(hyperHTML.wire()`<td>
+						<a href="${url}">ETF2L Profile</a>
+						</td>`)
+
+					} else if (item === 'steamProfilePic') {
+						var url = `https://etf2l.org/forum/user/${content}`
+						colums.push(hyperHTML.wire()`<td>
+						<img src=${content} class="steamProfilePic">
+						</td>`)
+
+					} else if (item === 'logstfLink') {
+						var url = `https://logs.tf/search/player?s=${data[row]['steamID']}`
+						colums.push(hyperHTML.wire()`<td>
+						<a href="${url}">Logs.tf</a>
+						</td>`)
+
+					} else if (item === 'steamID') {
+
+					} else {
+						colums.push(hyperHTML.wire()`<td>${content}</td>`)
+
+					}
+				}
+				rows.push(hyperHTML.wire()`<tr>${colums}</tr>`)
+			}
+		}
+
+		return hyperHTML.wire()`<table>${rows}</table>`
+	}
+
+</script>
+</body>
+</html>

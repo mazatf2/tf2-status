@@ -1,27 +1,84 @@
+<!DOCTYPE html>
 <html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .App {
+            text-align: center;
+        }
+
+        .App-logo {
+            height: 80px;
+        }
+
+        .App-header {
+            background-color: #222;
+            height: 150px;
+            padding: 20px;
+            color: white;
+        }
+
+        .App-title {
+            font-size: 1.5em;
+        }
+
+        .App-intro {
+            font-size: large;
+        }
+
+        table {
+            text-align: left;
+        }
+
+        table td {
+            padding: 0.5em;
+        }
+
+        table td:nth-child(odd) {
+            background-color: #abc;
+        }
+
+        .steamProfilePic {
+            width: 5em;
+            height: 5em;
+        }
+
+    </style>
+</head>
 <body>
-<style>
-    table td {
-        padding: 0.5em;
-    }
-
-    table td:nth-child(odd) {
-        background-color: #abc;
-    }
-
-    .steamProfilePic {
-        width: 5em;
-        height: 5em;
-    }
-</style>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/hyperhtml@2.10.0/min.js"></script>
-<br>
-<textarea id="input" placeholder="test" rows="16" cols="80"></textarea>
-<br>
-<input type="button" onclick="main()" value="run">
-<br>
-<div id="container"></div>
+
+
+<div class="App">
+    <header class="App-header">
+        <img src="karhu.png" class="App-logo">
+        <h1 class="App-title">TF2 Status</h1>
+    </header>
+    <br>
+    <p class="App-intro">
+        Copy <code>status</code> TF2 console command output to below.
+    </p>
+    <div>
+        <textarea id="input" placeholder="" rows="16" cols="80"></textarea>
+        <br>
+        <br>
+        <input type="button" onclick="main()" onkeypress="enter" value="Check" class="btn btn-primary btn-lg ">
+    </div>
+    <br>
+    <div id="container"></div>
+</div>
 
 <script>
 
@@ -30,7 +87,9 @@
 		players = []
 
 	function main() {
-		console.info('main()')
+		players = []
+		wait = api_request_rate_ms
+
 		var logLines = document.querySelector('#input').value
 		logLines = logLines.split(/\r\n|\n/)
 
@@ -45,7 +104,8 @@
 					players.push({
 						steamID: `[${steamID}]`,
 						nameServer: nameServer,
-						logstfLink: true
+						logstfLink: undefined,
+						steamProfilePic: undefined
 					})
 				} catch (e) {
 					console.error(e)
@@ -64,7 +124,6 @@
 				axios.get(`http://api.etf2l.org/player/${id}.json`)
 					.then(function (response) {
 						if (response.data.status && response.data.player && response.data.status.message === 'OK') {
-							//console.info(players, id)
 							var nameETF2L = response.data.player.name
 							var country = response.data.player.country
 							i.nameETF2L = nameETF2L
@@ -72,6 +131,7 @@
 							i.ETF2LProfileID = response.data.player.id
 							i.steamProfilePic = response.data.player.steam.avatar
 							//i.response = response.data
+							i.teams = response.data.player.teams
 
 							renderTable()
 
@@ -97,56 +157,92 @@
 	function generateTable(data) {
 		var html = ''
 		var rows = []
-		rows.push(hyperHTML.wire()`
+		var tableHead = hyperHTML.wire()`
 		<tr>
-			<td>nickname</td>
-			<td>Logs.tf</td>
+			<td></td>
+			<td>Nickname</td>
 			<td>ETF2L</td>
-			<td>country</td>
-		</tr>`)
+			<td>Country</td>
+			<td></td>
+			<td></td>
+			<td>Teams</td>
+		</tr>`
 
-		if (typeof data[0] === 'object') {
+		if (typeof data[0] === 'object' || 'array') {
 
 
 			for (var row in data) {
 
-				var colums = []
+				var colums = {}
 
 				for (var item in data[row]) {
 					var content = data[row][item]
 					//console.info(row, ' : ',item)
 					if (item === 'ETF2LProfileID') {
 						var url = `https://etf2l.org/forum/user/${content}`
-						colums.push(hyperHTML.wire()`<td>
+						colums.ETF2LProfileID = hyperHTML.wire()`<td>
 						<a href="${url}">ETF2L Profile</a>
-						</td>`)
+						</td>`
 
 					} else if (item === 'steamProfilePic') {
 						var url = `https://etf2l.org/forum/user/${content}`
-						colums.push(hyperHTML.wire()`<td>
+						colums.steamProfilePic = hyperHTML.wire()`<td>
 						<img src=${content} class="steamProfilePic">
-						</td>`)
+						</td>`
 
 					} else if (item === 'logstfLink') {
 						var url = `https://logs.tf/search/player?s=${data[row]['steamID']}`
-						colums.push(hyperHTML.wire()`<td>
+						colums.logstfLink = hyperHTML.wire()`<td>
 						<a href="${url}">Logs.tf</a>
-						</td>`)
+						</td>`
+
+					} else if (item === 'teams') {
+						if (content) {
+							let teams = []
+							for (let i of content) {
+								teams.push(hyperHTML.wire()`<p>${i.type} : ${i.name}</p>`)
+							}
+							colums.teams = hyperHTML.wire()`<td>${teams}</td>`
+						} else {
+							colums.teams = hyperHTML.wire()`<td></td>`
+						}
 
 					} else if (item === 'steamID') {
 
 					} else {
-						colums.push(hyperHTML.wire()`<td>${content}</td>`)
+						colums[item] = hyperHTML.wire()`<td>${content}</td>`
 
 					}
 				}
-				rows.push(hyperHTML.wire()`<tr>${colums}</tr>`)
+
+				/*
+				Object.keys(players[0])
+				(7) ["steamID", "nameServer", "logstfLink", "steamProfilePic", "nameETF2L", "country", "ETF2LProfileID"]
+				*/
+				let displayOrder = ['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'ETF2LProfileID', 'logstfLink', 'teams']
+				let sorted = []
+
+				for (let i of displayOrder) {
+					let result = colums[i] || hyperHTML.wire()`<td></td>`
+					sorted.push(result)
+				}
+
+				rows.push(hyperHTML.wire()`<tr>${sorted}</tr>`)
 			}
 		}
 
-		return hyperHTML.wire()`<table>${rows}</table>`
+		return hyperHTML.wire()`
+            <table align="center">
+                <thead>${tableHead}</thead>
+                <tbody>${rows}</tbody>
+            </table>`
 	}
 
+	function enter(event) {
+		if (event.key === 'Enter') {
+			main()
+		}
+	}
 </script>
 </body>
 </html>

@@ -53,12 +53,15 @@
             width: 5em;
             height: 5em;
         }
+        .gamesPlayed {
+            background-color: white !important;
+        }
 
     </style>
 </head>
 <body>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="https://unpkg.com/hyperhtml@2.10.0/min.js"></script>
+<script src="https://unpkg.com/hyperhtml@2.10.0/index.js"></script>
 
 
 <div class="App">
@@ -83,21 +86,20 @@
 <script>
 
 	var api_request_rate_ms = 200
-	var wait = api_request_rate_ms,
-		players = []
+	var players = []
 
 	function main() {
 		players = []
-		wait = api_request_rate_ms
+		let wait = api_request_rate_ms
 
-		var logLines = document.querySelector('#input').value
+		let logLines = document.querySelector('#input').value
 		logLines = logLines.split(/\r\n|\n/)
 
 		for (let i of logLines) {
 			if (i && i.charAt(0) === '#' && !i.match(/# userid name/)) {
-				var currentLine = i
-				var nameServer = currentLine.split('"')[1]
-				var steamID = currentLine.split('[')[1]
+				let currentLine = i
+				let nameServer = currentLine.split('"')[1]
+				let steamID = currentLine.split('[')[1]
 
 				try {
 					steamID = steamID.split(']')[0]
@@ -123,16 +125,18 @@
 			setTimeout(() => {
 				axios.get(`http://api.etf2l.org/player/${id}.json`)
 					.then(function (response) {
-						if (response.data.status && response.data.player && response.data.status.message === 'OK') {
-							var nameETF2L = response.data.player.name
-							var country = response.data.player.country
+						if (response.data.status && response.data.status.message === 'OK' && response.data.player) {
+							let nameETF2L = response.data.player.name
+							let country = response.data.player.country
 							i.nameETF2L = nameETF2L
 							i.country = country
 							i.ETF2LProfileID = response.data.player.id
 							i.steamProfilePic = response.data.player.steam.avatar
 							//i.response = response.data
 							i.teams = response.data.player.teams
+							i.gamesPlayed = ''
 
+							getResults(id, i)
 							renderTable()
 
 						}
@@ -144,9 +148,46 @@
 		}
 	}
 
+	function getResults(id, player) {
+
+		let wait = api_request_rate_ms
+
+
+		setTimeout(() => {
+
+			axios.get(`http://api.etf2l.org/player/${id}/results.json?since=0&per_page=100`)
+				.then(function (response) {
+					if (response.data.status && response.data.status.message === 'OK' && response.data.results) {
+
+						let results = response.data.results
+						let gamesPlayed = {}
+
+						for (let i of results) {
+							let type = i.competition.type
+							let division = i.division.name || i.competition.category
+							gamesPlayed[type] = gamesPlayed[type] || {}
+
+							if (!gamesPlayed[type][division])
+								gamesPlayed[type][division] = 0
+
+							gamesPlayed[type][division] = gamesPlayed[type][division] += 1
+						}
+
+						player.gamesPlayed = gamesPlayed
+
+						renderTable()
+
+					}
+				})
+				.catch(function (error) {
+					console.log(error)
+				})
+		}, wait += api_request_rate_ms)
+	}
+
 	function renderTable() {
-		var tableContainer = document.querySelector('#container')
-		var table = getTable()
+		let tableContainer = document.querySelector('#container')
+		let table = getTable()
 		hyperHTML.bind(tableContainer)`${table}`
 	}
 
@@ -155,9 +196,9 @@
 	}
 
 	function generateTable(data) {
-		var html = ''
-		var rows = []
-		var tableHead = hyperHTML.wire()`
+
+		let rows = []
+		let tableHead = hyperHTML.wire()`
 		<tr>
 			<td></td>
 			<td>Nickname</td>
@@ -166,38 +207,44 @@
 			<td></td>
 			<td></td>
 			<td>Teams</td>
+			<td>Games played</td>
 		</tr>`
 
 		if (typeof data[0] === 'object' || 'array') {
 
 
-			for (var row in data) {
+			for (let row in data) {
 
-				var colums = {}
+				let colums = {}
 
-				for (var item in data[row]) {
-					var content = data[row][item]
+				for (let item in data[row]) {
+					let content = data[row][item]
 					//console.info(row, ' : ',item)
 					if (item === 'ETF2LProfileID') {
-						var url = `https://etf2l.org/forum/user/${content}`
+						let url = `https://etf2l.org/forum/user/${content}`
+
 						colums.ETF2LProfileID = hyperHTML.wire()`<td>
 						<a href="${url}">ETF2L Profile</a>
 						</td>`
 
 					} else if (item === 'steamProfilePic') {
-						var url = `https://etf2l.org/forum/user/${content}`
+						let url = `https://etf2l.org/forum/user/${content}`
+
 						colums.steamProfilePic = hyperHTML.wire()`<td>
 						<img src=${content} class="steamProfilePic">
 						</td>`
 
 					} else if (item === 'logstfLink') {
-						var url = `https://logs.tf/search/player?s=${data[row]['steamID']}`
+						let url = `https://logs.tf/search/player?s=${data[row]['steamID']}`
+
 						colums.logstfLink = hyperHTML.wire()`<td>
 						<a href="${url}">Logs.tf</a>
 						</td>`
 
 					} else if (item === 'teams') {
+
 						if (content) {
+
 							let teams = []
 							for (let i of content) {
 								teams.push(hyperHTML.wire()`<p>${i.type} : ${i.name}</p>`)
@@ -206,12 +253,34 @@
 						} else {
 							colums.teams = hyperHTML.wire()`<td></td>`
 						}
+					} else if (item === 'gamesPlayed') {
+
+						if (content) {
+
+							let gRows = []
+
+							for (let compType in content) {
+								for (let matchName in content[compType]) {
+									gRows.push(hyperHTML.wire()`
+                                        <tr>
+                                            <td class="gamesPlayed">
+                                                ${compType} : ${matchName}
+                                            </td>
+                                            <td class="gamesPlayed">
+                                                ${content[compType][matchName]}
+                                            </td>
+                                        </tr>
+                                    `)
+								}
+							}
+
+							colums.gamesPlayed = hyperHTML.wire()`<table><tbody>${gRows}</tbody></table>`
+						}
 
 					} else if (item === 'steamID') {
 
 					} else {
 						colums[item] = hyperHTML.wire()`<td>${content}</td>`
-
 					}
 				}
 
@@ -219,7 +288,7 @@
 				Object.keys(players[0])
 				(7) ["steamID", "nameServer", "logstfLink", "steamProfilePic", "nameETF2L", "country", "ETF2LProfileID"]
 				*/
-				let displayOrder = ['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'ETF2LProfileID', 'logstfLink', 'teams']
+				let displayOrder = ['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'ETF2LProfileID', 'logstfLink', 'teams', 'gamesPlayed']
 				let sorted = []
 
 				for (let i of displayOrder) {
@@ -232,10 +301,10 @@
 		}
 
 		return hyperHTML.wire()`
-            <table align="center">
-                <thead>${tableHead}</thead>
-                <tbody>${rows}</tbody>
-            </table>`
+			<table align="center">
+				<thead>${tableHead}</thead>
+				<tbody>${rows}</tbody>
+			</table>`
 	}
 
 	function enter(event) {

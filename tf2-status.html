@@ -113,7 +113,6 @@
 					console.error(e)
 				}
 
-
 			}
 			renderTable()
 		}
@@ -136,7 +135,7 @@
 							i.teams = response.data.player.teams
 							i.gamesPlayed = ''
 
-							getResults(id, i)
+							getResults(id, 1, i)
 							renderTable()
 
 						}
@@ -148,19 +147,19 @@
 		}
 	}
 
-	function getResults(id, player) {
+	function getResults(id, pageID, player) {
 
 		let wait = api_request_rate_ms
 
 
 		setTimeout(() => {
 
-			axios.get(`http://api.etf2l.org/player/${id}/results.json?since=0&per_page=100`)
+			axios.get(`http://api.etf2l.org/player/${id}/results/${pageID}.json?since=0&per_page=100`)
 				.then(function (response) {
 					if (response.data.status && response.data.status.message === 'OK' && response.data.results) {
 
 						let results = response.data.results
-						let gamesPlayed = {}
+						let gamesPlayed = player.gamesPlayed || {}
 
 						for (let i of results) {
 							let type = i.competition.type
@@ -176,6 +175,12 @@
 						player.gamesPlayed = gamesPlayed
 
 						renderTable()
+
+                        let page = response.data.page
+                        if(page.next_page_url){
+							pageID += 1
+	                        getResults(id, pageID, player)
+                        }
 
 					}
 				})
@@ -273,6 +278,8 @@
                                     `)
 								}
 							}
+
+                            gRows.push(hyperHTML.wire()`<hr>`)
 
 							colums.gamesPlayed = hyperHTML.wire()`<table><tbody>${gRows}</tbody></table>`
 						}

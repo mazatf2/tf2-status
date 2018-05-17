@@ -45,13 +45,30 @@
 			background-color: #abc;
 		}
 
+		table p {
+			margin-bottom: 0.5rem;
+		}
+
+		.tableBackgroundWhite * {
+			background-color: white !important;
+		}
+
+		.tableBackgroundCustom * {
+			background-color: #abc !important;
+		}
+
 		.steamProfilePic {
 			width: 5em;
 			height: 5em;
 		}
 
 		.gamesPlayed * {
-			background-color: white !important;
+			border: 0 !important;
+		}
+
+		.gamesPlayed td {
+			padding: 0;
+			padding-bottom: 0.5rem;
 		}
 
 		.noBorder {
@@ -316,7 +333,7 @@
 											<td>
 												${division}
 											</td>
-											<td>
+											<td style="text-align: right; padding-left: 0.5rem;">
 												${games[compType][division]}
 											</td>
 										</tr>
@@ -345,7 +362,7 @@
 											<td>
 												${compType}:${division}
 											</td>
-											<td>
+											<td style="text-align: right; padding-left: 0.5rem;">
 												${games.Rest[compType][division]}
 											</td>
 										</tr>
@@ -361,20 +378,20 @@
 							}
 
 							columns.gamesPlayed6on6 = hyperHTML.wire()`
-							<td style="padding: 0;">
-								<table class="gamesPlayed noBorder"><tbody>${rows6on6}</tbody></table>
+							<td>
+								<table class="gamesPlayed noBorder tableBackgroundWhite"><tbody>${rows6on6}</tbody></table>
 							</td>
 							`
 
 							columns.gamesPlayedHl = hyperHTML.wire()`
-							<td style="padding: 0;">
-								<table class="noBorder"><tbody>${rowsHl}</tbody></table>
+							<td>
+								<table class="gamesPlayed noBorder tableBackgroundCustom"><tbody>${rowsHl}</tbody></table>
 							</td>
 							`
 
 							columns.gamesPlayedRest = hyperHTML.wire()`
-							<td style="padding: 0;">
-								<table class="gamesPlayed noBorder"><tbody>${rowsRest}</tbody></table>
+							<td>
+								<table class="gamesPlayed noBorder tableBackgroundWhite"><tbody>${rowsRest}</tbody></table>
 							</td>
 							`
 						}

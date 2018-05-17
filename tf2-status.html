@@ -62,10 +62,13 @@
 			height: 5em;
 		}
 
+		.gamesPlayed * {
+			border: 0 !important;
+		}
+
 		.gamesPlayed td {
 			padding: 0;
-			padding-bottom: 0.25rem;
-			padding-top: 0.25rem;
+			padding-bottom: 0.5rem;
 		}
 
 		.noBorder {
@@ -376,19 +379,19 @@
 
 							columns.gamesPlayed6on6 = hyperHTML.wire()`
 							<td>
-								<table class="gamesPlayed tableBackgroundWhite" style="width: 100%"><tbody>${rows6on6}</tbody></table>
+								<table class="gamesPlayed noBorder tableBackgroundWhite"><tbody>${rows6on6}</tbody></table>
 							</td>
 							`
 
 							columns.gamesPlayedHl = hyperHTML.wire()`
 							<td>
-								<table class="gamesPlayed tableBackgroundCustom" style="width: 100%"><tbody>${rowsHl}</tbody></table>
+								<table class="gamesPlayed noBorder tableBackgroundCustom"><tbody>${rowsHl}</tbody></table>
 							</td>
 							`
 
 							columns.gamesPlayedRest = hyperHTML.wire()`
 							<td>
-								<table class="gamesPlayed tableBackgroundWhite" style="width: 100%"><tbody>${rowsRest}</tbody></table>
+								<table class="gamesPlayed noBorder tableBackgroundWhite"><tbody>${rowsRest}</tbody></table>
 							</td>
 							`
 						}

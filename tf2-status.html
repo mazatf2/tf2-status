@@ -219,7 +219,9 @@
 			<td></td>
 			<td></td>
 			<td>Teams</td>
-			<td>Games played</td>
+			<td>6on6 played</td>
+			<td>HL played</td>
+			<td>Rest played</td>
 		</tr>`
 
 		if (typeof data[0] === 'object' || 'array') {
@@ -357,7 +359,7 @@
 									i.classList.add('noBorder')
 								}
 							}
-
+/*
 							columns.gamesPlayed = hyperHTML.wire()`
 								<td style="padding: 0;">
 									<div>
@@ -388,7 +390,24 @@
 									</div>
 								</td>
 								`
+*/
+							columns.gamesPlayed6on6 = hyperHTML.wire()`
+							<td>
+								<table class="gamesPlayed noBorder"><tbody>${rows6on6}</tbody></table>
+							</td>
+							`
 
+							columns.gamesPlayedHl = hyperHTML.wire()`
+							<td>
+								<table class="noBorder"><tbody>${rowsHl}</tbody></table>
+							</td>
+							`
+
+							columns.gamesPlayedRest = hyperHTML.wire()`
+							<td>
+								<table class="gamesPlayed noBorder"><tbody>${rowsRest}</tbody></table>
+							</td>
+							`
 						}
 
 					} else if (item === 'steamID') {
@@ -402,7 +421,7 @@
 				Object.keys(players[0])
 				(7) ["steamID", "nameServer", "logstfLink", "steamProfilePic", "nameETF2L", "country", "ETF2LProfileID"]
 				*/
-				let displayOrder = ['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'ETF2LProfileID', 'logstfLink', 'teams', 'gamesPlayed']
+				let displayOrder = ['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'ETF2LProfileID', 'logstfLink', 'teams', 'gamesPlayed6on6', 'gamesPlayedHl', 'gamesPlayedRest']
 				let sorted = []
 
 				for (let i of displayOrder) {

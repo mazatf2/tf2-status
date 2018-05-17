@@ -2,89 +2,87 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="theme-color" content="#000000">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+		  integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-        }
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+		}
 
-        .App {
-            text-align: center;
-        }
+		.App {
+			text-align: center;
+		}
 
-        .App-logo {
-            height: 80px;
-        }
+		.App-logo {
+			height: 80px;
+		}
 
-        .App-header {
-            background-color: #222;
-            height: 150px;
-            padding: 20px;
-            color: white;
-        }
+		.App-header {
+			background-color: #222;
+			height: 150px;
+			padding: 20px;
+			color: white;
+		}
 
-        .App-title {
-            font-size: 1.5em;
-        }
+		.App-title {
+			font-size: 1.5em;
+		}
 
-        .App-intro {
-            font-size: large;
-        }
+		.App-intro {
+			font-size: large;
+		}
 
-        table {
-            text-align: left;
-        }
+		table {
+			text-align: left;
+		}
 
-        table td {
-            padding: 0.5em;
-        }
+		table td:nth-child(odd) {
+			background-color: #abc;
+		}
 
-        table td:nth-child(odd) {
-            background-color: #abc;
-        }
+		.steamProfilePic {
+			width: 5em;
+			height: 5em;
+		}
 
-        .steamProfilePic {
-            width: 5em;
-            height: 5em;
-        }
-        .gamesPlayed {
-            background-color: white !important;
-        }
+		.gamesPlayed * {
+			background-color: white !important;
+		}
 
-    </style>
+		.noBorder {
+			border: 0 !important;
+		}
+	</style>
 </head>
 <body>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/hyperhtml@2.10.0/index.js"></script>
 
-
 <div class="App">
-    <header class="App-header">
-        <img src="karhu.png" class="App-logo">
-        <h1 class="App-title">TF2 Status</h1>
-    </header>
-    <br>
-    <p class="App-intro">
-        Copy <code>status</code> TF2 console command output to below.
-    </p>
-    <div>
-        <textarea id="input" placeholder="" rows="16" cols="80"></textarea>
-        <br>
-        <br>
-        <input type="button" onclick="main()" onkeypress="enter" value="Check" class="btn btn-primary btn-lg ">
-    </div>
-    <br>
-    <div id="container"></div>
+	<header class="App-header">
+		<img src="karhu.png" class="App-logo">
+		<h1 class="App-title">TF2 Status</h1>
+	</header>
+	<br>
+	<p class="App-intro">
+		Copy <code>status</code> TF2 console command output to below.
+	</p>
+	<div>
+		<textarea id="input" placeholder="" rows="16" cols="80"></textarea>
+		<br>
+		<br>
+		<input type="button" onclick="main()" onkeypress="enter" value="Check" class="btn btn-primary btn-lg ">
+	</div>
+	<br>
+	<div id="container"></div>
 </div>
 
 <script>
-
 	var api_request_rate_ms = 200
 	var players = []
 
@@ -159,28 +157,37 @@
 					if (response.data.status && response.data.status.message === 'OK' && response.data.results) {
 
 						let results = response.data.results
-						let gamesPlayed = player.gamesPlayed || {}
+						let gamesPlayed = player.gamesPlayed || {totalGamesPlayed: {all: 0}, results: {}}
 
 						for (let i of results) {
 							let type = i.competition.type
 							let division = i.division.name || i.competition.category
-							gamesPlayed[type] = gamesPlayed[type] || {}
 
-							if (!gamesPlayed[type][division])
-								gamesPlayed[type][division] = 0
+							gamesPlayed.results[type] = gamesPlayed.results[type] || {}
+							gamesPlayed.totalGamesPlayed[type] = gamesPlayed.totalGamesPlayed[type] || 0
 
-							gamesPlayed[type][division] = gamesPlayed[type][division] += 1
+							if (!gamesPlayed.results[type][division]) {
+								gamesPlayed.results[type][division] = 0
+							}
+
+							if (!gamesPlayed.totalGamesPlayed[type]) {
+								gamesPlayed.totalGamesPlayed[type] = 0
+							}
+
+							gamesPlayed.results[type][division] = gamesPlayed.results[type][division] += 1
+							gamesPlayed.totalGamesPlayed[type] = gamesPlayed.totalGamesPlayed[type] += 1
+							gamesPlayed.totalGamesPlayed.all += 1
 						}
 
 						player.gamesPlayed = gamesPlayed
 
 						renderTable()
 
-                        let page = response.data.page
-                        if(page.next_page_url){
+						let page = response.data.page
+						if (page.next_page_url) {
 							pageID += 1
-	                        getResults(id, pageID, player)
-                        }
+							getResults(id, pageID, player)
+						}
 
 					}
 				})
@@ -217,10 +224,9 @@
 
 		if (typeof data[0] === 'object' || 'array') {
 
-
 			for (let row in data) {
 
-				let colums = {}
+				let columns = {}
 
 				for (let item in data[row]) {
 					let content = data[row][item]
@@ -228,21 +234,21 @@
 					if (item === 'ETF2LProfileID') {
 						let url = `https://etf2l.org/forum/user/${content}`
 
-						colums.ETF2LProfileID = hyperHTML.wire()`<td>
+						columns.ETF2LProfileID = hyperHTML.wire()`<td>
 						<a href="${url}">ETF2L Profile</a>
 						</td>`
 
 					} else if (item === 'steamProfilePic') {
 						let url = `https://etf2l.org/forum/user/${content}`
 
-						colums.steamProfilePic = hyperHTML.wire()`<td>
+						columns.steamProfilePic = hyperHTML.wire()`<td>
 						<img src=${content} class="steamProfilePic">
 						</td>`
 
 					} else if (item === 'logstfLink') {
 						let url = `https://logs.tf/search/player?s=${data[row]['steamID']}`
 
-						colums.logstfLink = hyperHTML.wire()`<td>
+						columns.logstfLink = hyperHTML.wire()`<td>
 						<a href="${url}">Logs.tf</a>
 						</td>`
 
@@ -254,52 +260,144 @@
 							for (let i of content) {
 								teams.push(hyperHTML.wire()`<p>${i.type} : ${i.name}</p>`)
 							}
-							colums.teams = hyperHTML.wire()`<td>${teams}</td>`
+							columns.teams = hyperHTML.wire()`<td>${teams}</td>`
 						} else {
-							colums.teams = hyperHTML.wire()`<td></td>`
+							columns.teams = hyperHTML.wire()`<td></td>`
 						}
 					} else if (item === 'gamesPlayed') {
 
 						if (content) {
 
-							let gRows = []
+							let results = content.results
+							let totalGamesPlayed = content.totalGamesPlayed
+							let allMatchesCount = totalGamesPlayed.all
 
-							for (let compType in content) {
-								for (let matchName in content[compType]) {
-									gRows.push(hyperHTML.wire()`
-                                        <tr>
-                                            <td class="gamesPlayed">
-                                                ${compType} : ${matchName}
-                                            </td>
-                                            <td class="gamesPlayed">
-                                                ${content[compType][matchName]}
-                                            </td>
-                                        </tr>
-                                    `)
+							let games = {'6on6': {}, 'Highlander': {}, 'Rest': {}}
+
+							function reMatch(re, string, compType, division, matchCount) {
+
+								let match = string.match(re)
+								if (match) {
+									if (!games[compType][division]) games[compType][division] = 0
+									games[compType][division] = matchCount
+
+									return true
+								}
+
+							}
+
+							for (let compType in results) {
+								for (let divisionName in results[compType]) {
+									if (
+										reMatch(/6on6/i, compType, '6on6', divisionName, results[compType][divisionName]) ||
+										reMatch(/highlander/i, compType, 'Highlander', divisionName, results[compType][divisionName])
+									) {
+
+									} else {
+										if (!games.Rest[compType])
+											games.Rest[compType] = {}
+
+										if (!games.Rest[compType][divisionName])
+											games.Rest[compType][divisionName] = 0
+
+										games.Rest[compType][divisionName] = results[compType][divisionName]
+									}
+
 								}
 							}
 
-                            gRows.push(hyperHTML.wire()`<hr>`)
+							function addRows(compType, container) {
 
-							colums.gamesPlayed = hyperHTML.wire()`<table><tbody>${gRows}</tbody></table>`
+								for (let division in games[compType]) {
+									container.push(hyperHTML.wire()`
+										<tr>
+											<td>
+												${compType} : ${division}
+											</td>
+											<td>
+												${games[compType][division]}
+											</td>
+										</tr>
+									`)
+								}
+
+								if (container[0]) {
+									for (let i of container[0].children) {
+										i.classList.add('noBorder')
+									}
+								}
+							}
+
+							var rows6on6 = []
+							var rowsHl = []
+							var rowsRest = []
+
+							addRows('6on6', rows6on6)
+							addRows('Highlander', rowsHl)
+
+							//for rowsRest
+							for (let compType in games.Rest) {
+								for (let division in games.Rest[compType]) {
+									rowsRest.push(hyperHTML.wire()`
+										<tr>
+											<td>
+												${compType} : ${division}
+											</td>
+											<td>
+												${games.Rest[compType][division]}
+											</td>
+										</tr>
+									`)
+								}
+
+							}
+
+							if (rowsRest[0]) {
+								for (let i of rowsRest[0].children) {
+									i.classList.add('noBorder')
+								}
+							}
+
+							columns.gamesPlayed = hyperHTML.wire()`
+								<td style="padding: 0;">
+									<div>
+										<table class="gamesPlayed">
+											<tbody>
+												<tr>
+													<td style="padding: 0; border: 0;">
+														<table><tbody>${rows6on6}</tbody></table>
+													</td>
+													<td style="padding: 0; border: 0;">
+														<table><tbody>${rowsHl}</tbody></table>
+													</td>
+													<td style="padding: 0; border: 0;">
+														<table><tbody>${rowsRest}</tbody></table>
+													</td>
+												</tr>
+											</tbody>
+										</table
+									</div>
+								</td>
+								`
+
 						}
 
 					} else if (item === 'steamID') {
 
 					} else {
-						colums[item] = hyperHTML.wire()`<td>${content}</td>`
+						columns[item] = hyperHTML.wire()`<td>${content}</td>`
 					}
 				}
 
 				/*
 				Object.keys(players[0])
-				(7) ["steamID", "nameServer", "logstfLink", "steamProfilePic", "nameETF2L", "country", "ETF2LProfileID"]
+				(7) ["steamID", "nameServer", "logstfLink", "steamProfilePic", "nameETF2L", "country", "ETF2LProfileID"]
 				*/
 				let displayOrder = ['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'ETF2LProfileID', 'logstfLink', 'teams', 'gamesPlayed']
 				let sorted = []
 
 				for (let i of displayOrder) {
-					let result = colums[i] || hyperHTML.wire()`<td></td>`
+					let result = columns[i] || hyperHTML.wire()`<td></td>`
 					sorted.push(result)
 				}
 
@@ -308,10 +406,13 @@
 		}
 
 		return hyperHTML.wire()`
-			<table align="center">
-				<thead>${tableHead}</thead>
-				<tbody>${rows}</tbody>
-			</table>`
+			<div class="table-responsive">
+				<table align="center" class="table">
+					<thead>${tableHead}</thead>
+					<tbody>${rows}</tbody>
+				</table>
+			</div>`
+
 	}
 
 	function enter(event) {

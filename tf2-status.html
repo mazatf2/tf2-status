@@ -312,7 +312,7 @@
 									container.push(hyperHTML.wire()`
 										<tr>
 											<td>
-												${compType} : ${division}
+												${division}
 											</td>
 											<td>
 												${games[compType][division]}
@@ -341,7 +341,7 @@
 									rowsRest.push(hyperHTML.wire()`
 										<tr>
 											<td>
-												${compType} : ${division}
+												${compType}:${division}
 											</td>
 											<td>
 												${games.Rest[compType][division]}
@@ -365,13 +365,22 @@
 											<tbody>
 												<tr>
 													<td style="padding: 0; border: 0;">
-														<table><tbody>${rows6on6}</tbody></table>
+														<table>
+															<thead><tr><td>6on6</td></tr></thead>
+															<tbody>${rows6on6}</tbody>
+														</table>
 													</td>
 													<td style="padding: 0; border: 0;">
-														<table><tbody>${rowsHl}</tbody></table>
+														<table>
+															<thead><tr><td>Highlander</td></tr></thead>
+															<tbody>${rowsHl}</tbody>
+														</table>
 													</td>
 													<td style="padding: 0; border: 0;">
-														<table><tbody>${rowsRest}</tbody></table>
+														<table>
+															<thead><tr><td>Rest</td></tr></thead>
+															<tbody>${rowsRest}</tbody>
+														</table>
 													</td>
 												</tr>
 											</tbody>

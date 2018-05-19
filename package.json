@@ -1,0 +1,17 @@
+{
+  "name": "tf2-status",
+  "version": "0.0.0-git",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mazatf2/tf2-status.git"
+  },
+  "author": "mazatf2",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mazatf2/tf2-status/issues"
+  },
+  "homepage": "https://github.com/mazatf2/tf2-status#readme"
+}

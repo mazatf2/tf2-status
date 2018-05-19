@@ -1,0 +1,13 @@
+[ignore]
+
+[include]
+build.js
+main.js
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]

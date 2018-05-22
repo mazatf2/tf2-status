@@ -12,7 +12,7 @@ fs.readFile('./tf2-status.html', 'utf8', function (error, htmlFile) {
 ${jsFile}
 </script>`)
 
-		fs.writeFile('./dist/tf2-status-html', result, 'utf8', function (error) {
+		fs.writeFile('./dist/tf2-status.html', result, 'utf8', function (error) {
 			if (error) throw error
 		})
 	})

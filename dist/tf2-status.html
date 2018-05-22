@@ -109,33 +109,32 @@ function main() {
 	let logLines = document.querySelector('#input').value
 	logLines = logLines.split(/\r\n|\n/)
 
+	//[ , name, steamID]
+	const re = /#\s*\d+\s"(.+)"\s*(\[U:1:\d+\])/  //bug missing " on long names
+
 	for (let i of logLines) {
-		if (i && i.charAt(0) === '#' && !i.match(/# userid name/)) {
+		if (i.match(re)) {
+
 			let currentLine = i
-			let nameServer = currentLine.split('"')[1]
-			let steamID = currentLine.split('[')[1]
+			let result = re.exec(currentLine)
 
-			try {
-				steamID = steamID.split(']')[0]
-				steamID = `[${steamID}]`
+			let nameServer = result[1]
+			let steamID = result[2]
 
-				players[playerID] = {
-					playerID: playerID,
-					steamID: steamID,
-					nameServer: nameServer,
-					logstfLink: 1,
-					steamProfilePic: undefined
-				}
-
-				playerID++
-			} catch (e) {
-				console.error(e)
+			players[playerID] = {
+				playerID: playerID,
+				steamID: steamID,
+				nameServer: nameServer,
+				logstfLink: 1,
+				steamProfilePic: undefined
 			}
 
+			playerID++
+
 		}
+
 		renderTable()
 	}
-
 
 	Object.values(players).forEach(function (i) {
 

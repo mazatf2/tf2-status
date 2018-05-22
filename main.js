@@ -1,10 +1,13 @@
 // @flow
 
-var api_request_rate_ms = 200
-var players = []
+let api_request_rate_ms = 200
+let players = {}
+
+let playerID = 0
 
 function main() {
-	players = []
+	players = {}
+	playerID = 0
 	let wait = api_request_rate_ms
 
 	let logLines = document.querySelector('#input').value
@@ -18,12 +21,17 @@ function main() {
 
 			try {
 				steamID = steamID.split(']')[0]
-				players.push({
-					steamID: `[${steamID}]`,
+				steamID = `[${steamID}]`
+
+				players[playerID] = {
+					playerID: playerID,
+					steamID: steamID,
 					nameServer: nameServer,
-					logstfLink: undefined,
+					logstfLink: 1,
 					steamProfilePic: undefined
-				})
+				}
+
+				playerID++
 			} catch (e) {
 				console.error(e)
 			}
@@ -32,7 +40,8 @@ function main() {
 		renderTable()
 	}
 
-	for (let i of players) {
+
+	Object.values(players).forEach(function (i) {
 
 		let id = i.steamID //this needs to be 'let' because scope
 
@@ -48,7 +57,10 @@ function main() {
 						i.steamProfilePic = response.data.player.steam.avatar
 						//i.response = response.data
 						i.teams = response.data.player.teams
-						i.gamesPlayed = ''
+
+						i.played6on6 = []
+						i.playedHL = []
+						i.playedRest = []
 
 						getResults(id, 1, i)
 						renderTable()
@@ -59,13 +71,12 @@ function main() {
 					console.log(error)
 				})
 		}, wait += api_request_rate_ms)
-	}
+	})
 }
 
 function getResults(id, pageID, player) {
 
 	let wait = api_request_rate_ms
-
 
 	setTimeout(() => {
 
@@ -74,29 +85,20 @@ function getResults(id, pageID, player) {
 				if (response.data.status && response.data.status.message === 'OK' && response.data.results) {
 
 					let results = response.data.results
-					let gamesPlayed = player.gamesPlayed || {totalGamesPlayed: {all: 0}, results: {}}
 
 					for (let i of results) {
-						let type = i.competition.type
-						let division = i.division.name || i.competition.category
+						let type = i.competition.type //6on6, 1v1, HL
+						let division = i.division.name || i.competition.category //season a powered by b, fun cup, group a
 
-						gamesPlayed.results[type] = gamesPlayed.results[type] || {}
-						gamesPlayed.totalGamesPlayed[type] = gamesPlayed.totalGamesPlayed[type] || 0
-
-						if (!gamesPlayed.results[type][division]) {
-							gamesPlayed.results[type][division] = 0
+						if (type === '6on6') {
+							player.played6on6.push({key: '6on6', type: type, division: division})
+						} else if (type === 'Highlander') {
+							player.playedHL.push({key: 'HL', type: type, division: division})
+						} else {
+							player.playedRest.push({key: 'Rest', type: type, division: division})
 						}
 
-						if (!gamesPlayed.totalGamesPlayed[type]) {
-							gamesPlayed.totalGamesPlayed[type] = 0
-						}
-
-						gamesPlayed.results[type][division] = gamesPlayed.results[type][division] += 1
-						gamesPlayed.totalGamesPlayed[type] = gamesPlayed.totalGamesPlayed[type] += 1
-						gamesPlayed.totalGamesPlayed.all += 1
 					}
-
-					player.gamesPlayed = gamesPlayed
 
 					renderTable()
 
@@ -143,169 +145,122 @@ function generateTable(data) {
 
 	if (typeof data[0] === 'object' || 'array') {
 
-		for (let row in data) {
+		Object.values(data).forEach(function (player) {
 
 			let columns = {}
 
-			for (let item in data[row]) {
-				let content = data[row][item]
-				//console.info(row, ' : ',item)
-				if (item === 'ETF2LProfileID') {
-					let url = `https://etf2l.org/forum/user/${content}`
+			if (player.ETF2LProfileID) {
+				let url = `https://etf2l.org/forum/user/${player.ETF2LProfileID}`
 
-					columns.ETF2LProfileID = hyperHTML.wire()`<td>
-						<a href="${url}">ETF2L Profile</a>
-						</td>`
+				columns.ETF2LProfileID = hyperHTML.wire()`<td>
+					<a href="${url}">ETF2L Profile</a>
+					</td>`
 
-				} else if (item === 'steamProfilePic') {
-					let url = `https://etf2l.org/forum/user/${content}`
-
-					columns.steamProfilePic = hyperHTML.wire()`<td>
-						<img src=${content} class="steamProfilePic">
-						</td>`
-
-				} else if (item === 'logstfLink') {
-					let url = `https://logs.tf/search/player?s=${data[row]['steamID']}`
-
-					columns.logstfLink = hyperHTML.wire()`<td>
-						<a href="${url}">Logs.tf</a>
-						</td>`
-
-				} else if (item === 'teams') {
-
-					if (content) {
-
-						let teams = []
-						for (let i of content) {
-							teams.push(hyperHTML.wire()`<p>${i.type} : ${i.name}</p>`)
-						}
-						columns.teams = hyperHTML.wire()`<td>${teams}</td>`
-					} else {
-						columns.teams = hyperHTML.wire()`<td></td>`
-					}
-				} else if (item === 'gamesPlayed') {
-
-					if (content) {
-
-						let results = content.results
-						let totalGamesPlayed = content.totalGamesPlayed
-						let allMatchesCount = totalGamesPlayed.all
-
-						let games = {'6on6': {}, 'Highlander': {}, 'Rest': {}}
-
-						function reMatch(re, string, compType, division, matchCount) {
-
-							let match = string.match(re)
-							if (match) {
-								if (!games[compType][division]) games[compType][division] = 0
-								games[compType][division] = matchCount
-
-								return true
-							}
-
-						}
-
-						for (let compType in results) {
-							for (let divisionName in results[compType]) {
-								if (
-									reMatch(/6on6/i, compType, '6on6', divisionName, results[compType][divisionName]) ||
-									reMatch(/highlander/i, compType, 'Highlander', divisionName, results[compType][divisionName])
-								) {
-
-								} else {
-									if (!games.Rest[compType])
-										games.Rest[compType] = {}
-
-									if (!games.Rest[compType][divisionName])
-										games.Rest[compType][divisionName] = 0
-
-									games.Rest[compType][divisionName] = results[compType][divisionName]
-								}
-
-							}
-						}
-
-						function addRows(compType, container) {
-
-							for (let division in games[compType]) {
-								container.push(hyperHTML.wire()`
-										<tr>
-											<td>
-												${division}
-											</td>
-											<td style="text-align: right; padding-left: 0.5rem;">
-												${games[compType][division]}
-											</td>
-										</tr>
-									`)
-							}
-
-							if (container[0]) {
-								for (let i of container[0].children) {
-									i.classList.add('noBorder')
-								}
-							}
-						}
-
-						var rows6on6 = []
-						var rowsHl = []
-						var rowsRest = []
-
-						addRows('6on6', rows6on6)
-						addRows('Highlander', rowsHl)
-
-						//for rowsRest
-						for (let compType in games.Rest) {
-							for (let division in games.Rest[compType]) {
-								rowsRest.push(hyperHTML.wire()`
-										<tr>
-											<td>
-												${compType}:${division}
-											</td>
-											<td style="text-align: right; padding-left: 0.5rem;">
-												${games.Rest[compType][division]}
-											</td>
-										</tr>
-									`)
-							}
-
-						}
-
-						if (rowsRest[0]) {
-							for (let i of rowsRest[0].children) {
-								i.classList.add('noBorder')
-							}
-						}
-
-						columns.gamesPlayed6on6 = hyperHTML.wire()`
-							<td>
-								<table class="gamesPlayed tableBackgroundWhite" style="width: 100%"><tbody>${rows6on6}</tbody></table>
-							</td>
-							`
-
-						columns.gamesPlayedHl = hyperHTML.wire()`
-							<td>
-								<table class="gamesPlayed tableBackgroundCustom" style="width: 100%"><tbody>${rowsHl}</tbody></table>
-							</td>
-							`
-
-						columns.gamesPlayedRest = hyperHTML.wire()`
-							<td>
-								<table class="gamesPlayed tableBackgroundWhite" style="width: 100%"><tbody>${rowsRest}</tbody></table>
-							</td>
-							`
-					}
-
-				} else if (item === 'steamID') {
-
-				} else {
-					columns[item] = hyperHTML.wire()`<td>${content}</td>`
-				}
 			}
+			if (player.steamProfilePic) {
+				let url = `https://etf2l.org/forum/user/${player.steamProfilePic}`
+
+				columns.steamProfilePic = hyperHTML.wire()`<td>
+					<img src=${player.steamProfilePic} class="steamProfilePic">
+					</td>`
+
+			}
+			if (player.logstfLink) {
+				let url = `https://logs.tf/search/player?s=${player.steamID}`
+
+				columns.logstfLink = hyperHTML.wire()`<td>
+					<a href="${url}">Logs.tf</a>
+					</td>`
+
+			}
+			if (player.teams) {
+
+				if (player.teams.length > 0) {
+
+					let teams = []
+					for (let i of player.teams) {
+						teams.push(hyperHTML.wire()`<p>${i.type} : ${i.name}</p>`)
+					}
+					columns.teams = hyperHTML.wire()`<td>${teams}</td>`
+				} else {
+					columns.teams = hyperHTML.wire()`<td></td>`
+				}
+
+			}
+			if (player.played6on6 || player.playedHL || player.playedRest) {
+
+				let games = {'6on6': {}, 'Highlander': {}, 'Rest': {}}
+
+				function addRows(compType, container, playedGames) {
+
+					for (let i of playedGames) {
+
+						if (!games[compType][i.division]) games[compType][i.division] = 0
+
+						games[compType][i.division] += 1
+					}
+
+					for (let division in games[compType]) {
+
+						container.push(hyperHTML.wire()`
+							<tr>
+								<td>
+									${division}
+								</td>
+								<td style="text-align: right; padding-left: 0.5rem;">
+									${games[compType][division]}
+								</td>
+							</tr>`
+						)
+
+					}
+
+					if (container[0]) {
+						for (let i of container[0].children) {
+							i.classList.add('noBorder')
+						}
+					}
+				}
+
+				var rows6on6 = []
+				var rowsHl = []
+				var rowsRest = []
+
+				addRows('6on6', rows6on6, player.played6on6)
+				addRows('Highlander', rowsHl, player.playedHL)
+				addRows('Rest', rowsRest, player.playedRest)
+
+				if (rowsRest[0]) {
+					for (let i of rowsRest[0].children) {
+						i.classList.add('noBorder')
+					}
+				}
+
+				columns.gamesPlayed6on6 = hyperHTML.wire()`
+					<td>
+						<table class="gamesPlayed tableBackgroundWhite" style="width: 100%"><tbody>${rows6on6}</tbody></table>
+					</td>`
+
+				columns.gamesPlayedHl = hyperHTML.wire()`
+					<td>
+						<table class="gamesPlayed tableBackgroundCustom" style="width: 100%"><tbody>${rowsHl}</tbody></table>
+					</td>`
+
+				columns.gamesPlayedRest = hyperHTML.wire()`
+					<td>
+						<table class="gamesPlayed tableBackgroundWhite" style="width: 100%"><tbody>${rowsRest}</tbody></table>
+					</td>`
+			}
+
+			['nameServer', 'nameETF2L', 'country'].forEach(function (i) {
+				if (player[i]) {
+					columns[i] = hyperHTML.wire()`<td>${player[i]}</td>`
+				}
+			})
 
 			/*
 			Object.keys(players[0])
-			(7) ["steamID", "nameServer", "logstfLink", "steamProfilePic", "nameETF2L", "country", "ETF2LProfileID"]
+			(13) ["playerID", "steamID", "nameServer", "logstfLink", "steamProfilePic", "nameETF2L", "country", "ETF2LProfileID", "teams", "gamesPlayed", "played6on6", "playedHL", "playedRest"]
 			*/
 			let displayOrder = ['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'ETF2LProfileID', 'logstfLink', 'teams', 'gamesPlayed6on6', 'gamesPlayedHl', 'gamesPlayedRest']
 			let sorted = []
@@ -316,16 +271,18 @@ function generateTable(data) {
 			}
 
 			rows.push(hyperHTML.wire()`<tr>${sorted}</tr>`)
-		}
+
+		})
+
 	}
 
 	return hyperHTML.wire()`
-			<div class="table-responsive">
-				<table align="center" class="table">
-					<thead>${tableHead}</thead>
-					<tbody>${rows}</tbody>
-				</table>
-			</div>`
+		<div class="table-responsive">
+			<table align="center" class="table">
+				<thead>${tableHead}</thead>
+				<tbody>${rows}</tbody>
+			</table>
+		</div>`
 
 }
 

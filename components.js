@@ -3,7 +3,7 @@ class BaseComponent extends hyperHTML.Component {
 		super()
 		this.props = props
 		this.label = props.label
-		this.data = props.data || ""
+		this.data = props.data || ''
 	}
 
 	render() {
@@ -17,7 +17,7 @@ class ETF2LProfileID extends BaseComponent {
 	}
 
 	render() {
-		let content = ""
+		let content = ''
 		if (this.props.player.ETF2LProfileID) {
 			let url = `https://etf2l.org/forum/user/${this.props.player.ETF2LProfileID}`
 			content = hyperHTML.wire()`<a href="${url}">ETF2L Profile</a>`
@@ -84,7 +84,7 @@ class _Played extends BaseComponent {
 	}
 
 	addRows(compType, playedGames) {
-		let games = {"6on6": {}, Highlander: {}, Rest: {}}
+		let games = {'6on6': {}, Highlander: {}, Rest: {}}
 		let container = this.container
 
 		for (let i of playedGames) {
@@ -107,7 +107,7 @@ class _Played extends BaseComponent {
 
 		if (container[0]) {
 			for (let i of container[0].children) {
-				i.classList.add("noBorder")
+				i.classList.add('noBorder')
 			}
 		}
 	}
@@ -119,7 +119,7 @@ class GamesPlayed6on6 extends _Played {
 	}
 
 	render() {
-		this.addRows("6on6", this.props.player.played6on6)
+		this.addRows('6on6', this.props.player.played6on6)
 
 		return this.html`
 			<td>
@@ -135,7 +135,7 @@ class GamesPlayedHL extends _Played {
 	}
 
 	render() {
-		this.addRows("Highlander", this.props.player.playedHL)
+		this.addRows('Highlander', this.props.player.playedHL)
 
 		return this.html`
 			<td>
@@ -151,7 +151,7 @@ class GamesPlayedRest extends _Played {
 	}
 
 	render() {
-		this.addRows("Rest", this.props.player.playedRest)
+		this.addRows('Rest', this.props.player.playedRest)
 
 		return this.html`
 			<td>
@@ -197,7 +197,7 @@ class ItemComponent extends hyperHTML.Component {
 		} else if (is(l.gamesPlayedRest)) {
 			this.component = new GamesPlayedRest(this.props)
 		} else {
-			this.component = hyperHTML.wire()`<td>< !-- ItemComponent no element found -- ></td>`
+			this.component = hyperHTML.wire()`<td><!-- ItemComponent no element found --></td>`
 		}
 	}
 

@@ -3,7 +3,7 @@ let players = {}
 
 let playerID = 0
 let app = {
-	labelOrder: ["steamProfilePic", "nameServer", "nameETF2L", "country", "ETF2LProfileID", "logstfLink", "teams", "gamesPlayed6on6", "gamesPlayedHL", "gamesPlayedRest"],
+	labelOrder: ['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'ETF2LProfileID', 'logstfLink', 'teams', 'gamesPlayed6on6', 'gamesPlayedHL', 'gamesPlayedRest'],
 	labels: {},
 }
 
@@ -16,7 +16,7 @@ function main() {
 	playerID = 0
 	let wait = api_request_rate_ms
 
-	let logLines = document.querySelector("#input").value
+	let logLines = document.querySelector('#input').value
 	logLines = logLines.split(/\r\n|\n/)
 
 	//[ , name, steamID]
@@ -34,15 +34,15 @@ function main() {
 				playerID: playerID,
 				steamID: steamID,
 				nameServer: nameServer,
-				steamProfilePic: "",
-				nameETF2L: "",
-				country: "",
-				ETF2LProfileID: "",
-				logstfLink: "",
+				steamProfilePic: '',
+				nameETF2L: '',
+				country: '',
+				ETF2LProfileID: '',
+				logstfLink: '',
 				teams: [],
-				gamesPlayed6on6: "",
-				gamesPlayedHL: "",
-				gamesPlayedRes: "",
+				gamesPlayed6on6: '',
+				gamesPlayedHL: '',
+				gamesPlayedRes: '',
 				played6on6: [],
 				playedHL: [],
 				playedRest: [],
@@ -61,7 +61,7 @@ function main() {
 			axios
 				.get(`http://api.etf2l.org/player/${id}.json`)
 				.then(function(response) {
-					if (response.data.status && response.data.status.message === "OK" && response.data.player) {
+					if (response.data.status && response.data.status.message === 'OK' && response.data.player) {
 						let nameETF2L = response.data.player.name
 						let country = response.data.player.country
 						i.nameETF2L = nameETF2L
@@ -93,19 +93,19 @@ function getResults(id, pageID, player) {
 		axios
 			.get(`http://api.etf2l.org/player/${id}/results/${pageID}.json?since=0&per_page=100`)
 			.then(function(response) {
-				if (response.data.status && response.data.status.message === "OK" && response.data.results) {
+				if (response.data.status && response.data.status.message === 'OK' && response.data.results) {
 					let results = response.data.results
 
 					for (let i of results) {
 						let type = i.competition.type //6on6, 1v1, HL
 						let division = i.division.name || i.competition.category //season a powered by b, fun cup, group a
 
-						if (type === "6on6") {
-							player.played6on6.push({key: "6on6", type: type, division: division})
-						} else if (type === "Highlander") {
-							player.playedHL.push({key: "HL", type: type, division: division})
+						if (type === '6on6') {
+							player.played6on6.push({key: '6on6', type: type, division: division})
+						} else if (type === 'Highlander') {
+							player.playedHL.push({key: 'HL', type: type, division: division})
 						} else {
-							player.playedRest.push({key: "Rest", type: type, division: division})
+							player.playedRest.push({key: 'Rest', type: type, division: division})
 						}
 					}
 
@@ -128,7 +128,7 @@ let table
 
 function renderTable() {
 	if (!table) {
-		let tableContainer = document.querySelector("#container")
+		let tableContainer = document.querySelector('#container')
 		table = new Table()
 		hyperHTML(tableContainer)`${table}`
 	} else {
@@ -198,7 +198,7 @@ class Table extends hyperHTML.Component {
 }
 
 function enter(event) {
-	if (event.key === "Enter") {
+	if (event.key === 'Enter') {
 		main()
 	}
 }

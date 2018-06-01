@@ -38,6 +38,7 @@ function main() {
 				played6on6: [],
 				playedHL: [],
 				playedRest: [],
+				results: [],
 			}
 
 			playerID++
@@ -87,17 +88,17 @@ function getResults(id, pageID, player) {
 			.then(function(response) {
 				if (response.data.status && response.data.status.message === 'OK' && response.data.results) {
 					let results = response.data.results
+					player.results = player.results.concat(results)
 
 					for (let i of results) {
 						let type = i.competition.type //6on6, 1v1, HL
-						let division = i.division.name || i.competition.category //season a powered by b, fun cup, group a
 
 						if (type === '6on6') {
-							player.played6on6.push({key: '6on6', type: type, division: division})
+							player.played6on6.push(i)
 						} else if (type === 'Highlander') {
-							player.playedHL.push({key: 'HL', type: type, division: division})
+							player.playedHL.push(i)
 						} else {
-							player.playedRest.push({key: 'Rest', type: type, division: division})
+							player.playedRest.push(i)
 						}
 					}
 
@@ -176,7 +177,7 @@ class Table extends hyperHTML.Component {
 								${new GamesPlayed6on6(player)}
 								${new GamesPlayedHL(player)}
 								${new GamesPlayedRest(player)}
-							</tr>	
+							</tr>
 					`,
 					)}
 				</tbody>

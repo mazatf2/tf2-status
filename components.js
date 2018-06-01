@@ -1,9 +1,8 @@
 class BaseComponent extends hyperHTML.Component {
-	constructor(props) {
+	constructor(props, data) {
 		super()
 		this.props = props
-		this.label = props.label
-		this.data = props.data || ''
+		this.data = data || props.data
 	}
 
 	render() {
@@ -18,8 +17,8 @@ class ETF2LProfileID extends BaseComponent {
 
 	render() {
 		let content = ''
-		if (this.props.player.ETF2LProfileID) {
-			let url = `https://etf2l.org/forum/user/${this.props.player.ETF2LProfileID}`
+		if (this.props.ETF2LProfileID) {
+			let url = `https://etf2l.org/forum/user/${this.props.ETF2LProfileID}`
 			content = hyperHTML.wire()`<a href="${url}">ETF2L Profile</a>`
 		}
 
@@ -33,7 +32,7 @@ class LogstfLink extends BaseComponent {
 	}
 
 	render() {
-		let url = `https://logs.tf/search/player?s=${this.props.player.steamID}`
+		let url = `https://logs.tf/search/player?s=${this.props.steamID}`
 		return this.html`<td><a href="${url}">Logs.tf</a></td>`
 	}
 }
@@ -44,13 +43,13 @@ class SteamProfilePic extends BaseComponent {
 	}
 
 	render() {
-		return this.html`<td><img src="${this.data}" class="steamProfilePic"></td>`
+		return this.html`<td><img src="${this.props.steamProfilePic}" class="steamProfilePic"></td>`
 	}
 }
 
 class TextComponent extends BaseComponent {
-	constructor(props) {
-		super(props)
+	constructor(props, data) {
+		super(props, data)
 	}
 
 	render() {
@@ -64,15 +63,15 @@ class Teams extends BaseComponent {
 	}
 
 	render() {
-		if (this.props.data && this.props.data.length > 0) {
+		let result = ''
+		if (this.props.teams && this.props.teams.length > 0) {
 			let teams = []
-			for (let i of this.props.data) {
+			for (let i of this.props.teams) {
 				teams.push(hyperHTML.wire()`<p>${i.type} : ${i.name}</p>`)
 			}
-			return this.html`<td>${teams}</td>`
-		} else {
-			return this.html`<td></td>`
+			result = teams
 		}
+		return this.html`<td>${result}</td>`
 	}
 }
 
@@ -119,7 +118,7 @@ class GamesPlayed6on6 extends _Played {
 	}
 
 	render() {
-		this.addRows('6on6', this.props.player.played6on6)
+		this.addRows('6on6', this.props.played6on6)
 
 		return this.html`
 			<td>
@@ -135,7 +134,7 @@ class GamesPlayedHL extends _Played {
 	}
 
 	render() {
-		this.addRows('Highlander', this.props.player.playedHL)
+		this.addRows('Highlander', this.props.playedHL)
 
 		return this.html`
 			<td>
@@ -151,57 +150,12 @@ class GamesPlayedRest extends _Played {
 	}
 
 	render() {
-		this.addRows('Rest', this.props.player.playedRest)
+		this.addRows('Rest', this.props.playedRest)
 
 		return this.html`
 			<td>
 				<table class="gamesPlayed tableBackgroundWhite" style="width: 100%"><tbody>${this.container}</tbody></table>
 			</td>
 		`
-	}
-}
-
-class ItemComponent extends hyperHTML.Component {
-	constructor(label, data, player) {
-		super()
-
-		this.label = label
-		this.data = data
-		this.player = player
-
-		this.props = {label: label, data: data, player: player}
-
-		const l = app.labels
-
-		let is = (thatLabel) => {
-			if (this.label === thatLabel) {
-				return true
-			}
-			return false
-		}
-
-		if (is(l.nameETF2L) || is(l.nameServer) || is(l.country)) {
-			this.component = new TextComponent(this.props)
-		} else if (is(l.steamProfilePic)) {
-			this.component = new SteamProfilePic(this.props)
-		} else if (is(l.logstfLink)) {
-			this.component = new LogstfLink(this.props)
-		} else if (is(l.ETF2LProfileID)) {
-			this.component = new ETF2LProfileID(this.props)
-		} else if (is(l.teams)) {
-			this.component = new Teams(this.props)
-		} else if (is(l.gamesPlayed6on6)) {
-			this.component = new GamesPlayed6on6(this.props)
-		} else if (is(l.gamesPlayedHL)) {
-			this.component = new GamesPlayedHL(this.props)
-		} else if (is(l.gamesPlayedRest)) {
-			this.component = new GamesPlayedRest(this.props)
-		} else {
-			this.component = hyperHTML.wire()`<td><!-- ItemComponent no element found --></td>`
-		}
-	}
-
-	render() {
-		return this.component
 	}
 }

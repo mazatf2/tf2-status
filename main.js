@@ -2,14 +2,6 @@ let api_request_rate_ms = 200
 let players = {}
 
 let playerID = 0
-let app = {
-	labelOrder: ['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'ETF2LProfileID', 'logstfLink', 'teams', 'gamesPlayed6on6', 'gamesPlayedHL', 'gamesPlayedRest'],
-	labels: {},
-}
-
-app.labelOrder.forEach(function(i) {
-	app.labels[i] = i
-})
 
 function main() {
 	players = {}
@@ -136,33 +128,12 @@ function renderTable() {
 	}
 }
 
-class TableRow extends hyperHTML.Component {
-	constructor(player) {
-		super()
-		this.player = player
-		this.TDs = []
-
-		this.labelOrder = app.labelOrder
-	}
-
-	render() {
-		for (let label of this.labelOrder) {
-			this.TDs.push(new ItemComponent(label, this.player[label], this.player))
-		}
-
-		return this.html`
-			<tr>
-				${this.TDs}
-			</tr>
-		`
-	}
-}
-
 class Table extends hyperHTML.Component {
 	constructor() {
 		super()
 		this.rows = []
 
+		//['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'ETF2LProfileID', 'logstfLink', 'teams', 'gamesPlayed6on6', 'gamesPlayedHL', 'gamesPlayedRest']
 		this.tableHead = hyperHTML.wire()`
 		<tr>
 			<td></td>
@@ -183,15 +154,32 @@ class Table extends hyperHTML.Component {
 		let rows = []
 		let tableHead = this.tableHead
 
-		Object.values(data).forEach(function(player) {
-			rows.push(new TableRow(player))
+		let playerList = Object.values(data).filter(function() {
+			return true
 		})
 
 		return this.html`
 		<div class="table-responsive">
 			<table align="center" class="table">
 				<thead>${tableHead}</thead>
-				<tbody>${rows}</tbody>
+				<tbody>
+					${playerList.map(
+						(player) => hyperHTML.wire(player)`
+							<tr>
+								${new SteamProfilePic(player)}
+								${new TextComponent(player, player.nameServer)}
+								${new TextComponent(player, player.nameETF2L)}
+								${new TextComponent(player, player.country)}
+								${new ETF2LProfileID(player)}
+								${new LogstfLink(player)}
+								${new Teams(player)}
+								${new GamesPlayed6on6(player)}
+								${new GamesPlayedHL(player)}
+								${new GamesPlayedRest(player)}
+							</tr>	
+					`,
+					)}
+				</tbody>
 			</table>
 		</div>`
 	}

@@ -94,11 +94,10 @@
 	<div id="container"></div>
 </div>
 <script>class BaseComponent extends hyperHTML.Component {
-	constructor(props) {
+	constructor(props, data) {
 		super()
 		this.props = props
-		this.label = props.label
-		this.data = props.data || ''
+		this.data = data || props.data
 	}
 
 	render() {
@@ -106,17 +105,26 @@
 	}
 }
 
-class ETF2LProfileID extends BaseComponent {
+class Links extends BaseComponent {
 	constructor(props) {
 		super(props)
 	}
 
 	render() {
-		let content = ''
-		if (this.props.player.ETF2LProfileID) {
-			let url = `https://etf2l.org/forum/user/${this.props.player.ETF2LProfileID}`
-			content = hyperHTML.wire()`<a href="${url}">ETF2L Profile</a>`
+		let content = []
+		if (this.props.ETF2LProfileID) {
+			let url = `https://etf2l.org/forum/user/${this.props.ETF2LProfileID}`
+			content.push(hyperHTML.wire()`<p><a href="${url}">ETF2L</a></p>`)
+		} else {
+			let steamID = this.props.steamID.replace('[', '').replace(']', '')
+			let url = `http://etf2l.org/search/${steamID}`
+			content.push(hyperHTML.wire()`<p><a href="${url}" style="text-decoration: line-through">ETF2L</a></p>`)
 		}
+		let ugcUrl = `https://www.ugcleague.com/playersearch.cfm?steamid=${this.props.steamID}&steamid32=&steamid64=&player_name=&submit=Find+Players&results=`
+		content.push(hyperHTML.wire()`<p><a href="${ugcUrl}">UGC</a></p>`)
+
+		let eseaUrl = `https://play.esea.net/index.php?s=search&query=${this.props.steamID}&source=users`
+		content.push(hyperHTML.wire()`<p><a href="${eseaUrl}">ESEA</a></p>`)
 
 		return this.html`<td>${content}</td>`
 	}
@@ -128,7 +136,7 @@ class LogstfLink extends BaseComponent {
 	}
 
 	render() {
-		let url = `https://logs.tf/search/player?s=${this.props.player.steamID}`
+		let url = `https://logs.tf/search/player?s=${this.props.steamID}`
 		return this.html`<td><a href="${url}">Logs.tf</a></td>`
 	}
 }
@@ -139,13 +147,13 @@ class SteamProfilePic extends BaseComponent {
 	}
 
 	render() {
-		return this.html`<td><img src="${this.data}" class="steamProfilePic"></td>`
+		return this.html`<td><img src="${this.props.steamProfilePic}" class="steamProfilePic"></td>`
 	}
 }
 
 class TextComponent extends BaseComponent {
-	constructor(props) {
-		super(props)
+	constructor(props, data) {
+		super(props, data)
 	}
 
 	render() {
@@ -159,15 +167,15 @@ class Teams extends BaseComponent {
 	}
 
 	render() {
-		if (this.props.data && this.props.data.length > 0) {
+		let result = ''
+		if (this.props.teams && this.props.teams.length > 0) {
 			let teams = []
-			for (let i of this.props.data) {
+			for (let i of this.props.teams) {
 				teams.push(hyperHTML.wire()`<p>${i.type} : ${i.name}</p>`)
 			}
-			return this.html`<td>${teams}</td>`
-		} else {
-			return this.html`<td></td>`
+			result = teams
 		}
+		return this.html`<td>${result}</td>`
 	}
 }
 
@@ -178,30 +186,146 @@ class _Played extends BaseComponent {
 		this.container = []
 	}
 
-	addRows(compType, playedGames) {
-		let games = {'6on6': {}, Highlander: {}, Rest: {}}
-		let container = this.container
-
-		for (let i of playedGames) {
-			if (!games[compType][i.division]) games[compType][i.division] = 0
-
-			games[compType][i.division] += 1
+	addRows6on6HL(compType, playedGames) {
+		let games = {
+			Premiership: [],
+			'Division: 1': [],
+			'Division: 2': [],
+			High: [],
+			Mid: [],
+			'Low / Open': [],
+			Cup: [],
+			error: [],
 		}
 
-		for (let division in games[compType]) {
-			container.push(hyperHTML.wire()`
-							<tr>
-								<td>
-									${division}
-								</td>
-								<td style="text-align: right; padding-left: 0.5rem;">
-									${games[compType][division]}
-								</td>
-							</tr>`)
+		function checkDiv(result) {
+			//"division": {"tier": null, "name": null, "id": null}
+			//obj.category, obj.type
+			//Premiership Preseason Playoffs
+			//NA Rules Cup - LOW
+
+			//tier 0
+			//obj.category, obj.type
+			//Premiership, Premiership Group, Premiership Tier
+
+			//tier 1
+			//obj.name: Division 1, Division 1A, High, High A, High tier
+
+			//tier 2
+			//Division 2, Mid, High/Mid
+
+			//tier 3
+			//Division 3, Division 3A, Open, Low
+			//Grey Group
+			//Open Group A
+
+			//tier 4
+			//Division 4, Division 4A, Open
+
+			//tier 5
+			//Division 5, Division 5A
+
+			//tier 6
+			//Division 6, Division 6A
+
+			let rName = result.division.name || result.competition.name
+			let category = result.competition.category || ''
+
+			if (category.match(/The Highlander Open/)) {
+				games.Cup.push(result)
+			} else if (rName.match(/Premiership/)) {
+				games.Premiership.push(result)
+			} else if (rName.match(/Division 1/)) {
+				games['Division: 1'].push(result)
+			} else if (rName.match(/Division 2/)) {
+				games['Division: 2'].push(result)
+			} else if (rName.match(/Division 3/) || rName.match(/Division 4/)) {
+				games.Mid.push(result)
+			} else if (rName.match(/Division 5/) || rName.match(/Division 6/)) {
+				games['Low / Open'].push(result)
+			} else if (rName.match(/High/)) {
+				games.High.push(result)
+			} else if (rName.match(/Mid/)) {
+				games.Mid.push(result)
+			} else if (rName.match(/Low/) || rName.match(/Open/)) {
+				games['Low / Open'].push(result)
+			} else if (category.match(/Cup/)) {
+				games.Cup.push(result)
+			} else {
+				games.error.push(result)
+			}
 		}
 
-		if (container[0]) {
-			for (let i of container[0].children) {
+		for (let result of playedGames) {
+			checkDiv(result)
+		}
+
+		Object.entries(games).forEach((a) => {
+			let [division, obj] = a
+
+			if (obj.length > 0) {
+				this.container.push(hyperHTML.wire()`
+					<tr>
+						<td>${division}</td>
+						<td style="text-align: right; padding-left: 0.5rem;">
+							${obj.length}
+						</td>
+					</tr>
+				`)
+			}
+		})
+
+		if (this.container[0]) {
+			for (let i of this.container[0].children) {
+				i.classList.add('noBorder')
+			}
+		}
+	}
+
+	addRowsRest(compType, playedGames) {
+		let games = {
+			'1on1': [],
+			'2on2': [],
+			Cup: [],
+		}
+
+		function checkDiv(result) {
+			let rName = result.division.name || result.competition.name
+			let category = result.competition.category || ''
+			let type = result.competition.type || ''
+
+			if (type === '1on1') {
+				games['1on1'].push(result)
+			} else if (type === '2on2') {
+				games['2on2'].push(result)
+			} else if (type === '2on 2') {
+				games['Division: 1'].push(result)
+			} else {
+				games.Cup.push(result)
+			}
+		}
+
+		for (let result of playedGames) {
+			checkDiv(result)
+		}
+
+		Object.entries(games).forEach((a) => {
+			let [gameType, obj] = a
+
+			if (obj.length > 0) {
+				this.container.push(hyperHTML.wire()`
+					<tr>
+						<td>${gameType}</td>
+						<td style="text-align: right; padding-left: 0.5rem;">
+							${obj.length}
+						</td>
+					</tr>
+				`)
+			}
+		})
+
+		if (this.container[0]) {
+			for (let i of this.container[0].children) {
 				i.classList.add('noBorder')
 			}
 		}
@@ -214,7 +338,7 @@ class GamesPlayed6on6 extends _Played {
 	}
 
 	render() {
-		this.addRows('6on6', this.props.player.played6on6)
+		this.addRows6on6HL('6on6', this.props.played6on6)
 
 		return this.html`
 			<td>
@@ -230,7 +354,7 @@ class GamesPlayedHL extends _Played {
 	}
 
 	render() {
-		this.addRows('Highlander', this.props.player.playedHL)
+		this.addRows6on6HL('Highlander', this.props.playedHL)
 
 		return this.html`
 			<td>
@@ -246,7 +370,7 @@ class GamesPlayedRest extends _Played {
 	}
 
 	render() {
-		this.addRows('Rest', this.props.player.playedRest)
+		this.addRowsRest('Rest', this.props.playedRest)
 
 		return this.html`
 			<td>
@@ -255,64 +379,11 @@ class GamesPlayedRest extends _Played {
 		`
 	}
 }
-
-class ItemComponent extends hyperHTML.Component {
-	constructor(label, data, player) {
-		super()
-
-		this.label = label
-		this.data = data
-		this.player = player
-
-		this.props = {label: label, data: data, player: player}
-
-		const l = app.labels
-
-		let is = (thatLabel) => {
-			if (this.label === thatLabel) {
-				return true
-			}
-			return false
-		}
-
-		if (is(l.nameETF2L) || is(l.nameServer) || is(l.country)) {
-			this.component = new TextComponent(this.props)
-		} else if (is(l.steamProfilePic)) {
-			this.component = new SteamProfilePic(this.props)
-		} else if (is(l.logstfLink)) {
-			this.component = new LogstfLink(this.props)
-		} else if (is(l.ETF2LProfileID)) {
-			this.component = new ETF2LProfileID(this.props)
-		} else if (is(l.teams)) {
-			this.component = new Teams(this.props)
-		} else if (is(l.gamesPlayed6on6)) {
-			this.component = new GamesPlayed6on6(this.props)
-		} else if (is(l.gamesPlayedHL)) {
-			this.component = new GamesPlayedHL(this.props)
-		} else if (is(l.gamesPlayedRest)) {
-			this.component = new GamesPlayedRest(this.props)
-		} else {
-			this.component = hyperHTML.wire()`<td><!-- ItemComponent no element found --></td>`
-		}
-	}
-
-	render() {
-		return this.component
-	}
-}
 </script>
 <script>let api_request_rate_ms = 200
 let players = {}
 
 let playerID = 0
-let app = {
-	labelOrder: ['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'ETF2LProfileID', 'logstfLink', 'teams', 'gamesPlayed6on6', 'gamesPlayedHL', 'gamesPlayedRest'],
-	labels: {},
-}
-
-app.labelOrder.forEach(function(i) {
-	app.labels[i] = i
-})
 
 function main() {
 	players = {}
@@ -349,6 +420,7 @@ function main() {
 				played6on6: [],
 				playedHL: [],
 				playedRest: [],
+				results: [],
 			}
 
 			playerID++
@@ -398,17 +470,17 @@ function getResults(id, pageID, player) {
 			.then(function(response) {
 				if (response.data.status && response.data.status.message === 'OK' && response.data.results) {
 					let results = response.data.results
+					player.results = player.results.concat(results)
 
 					for (let i of results) {
 						let type = i.competition.type //6on6, 1v1, HL
-						let division = i.division.name || i.competition.category //season a powered by b, fun cup, group a
 
 						if (type === '6on6') {
-							player.played6on6.push({key: '6on6', type: type, division: division})
+							player.played6on6.push(i)
 						} else if (type === 'Highlander') {
-							player.playedHL.push({key: 'HL', type: type, division: division})
+							player.playedHL.push(i)
 						} else {
-							player.playedRest.push({key: 'Rest', type: type, division: division})
+							player.playedRest.push(i)
 						}
 					}
 
@@ -439,33 +511,12 @@ function renderTable() {
 	}
 }
 
-class TableRow extends hyperHTML.Component {
-	constructor(player) {
-		super()
-		this.player = player
-		this.TDs = []
-
-		this.labelOrder = app.labelOrder
-	}
-
-	render() {
-		for (let label of this.labelOrder) {
-			this.TDs.push(new ItemComponent(label, this.player[label], this.player))
-		}
-
-		return this.html`
-			<tr>
-				${this.TDs}
-			</tr>
-		`
-	}
-}
-
 class Table extends hyperHTML.Component {
 	constructor() {
 		super()
 		this.rows = []
 
+		//['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'links', 'logstfLink', 'teams', 'gamesPlayed6on6', 'gamesPlayedHL', 'gamesPlayedRest']
 		this.tableHead = hyperHTML.wire()`
 		<tr>
 			<td></td>
@@ -486,15 +537,32 @@ class Table extends hyperHTML.Component {
 		let rows = []
 		let tableHead = this.tableHead
 
-		Object.values(data).forEach(function(player) {
-			rows.push(new TableRow(player))
+		let playerList = Object.values(data).filter(function() {
+			return true
 		})
 
 		return this.html`
 		<div class="table-responsive">
 			<table align="center" class="table">
 				<thead>${tableHead}</thead>
-				<tbody>${rows}</tbody>
+				<tbody>
+					${playerList.map(
+						(player) => hyperHTML.wire(player)`
+							<tr>
+								${new SteamProfilePic(player)}
+								${new TextComponent(player, player.nameServer)}
+								${new TextComponent(player, player.nameETF2L)}
+								${new TextComponent(player, player.country)}
+								${new Links(player)}
+								${new LogstfLink(player)}
+								${new Teams(player)}
+								${new GamesPlayed6on6(player)}
+								${new GamesPlayedHL(player)}
+								${new GamesPlayedRest(player)}
+							</tr>
+					`,
+					)}
+				</tbody>
 			</table>
 		</div>`
 	}

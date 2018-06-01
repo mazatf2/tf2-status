@@ -133,7 +133,7 @@ class Table extends hyperHTML.Component {
 		super()
 		this.rows = []
 
-		//['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'ETF2LProfileID', 'logstfLink', 'teams', 'gamesPlayed6on6', 'gamesPlayedHL', 'gamesPlayedRest']
+		//['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'links', 'logstfLink', 'teams', 'gamesPlayed6on6', 'gamesPlayedHL', 'gamesPlayedRest']
 		this.tableHead = hyperHTML.wire()`
 		<tr>
 			<td></td>
@@ -170,7 +170,7 @@ class Table extends hyperHTML.Component {
 								${new TextComponent(player, player.nameServer)}
 								${new TextComponent(player, player.nameETF2L)}
 								${new TextComponent(player, player.country)}
-								${new ETF2LProfileID(player)}
+								${new Links(player)}
 								${new LogstfLink(player)}
 								${new Teams(player)}
 								${new GamesPlayed6on6(player)}

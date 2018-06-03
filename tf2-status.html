@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="theme-color" content="#000000">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
@@ -74,6 +75,7 @@
 <body>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/hyperhtml@2.10.0/index.js"></script>
+<script src="https://unpkg.com/hyperhtml-app@0.2.1/min.js"></script>
 
 <div class="App">
 	<header class="App-header">
@@ -81,16 +83,7 @@
 		<h1 class="App-title">TF2 Status</h1>
 	</header>
 	<br>
-	<p class="App-intro">
-		Copy the <code>status</code> console command output, from TF2, into the box below:
-	</p>
-	<div>
-		<textarea id="input" placeholder="" rows="16" cols="80"></textarea>
-		<br>
-		<br>
-		<input type="button" onclick="main()" onkeypress="enter" value="Check" class="btn btn-primary btn-lg ">
-	</div>
-	<br>
+
 	<div id="container"></div>
 </div>
 <script src="components.js"></script>

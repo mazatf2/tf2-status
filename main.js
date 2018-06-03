@@ -1,47 +1,54 @@
 let api_request_rate_ms = 200
 let players = {}
-
 let playerID = 0
 
-function main() {
+class Player {
+	constructor(params) {
+		params = params || {}
+
+		this.playerID = playerID
+		this.steamID = params.steamID || {}
+		this.nameServer = params.nameServer || {}
+		this.steamProfilePic = ''
+		this.nameETF2L = ''
+		this.country = ''
+		this.ETF2LProfileID = ''
+		this.logstfLink = ''
+		this.teams = []
+		this.gamesPlayed6on6 = ''
+		this.gamesPlayedHL = ''
+		this.gamesPlayedRes = ''
+		this.played6on6 = []
+		this.playedHL = []
+		this.playedRest = []
+		this.results = []
+
+		players[this.playerID] = this
+		playerID++
+	}
+}
+
+//[ , name, steamID]
+const statusRE = /#\s*\d+\s"(.+)"\s*(\[U:1:\d+\])/ //bug missing " on long names
+const steamIDRE = /U:1:\d+/
+
+function main(logLines) {
 	players = {}
 	playerID = 0
 	let wait = api_request_rate_ms
 
-	let logLines = document.querySelector('#input').value
+	logLines = logLines || '' //document.querySelector('#input').value
 	logLines = logLines.split(/\r\n|\n/)
 
-	//[ , name, steamID]
-	const re = /#\s*\d+\s"(.+)"\s*(\[U:1:\d+\])/ //bug missing " on long names
-
 	for (let i of logLines) {
-		if (i.match(re)) {
+		if (i.match(statusRE)) {
 			let currentLine = i
-			let result = re.exec(currentLine)
+			let result = statusRE.exec(currentLine)
 
 			let nameServer = result[1]
 			let steamID = result[2]
 
-			players[playerID] = {
-				playerID: playerID,
-				steamID: steamID,
-				nameServer: nameServer,
-				steamProfilePic: '',
-				nameETF2L: '',
-				country: '',
-				ETF2LProfileID: '',
-				logstfLink: '',
-				teams: [],
-				gamesPlayed6on6: '',
-				gamesPlayedHL: '',
-				gamesPlayedRes: '',
-				played6on6: [],
-				playedHL: [],
-				playedRest: [],
-				results: [],
-			}
-
-			playerID++
+			let player = new Player({nameServer: nameServer, steamID: steamID})
 		}
 
 		renderTable()
@@ -103,6 +110,8 @@ function getResults(id, pageID, player) {
 					}
 
 					renderTable()
+					player['ää'] = 'asd123'
+					player.testValue1 = '123321312312'
 
 					let page = response.data.page
 					if (page.next_page_url) {
@@ -117,11 +126,8 @@ function getResults(id, pageID, player) {
 	}, (wait += api_request_rate_ms))
 }
 
-let table
-
 function renderTable() {
 	if (!table) {
-		let tableContainer = document.querySelector('#container')
 		table = new Table()
 		hyperHTML(tableContainer)`${table}`
 	} else {
@@ -129,9 +135,76 @@ function renderTable() {
 	}
 }
 
+class TextArea extends hyperHTML.Component {
+	constructor(props) {
+		super(props)
+		this.props = props || {}
+		this.props.value = this.props.value || ''
+
+		this.init()
+	}
+	init() {
+		let hash = window.location.hash || ''
+		if (hash && hash.length > 1) {
+			hash = hash.substring(1, hash.length) //del #
+			let tuples = hash.split(',', 32 * 3)
+
+			if (tuples[tuples.length] === ',') {
+				tuples.splice(tuples.length - 1, 1)
+			}
+			for (let i = 0; i < tuples.length; i += 2) {
+				let steamID = tuples[i + 1]
+				if (steamID && steamID.match(steamIDRE)) {
+					let name = decodeURI(tuples[i]).substr(0, 32)
+					name = `"${name}"`.padEnd(32, ' ')
+					let result = `#  0 ${name} [${steamID}]`
+
+					this.props.value += '\r\n' + `#  0 ${name} [${steamID}]`
+				}
+			}
+		}
+	}
+
+	onclick() {
+		main(this.props.value)
+	}
+
+	oninput() {
+		this.props.value = document.querySelector('#input').value
+
+		let lines = this.props.value.split(/\r\n|\n/)
+
+		let newHash = ''
+		lines.forEach((i) => {
+			if (i.match(statusRE)) {
+				let result = statusRE.exec(i)
+
+				let nameServer = result[1]
+				let steamID = result[2].replace(/[\[|\]]/g, '')
+				newHash += `${nameServer},${steamID},`
+			}
+		})
+		console.info(newHash)
+		if (newHash[newHash.length] === ',') {
+			newHash.splice(0, -1)
+		}
+		window.location.hash = newHash
+	}
+	render() {
+		return this.html`
+			<textarea id="input" placeholder="" rows="16" cols="80" oninput=${this}>${this.props.value}</textarea>
+			<br>
+			<br>
+			<input type="button" onclick=${this} value="Check" class="btn btn-primary btn-lg ">
+		`
+	}
+}
+
 class Table extends hyperHTML.Component {
 	constructor() {
 		super()
+
+		this.textArea = new TextArea()
 		this.rows = []
 
 		//['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'links', 'logstfLink', 'teams', 'gamesPlayed6on6', 'gamesPlayedHL', 'gamesPlayedRest']
@@ -160,34 +233,60 @@ class Table extends hyperHTML.Component {
 		})
 
 		return this.html`
-		<div class="table-responsive">
-			<table align="center" class="table">
-				<thead>${tableHead}</thead>
-				<tbody>
-					${playerList.map(
-						(player) => hyperHTML.wire(player)`
-							<tr>
-								${new SteamProfilePic(player)}
-								${new TextComponent(player, player.nameServer)}
-								${new TextComponent(player, player.nameETF2L)}
-								${new TextComponent(player, player.country)}
-								${new Links(player)}
-								${new LogstfLink(player)}
-								${new Teams(player)}
-								${new GamesPlayed6on6(player)}
-								${new GamesPlayedHL(player)}
-								${new GamesPlayedRest(player)}
-							</tr>
-					`,
-					)}
-				</tbody>
-			</table>
-		</div>`
+			<p class="App-intro">
+			Copy the <code>status</code> console command output, from TF2, into the box below:
+			</p>
+			<div>
+				${this.textArea}
+			</div>
+			<br>
+			<div class="table-responsive">
+				<table align="center" class="table">
+					<thead>${tableHead}</thead>
+					<tbody>
+						${playerList.map(
+							(player) => hyperHTML.wire(player)`
+								<tr>
+									${new SteamProfilePic(player)}
+									${new TextComponent(player, player.nameServer)}
+									${new TextComponent(player, player.nameETF2L)}
+									${new TextComponent(player, player.country)}
+									${new Links(player)}
+									${new LogstfLink(player)}
+									${new Teams(player)}
+									${new GamesPlayed6on6(player)}
+									${new GamesPlayedHL(player)}
+									${new GamesPlayedRest(player)}
+								</tr>
+						`,
+						)}
+					</tbody>
+				</table>
+			</div>`
 	}
 }
 
-function enter(event) {
-	if (event.key === 'Enter') {
-		main()
+let table
+class FrontPage extends hyperHTML.Component {
+	constructor() {
+		super()
+		this.table = new Table()
+		table = this.table
+	}
+	render() {
+		return this.html`${this.table}`
 	}
 }
+
+const hyper = hyperHTML //needed for hyperHTML app router
+const router = hyperHTML.app()
+let frontPage = new FrontPage()
+
+let path = window.location.pathname
+let tableContainer = document.querySelector('#container')
+
+router.get(path, (a) => {
+	hyperHTML(tableContainer)`${frontPage}`
+})
+
+router.navigate(path)

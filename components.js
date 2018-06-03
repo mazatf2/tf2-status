@@ -203,8 +203,6 @@ class _Played extends BaseComponent {
 				games['1on1'].push(result)
 			} else if (type === '2on2') {
 				games['2on2'].push(result)
-			} else if (type === '2on 2') {
-				games['Division: 1'].push(result)
 			} else {
 				games.Cup.push(result)
 			}

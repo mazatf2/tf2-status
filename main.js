@@ -29,7 +29,7 @@ class Player {
 }
 
 //[ , name, steamID]
-const statusRE = /#\s*\d+\s"(.+)"\s*(\[U:1:\d+\])/ //bug missing " on long names
+const statusRE = /#\s*\d+\s"(.+)"\s*(\[U:1:\d+\])/
 const steamIDRE = /U:1:\d+/
 
 function main(logLines) {
@@ -37,7 +37,7 @@ function main(logLines) {
 	playerID = 0
 	let wait = api_request_rate_ms
 
-	logLines = logLines || '' //document.querySelector('#input').value
+	logLines = logLines || ''
 	logLines = logLines.split(/\r\n|\n/)
 
 	for (let i of logLines) {
@@ -110,8 +110,6 @@ function getResults(id, pageID, player) {
 					}
 
 					renderTable()
-					player['ää'] = 'asd123'
-					player.testValue1 = '123321312312'
 
 					let page = response.data.page
 					if (page.next_page_url) {
@@ -184,9 +182,9 @@ class TextArea extends hyperHTML.Component {
 				newHash += `${nameServer},${steamID},`
 			}
 		})
-		console.info(newHash)
-		if (newHash[newHash.length] === ',') {
-			newHash.splice(0, -1)
+
+		if (newHash[newHash.length - 1] === ',') {
+			newHash = newHash.slice(0, -1)
 		}
 		window.location.hash = newHash
 	}

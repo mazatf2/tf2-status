@@ -56,6 +56,17 @@ class SteamProfilePic extends BaseComponent {
 	}
 }
 
+class NameServer extends BaseComponent {
+	constructor(props) {
+		super(props)
+	}
+
+	render() {
+		let url = `http://steamcommunity.com/profiles/${this.props.steamID}`
+		return this.html`<td><a href="${url}">${this.props.nameServer}</a></td>`
+	}
+}
+
 class TextComponent extends BaseComponent {
 	constructor(props, data) {
 		super(props, data)

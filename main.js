@@ -246,7 +246,7 @@ class Table extends hyperHTML.Component {
 							(player) => hyperHTML.wire(player)`
 								<tr>
 									${new SteamProfilePic(player)}
-									${new TextComponent(player, player.nameServer)}
+									${new NameServer(player)}
 									${new TextComponent(player, player.nameETF2L)}
 									${new TextComponent(player, player.country)}
 									${new Links(player)}

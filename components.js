@@ -52,7 +52,13 @@ class SteamProfilePic extends BaseComponent {
 	}
 
 	render() {
-		return this.html`<td><img src="${this.props.steamProfilePic}" class="steamProfilePic"></td>`
+		let url = this.props.steamProfilePic || './not_found.gif'
+		let visibility = 'hidden'
+		if(url !== './not_found.gif'){
+			visibility = 'visible'
+		}
+
+		return  this.html`<td><img src="${url}" class="steamProfilePic" style="${{visibility: visibility}}"></td>`
 	}
 }
 

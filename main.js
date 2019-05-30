@@ -58,26 +58,28 @@ function main(logLines) {
 		let id = i.steamID //this needs to be 'let' because scope
 
 		setTimeout(() => {
-			axios
-				.get(`http://api.etf2l.org/player/${id}.json`)
+			fetch(`http://api.etf2l.org/player/${id}.json`)
 				.then(function(response) {
-					if (response.data.status && response.data.status.message === 'OK' && response.data.player) {
-						let nameETF2L = response.data.player.name
-						let country = response.data.player.country
-						i.nameETF2L = nameETF2L
-						i.country = country
-						i.ETF2LProfileID = response.data.player.id
-						i.steamProfilePic = response.data.player.steam.avatar
-						//i.response = response.data
-						i.teams = response.data.player.teams
+					response.json()
+						.then((json)=>{
+							if (json.status && json.status.message === 'OK' && json.player) {
+								let nameETF2L = json.player.name
+								let country = json.player.country
+								i.nameETF2L = nameETF2L
+								i.country = country
+								i.ETF2LProfileID = json.player.id
+								i.steamProfilePic = json.player.steam.avatar
+								//i.response = json
+								i.teams = json.player.teams
 
-						i.played6on6 = []
-						i.playedHL = []
-						i.playedRest = []
+								i.played6on6 = []
+								i.playedHL = []
+								i.playedRest = []
 
-						getResults(id, 1, i)
-						renderTable()
-					}
+								getResults(id, 1, i)
+								renderTable()
+							}
+						})
 				})
 				.catch(function(error) {
 					console.log(error)
@@ -90,33 +92,36 @@ function getResults(id, pageID, player) {
 	let wait = api_request_rate_ms
 
 	setTimeout(() => {
-		axios
-			.get(`http://api.etf2l.org/player/${id}/results/${pageID}.json?since=0&per_page=100`)
+		fetch(`http://api.etf2l.org/player/${id}/results/${pageID}.json?since=0&per_page=100`)
 			.then(function(response) {
-				if (response.data.status && response.data.status.message === 'OK' && response.data.results) {
-					let results = response.data.results
-					player.results = player.results.concat(results)
+				response.json()
+					.then((json)=>{
 
-					for (let i of results) {
-						let type = i.competition.type //6on6, 1v1, HL
+						if (json.status && json.status.message === 'OK' && json.results) {
+							let results = json.results
+							player.results = player.results.concat(results)
 
-						if (type === '6on6') {
-							player.played6on6.push(i)
-						} else if (type === 'Highlander') {
-							player.playedHL.push(i)
-						} else {
-							player.playedRest.push(i)
+							for (let i of results) {
+								let type = i.competition.type //6on6, 1v1, HL
+
+								if (type === '6on6') {
+									player.played6on6.push(i)
+								} else if (type === 'Highlander') {
+									player.playedHL.push(i)
+								} else {
+									player.playedRest.push(i)
+								}
+							}
+
+							renderTable()
+
+							let page = json.page
+							if (page.next_page_url) {
+								pageID += 1
+								getResults(id, pageID, player)
+							}
 						}
-					}
-
-					renderTable()
-
-					let page = response.data.page
-					if (page.next_page_url) {
-						pageID += 1
-						getResults(id, pageID, player)
-					}
-				}
+					})
 			})
 			.catch(function(error) {
 				console.log(error)

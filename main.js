@@ -56,6 +56,8 @@ function main(logLines) {
 
 	Object.values(players).forEach(function(i) {
 		let id = i.steamID //this needs to be 'let' because scope
+		id = id.replace(/\[/, '')
+		id = id.replace(/\]/, '')
 
 		setTimeout(() => {
 			fetch(`http://api.etf2l.org/player/${id}.json`)
@@ -90,6 +92,8 @@ function main(logLines) {
 
 function getResults(id, pageID, player) {
 	let wait = api_request_rate_ms
+	id = id.replace(/\[/, '')
+	id = id.replace(/\]/, '')
 
 	setTimeout(() => {
 		fetch(`http://api.etf2l.org/player/${id}/results/${pageID}.json?since=0&per_page=100`)

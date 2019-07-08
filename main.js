@@ -5,9 +5,11 @@ let playerID = 0
 class Player {
 	constructor(params) {
 		params = params || {}
+		let steamID = new SteamID(params.steamID)
 
 		this.playerID = playerID
-		this.steamID = params.steamID || {}
+		this.steamID = steamID.getSteamID64()
+		this.steamID32 = steamID.getSteam3RenderedID()
 		this.nameServer = params.nameServer || {}
 		this.steamProfilePic = ''
 		this.nameETF2L = ''
@@ -56,8 +58,6 @@ function main(logLines) {
 
 	Object.values(players).forEach(function(i) {
 		let id = i.steamID //this needs to be 'let' because scope
-		id = id.replace(/\[/, '')
-		id = id.replace(/\]/, '')
 
 		setTimeout(() => {
 			fetch(`http://api.etf2l.org/player/${id}.json`)
@@ -92,8 +92,6 @@ function main(logLines) {
 
 function getResults(id, pageID, player) {
 	let wait = api_request_rate_ms
-	id = id.replace(/\[/, '')
-	id = id.replace(/\]/, '')
 
 	setTimeout(() => {
 		fetch(`http://api.etf2l.org/player/${id}/results/${pageID}.json?since=0&per_page=100`)

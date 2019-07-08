@@ -75,6 +75,7 @@
 <body>
 <script src="https://unpkg.com/hyperhtml@2.27.0/min.js"></script>
 <script src="https://unpkg.com/hyperhtml-app@1.0.1/min.js"></script>
+<script src="https://raw.githubusercontent.com/mazatf2/tf2-status/master/libs/node-steamid.min.jss"></script>
 
 <div class="App">
 	<header class="App-header">
@@ -102,19 +103,22 @@ class Links extends BaseComponent {
 	}
 
 	render() {
+		let steamID = this.props.steamID
+		let steamID32 = this.props.steamID32
 		let content = []
+
 		if (this.props.ETF2LProfileID) {
 			let url = `https://etf2l.org/forum/user/${this.props.ETF2LProfileID}`
 			content.push(hyperHTML.wire()`<p><a href="${url}">ETF2L</a></p>`)
 		} else {
-			let steamID = this.props.steamID.replace('[', '').replace(']', '')
 			let url = `http://etf2l.org/search/${steamID}`
 			content.push(hyperHTML.wire()`<p><a href="${url}" style="text-decoration: line-through">ETF2L</a></p>`)
 		}
-		let ugcUrl = `https://www.ugcleague.com/playersearch.cfm?steamid=${this.props.steamID}&steamid32=&steamid64=&player_name=&submit=Find+Players&results=`
+
+		let ugcUrl = `https://www.ugcleague.com/playersearch.cfm?steamid=&steamid32=&steamid64=${steamID}&player_name=&submit=Find+Players&results=`
 		content.push(hyperHTML.wire()`<p><a href="${ugcUrl}">UGC</a></p>`)
 
-		let eseaUrl = `https://play.esea.net/index.php?s=search&query=${this.props.steamID}&source=users`
+		let eseaUrl = `https://play.esea.net/index.php?s=search&query=${steamID32}&source=users`
 		content.push(hyperHTML.wire()`<p><a href="${eseaUrl}">ESEA</a></p>`)
 
 		return this.html`<td>${content}</td>`
@@ -393,9 +397,11 @@ let playerID = 0
 class Player {
 	constructor(params) {
 		params = params || {}
+		let steamID = new SteamID(params.steamID)
 
 		this.playerID = playerID
-		this.steamID = params.steamID || {}
+		this.steamID = steamID.getSteamID64()
+		this.steamID32 = steamID.getSteam3RenderedID()
 		this.nameServer = params.nameServer || {}
 		this.steamProfilePic = ''
 		this.nameETF2L = ''
@@ -444,8 +450,6 @@ function main(logLines) {
 
 	Object.values(players).forEach(function(i) {
 		let id = i.steamID //this needs to be 'let' because scope
-		id = id.replace(/\[/, '')
-		id = id.replace(/\]/, '')
 
 		setTimeout(() => {
 			fetch(`http://api.etf2l.org/player/${id}.json`)
@@ -480,8 +484,6 @@ function main(logLines) {
 
 function getResults(id, pageID, player) {
 	let wait = api_request_rate_ms
-	id = id.replace(/\[/, '')
-	id = id.replace(/\]/, '')
 
 	setTimeout(() => {
 		fetch(`http://api.etf2l.org/player/${id}/results/${pageID}.json?since=0&per_page=100`)

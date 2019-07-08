@@ -16,19 +16,22 @@ class Links extends BaseComponent {
 	}
 
 	render() {
+		let steamID = this.props.steamID
+		let steamID32 = this.props.steamID32
 		let content = []
+
 		if (this.props.ETF2LProfileID) {
 			let url = `https://etf2l.org/forum/user/${this.props.ETF2LProfileID}`
 			content.push(hyperHTML.wire()`<p><a href="${url}">ETF2L</a></p>`)
 		} else {
-			let steamID = this.props.steamID.replace('[', '').replace(']', '')
 			let url = `http://etf2l.org/search/${steamID}`
 			content.push(hyperHTML.wire()`<p><a href="${url}" style="text-decoration: line-through">ETF2L</a></p>`)
 		}
-		let ugcUrl = `https://www.ugcleague.com/playersearch.cfm?steamid=${this.props.steamID}&steamid32=&steamid64=&player_name=&submit=Find+Players&results=`
+
+		let ugcUrl = `https://www.ugcleague.com/playersearch.cfm?steamid=&steamid32=&steamid64=${steamID}&player_name=&submit=Find+Players&results=`
 		content.push(hyperHTML.wire()`<p><a href="${ugcUrl}">UGC</a></p>`)
 
-		let eseaUrl = `https://play.esea.net/index.php?s=search&query=${this.props.steamID}&source=users`
+		let eseaUrl = `https://play.esea.net/index.php?s=search&query=${steamID32}&source=users`
 		content.push(hyperHTML.wire()`<p><a href="${eseaUrl}">ESEA</a></p>`)
 
 		return this.html`<td>${content}</td>`

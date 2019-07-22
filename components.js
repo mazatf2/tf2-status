@@ -103,7 +103,11 @@ class Etf2l extends BaseComponent {
 	}
 
 	render() {
-		return this.html`<td>${this.props.nameETF2L}<br>${this.props.country}</td>`
+		return this.html`
+			<td>
+				<p>${this.props.nameETF2L}</p>
+				<p>${this.props.country}</p>
+			</td>`
 	}
 }
 

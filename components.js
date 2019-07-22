@@ -63,9 +63,9 @@ class SteamIDLinks extends BaseComponent {
 
 		return this.html`
 			<td>
-				<p><a href=${url + steam64}>${steam64}</a></p>
-				<p><a href=${url + steam3}>${steam3}</a></p>
-				<p><a href=${url + steam2}>${steam2}</a></p>
+				<p style="text-align: right"><a href=${url + steam64}>${steam64}</a></p>
+				<p style="text-align: right"><a href=${url + steam3}>${steam3}</a></p>
+				<p style="text-align: right"><a href=${url + steam2}>${steam2}</a></p>
 			</td>`
 	}
 }

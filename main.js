@@ -8,8 +8,9 @@ class Player {
 		let steamID = new SteamID(params.steamID)
 
 		this.playerID = playerID
-		this.steamID = steamID.getSteamID64()
-		this.steamID32 = steamID.getSteam3RenderedID()
+		this.steamID64 = steamID.getSteamID64()
+		this.steamID2 = steamID.getSteam2RenderedID()
+		this.steamID3 = steamID.getSteam3RenderedID()
 		this.nameServer = params.nameServer || {}
 		this.steamProfilePic = ''
 		this.nameETF2L = ''
@@ -57,10 +58,10 @@ function main(logLines) {
 	}
 
 	Object.values(players).forEach(function(i) {
-		let id = i.steamID //this needs to be 'let' because scope
+		let id64 = i.steamID64 //this needs to be 'let' because scope
 
 		setTimeout(() => {
-			fetch(`http://api.etf2l.org/player/${id}.json`)
+			fetch(`http://api.etf2l.org/player/${id64}.json`)
 				.then(function(response) {
 					response.json()
 						.then((json)=>{
@@ -78,7 +79,7 @@ function main(logLines) {
 								i.playedHL = []
 								i.playedRest = []
 
-								getResults(id, 1, i)
+								getResults(id64, 1, i)
 								renderTable()
 							}
 						})
@@ -90,11 +91,11 @@ function main(logLines) {
 	})
 }
 
-function getResults(id, pageID, player) {
+function getResults(id64, pageID, player) {
 	let wait = api_request_rate_ms
 
 	setTimeout(() => {
-		fetch(`http://api.etf2l.org/player/${id}/results/${pageID}.json?since=0&per_page=100`)
+		fetch(`http://api.etf2l.org/player/${id64}/results/${pageID}.json?since=0&per_page=100`)
 			.then(function(response) {
 				response.json()
 					.then((json)=>{
@@ -120,7 +121,7 @@ function getResults(id, pageID, player) {
 							let page = json.page
 							if (page.next_page_url) {
 								pageID += 1
-								getResults(id, pageID, player)
+								getResults(id64, pageID, player)
 							}
 						}
 					})
@@ -218,7 +219,7 @@ class Table extends hyperHTML.Component {
 			<td></td>
 			<td>Nickname</td>
 			<td>ETF2L</td>
-			<td>Country</td>
+			<td></td>
 			<td></td>
 			<td></td>
 			<td>Teams</td>
@@ -254,8 +255,8 @@ class Table extends hyperHTML.Component {
 								<tr>
 									${new SteamProfilePic(player)}
 									${new NameServer(player)}
-									${new TextComponent(player, player.nameETF2L)}
-									${new TextComponent(player, player.country)}
+									${new Etf2l(player)}
+									${new SteamIDLinks(player)}
 									${new Links(player)}
 									${new LogstfLink(player)}
 									${new Teams(player)}

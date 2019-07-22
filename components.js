@@ -16,22 +16,22 @@ class Links extends BaseComponent {
 	}
 
 	render() {
-		let steamID = this.props.steamID
-		let steamID32 = this.props.steamID32
+		let steamID64 = this.props.steamID64
+		let steamID3 = this.props.steamID3
 		let content = []
 
 		if (this.props.ETF2LProfileID) {
 			let url = `https://etf2l.org/forum/user/${this.props.ETF2LProfileID}`
 			content.push(hyperHTML.wire()`<p><a href="${url}">ETF2L</a></p>`)
 		} else {
-			let url = `http://etf2l.org/search/${steamID}`
+			let url = `http://etf2l.org/search/${steamID64}`
 			content.push(hyperHTML.wire()`<p><a href="${url}" style="text-decoration: line-through">ETF2L</a></p>`)
 		}
 
-		let ugcUrl = `https://www.ugcleague.com/playersearch.cfm?steamid=&steamid32=&steamid64=${steamID}&player_name=&submit=Find+Players&results=`
+		let ugcUrl = `https://www.ugcleague.com/playersearch.cfm?steamid=&steamid32=&steamid64=${steamID64}&player_name=&submit=Find+Players&results=`
 		content.push(hyperHTML.wire()`<p><a href="${ugcUrl}">UGC</a></p>`)
 
-		let eseaUrl = `https://play.esea.net/index.php?s=search&query=${steamID32}&source=users`
+		let eseaUrl = `https://play.esea.net/index.php?s=search&query=${steamID3}&source=users`
 		content.push(hyperHTML.wire()`<p><a href="${eseaUrl}">ESEA</a></p>`)
 
 		return this.html`<td>${content}</td>`
@@ -46,6 +46,27 @@ class LogstfLink extends BaseComponent {
 	render() {
 		let url = `https://logs.tf/search/player?s=${this.props.steamID}`
 		return this.html`<td><a href="${url}">Logs.tf</a></td>`
+	}
+}
+
+class SteamIDLinks extends BaseComponent {
+	constructor(props, data) {
+		super(props, data)
+	}
+
+	render() {
+		const steam64 = this.props.steamID64
+		const steam3 = this.props.steamID3
+		const steam2 = this.props.steamID2
+
+		const url = 'https://www.google.fi/search?q='
+
+		return this.html`
+			<td>
+				<p><a href=${url + steam64}>${steam64}</a></p>
+				<p><a href=${url + steam3}>${steam3}</a></p>
+				<p><a href=${url + steam2}>${steam2}</a></p>
+			</td>`
 	}
 }
 
@@ -73,6 +94,16 @@ class NameServer extends BaseComponent {
 	render() {
 		let url = `http://steamcommunity.com/profiles/${this.props.steamID}`
 		return this.html`<td><a href="${url}">${this.props.nameServer}</a></td>`
+	}
+}
+
+class Etf2l extends BaseComponent {
+	constructor(props, data) {
+		super(props, data)
+	}
+
+	render() {
+		return this.html`<td>${this.props.nameETF2L}<br>${this.props.country}</td>`
 	}
 }
 

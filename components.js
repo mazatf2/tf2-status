@@ -44,7 +44,7 @@ class LogstfLink extends BaseComponent {
 	}
 
 	render() {
-		let url = `https://logs.tf/search/player?s=${this.props.steamID64}`
+		let url = `https://logs.tf/search/player?s=${this.props.steamID}`
 		return this.html`<td><a href="${url}">Logs.tf</a></td>`
 	}
 }

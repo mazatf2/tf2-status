@@ -16,11 +16,8 @@ class Player {
 		this.nameETF2L = ''
 		this.country = ''
 		this.ETF2LProfileID = ''
-		this.logstfLink = ''
+		this.bans = []
 		this.teams = []
-		this.gamesPlayed6on6 = ''
-		this.gamesPlayedHL = ''
-		this.gamesPlayedRes = ''
 		this.played6on6 = []
 		this.playedHL = []
 		this.playedRest = []
@@ -72,7 +69,7 @@ function main(logLines) {
 								i.country = country
 								i.ETF2LProfileID = json.player.id
 								i.steamProfilePic = json.player.steam.avatar
-								//i.response = json
+								i.bans = json.player.bans || []
 								i.teams = json.player.teams
 
 								i.played6on6 = []

@@ -103,22 +103,22 @@ class Links extends BaseComponent {
 	}
 
 	render() {
-		let steamID = this.props.steamID
-		let steamID32 = this.props.steamID32
+		let steamID64 = this.props.steamID64
+		let steamID3 = this.props.steamID3
 		let content = []
 
 		if (this.props.ETF2LProfileID) {
 			let url = `https://etf2l.org/forum/user/${this.props.ETF2LProfileID}`
 			content.push(hyperHTML.wire()`<p><a href="${url}">ETF2L</a></p>`)
 		} else {
-			let url = `http://etf2l.org/search/${steamID}`
+			let url = `http://etf2l.org/search/${steamID64}`
 			content.push(hyperHTML.wire()`<p><a href="${url}" style="text-decoration: line-through">ETF2L</a></p>`)
 		}
 
-		let ugcUrl = `https://www.ugcleague.com/playersearch.cfm?steamid=&steamid32=&steamid64=${steamID}&player_name=&submit=Find+Players&results=`
+		let ugcUrl = `https://www.ugcleague.com/playersearch.cfm?steamid=&steamid32=&steamid64=${steamID64}&player_name=&submit=Find+Players&results=`
 		content.push(hyperHTML.wire()`<p><a href="${ugcUrl}">UGC</a></p>`)
 
-		let eseaUrl = `https://play.esea.net/index.php?s=search&query=${steamID32}&source=users`
+		let eseaUrl = `https://play.esea.net/index.php?s=search&query=${steamID3}&source=users`
 		content.push(hyperHTML.wire()`<p><a href="${eseaUrl}">ESEA</a></p>`)
 
 		return this.html`<td>${content}</td>`
@@ -131,8 +131,29 @@ class LogstfLink extends BaseComponent {
 	}
 
 	render() {
-		let url = `https://logs.tf/search/player?s=${this.props.steamID}`
+		let url = `https://logs.tf/search/player?s=${this.props.steamID64}`
 		return this.html`<td><a href="${url}">Logs.tf</a></td>`
+	}
+}
+
+class SteamIDLinks extends BaseComponent {
+	constructor(props, data) {
+		super(props, data)
+	}
+
+	render() {
+		const steam64 = this.props.steamID64
+		const steam3 = this.props.steamID3
+		const steam2 = this.props.steamID2
+
+		const url = 'https://www.google.fi/search?q='
+
+		return this.html`
+			<td>
+				<p style="text-align: right"><a href=${url + steam64}>${steam64}</a></p>
+				<p style="text-align: right"><a href=${url + steam3}>${steam3}</a></p>
+				<p style="text-align: right"><a href=${url + steam2}>${steam2}</a></p>
+			</td>`
 	}
 }
 
@@ -157,9 +178,43 @@ class NameServer extends BaseComponent {
 		super(props)
 	}
 
+	getBanStatus(ban) {
+		const time = new Date(ban.end * 1000) - new Date()
+		const sign = Math.sign(time)
+
+		if(sign === 1){
+			return 'Active'
+		} else {
+			return 'Expired'
+		}
+   }
+
 	render() {
-		let url = `http://steamcommunity.com/profiles/${this.props.steamID}`
-		return this.html`<td><a href="${url}">${this.props.nameServer}</a></td>`
+		let url = `http://steamcommunity.com/profiles/${this.props.steamID64}`
+
+		return this.html`
+			<td>
+				<a href="${url}">${this.props.nameServer}</a>
+				${this.props.bans.map((ban) => hyperHTML.wire(ban)`
+					<p>
+						${this.getBanStatus(ban)} ban: ${ban.reason}
+					</p>
+				`,)}
+			</td>`
+	}
+}
+
+class Etf2l extends BaseComponent {
+	constructor(props, data) {
+		super(props, data)
+	}
+
+	render() {
+		return this.html`
+			<td>
+				<p>${this.props.nameETF2L}</p>
+				<p>${this.props.country}</p>
+			</td>`
 	}
 }
 
@@ -400,18 +455,16 @@ class Player {
 		let steamID = new SteamID(params.steamID)
 
 		this.playerID = playerID
-		this.steamID = steamID.getSteamID64()
-		this.steamID32 = steamID.getSteam3RenderedID()
+		this.steamID64 = steamID.getSteamID64()
+		this.steamID2 = steamID.getSteam2RenderedID()
+		this.steamID3 = steamID.getSteam3RenderedID()
 		this.nameServer = params.nameServer || {}
 		this.steamProfilePic = ''
 		this.nameETF2L = ''
 		this.country = ''
 		this.ETF2LProfileID = ''
-		this.logstfLink = ''
+		this.bans = []
 		this.teams = []
-		this.gamesPlayed6on6 = ''
-		this.gamesPlayedHL = ''
-		this.gamesPlayedRes = ''
 		this.played6on6 = []
 		this.playedHL = []
 		this.playedRest = []
@@ -449,10 +502,10 @@ function main(logLines) {
 	}
 
 	Object.values(players).forEach(function(i) {
-		let id = i.steamID //this needs to be 'let' because scope
+		let id64 = i.steamID64 //this needs to be 'let' because scope
 
 		setTimeout(() => {
-			fetch(`http://api.etf2l.org/player/${id}.json`)
+			fetch(`http://api.etf2l.org/player/${id64}.json`)
 				.then(function(response) {
 					response.json()
 						.then((json)=>{
@@ -463,14 +516,14 @@ function main(logLines) {
 								i.country = country
 								i.ETF2LProfileID = json.player.id
 								i.steamProfilePic = json.player.steam.avatar
-								//i.response = json
+								i.bans = json.player.bans || []
 								i.teams = json.player.teams
 
 								i.played6on6 = []
 								i.playedHL = []
 								i.playedRest = []
 
-								getResults(id, 1, i)
+								getResults(id64, 1, i)
 								renderTable()
 							}
 						})
@@ -482,11 +535,11 @@ function main(logLines) {
 	})
 }
 
-function getResults(id, pageID, player) {
+function getResults(id64, pageID, player) {
 	let wait = api_request_rate_ms
 
 	setTimeout(() => {
-		fetch(`http://api.etf2l.org/player/${id}/results/${pageID}.json?since=0&per_page=100`)
+		fetch(`http://api.etf2l.org/player/${id64}/results/${pageID}.json?since=0&per_page=100`)
 			.then(function(response) {
 				response.json()
 					.then((json)=>{
@@ -512,7 +565,7 @@ function getResults(id, pageID, player) {
 							let page = json.page
 							if (page.next_page_url) {
 								pageID += 1
-								getResults(id, pageID, player)
+								getResults(id64, pageID, player)
 							}
 						}
 					})
@@ -610,7 +663,7 @@ class Table extends hyperHTML.Component {
 			<td></td>
 			<td>Nickname</td>
 			<td>ETF2L</td>
-			<td>Country</td>
+			<td></td>
 			<td></td>
 			<td></td>
 			<td>Teams</td>
@@ -646,8 +699,8 @@ class Table extends hyperHTML.Component {
 								<tr>
 									${new SteamProfilePic(player)}
 									${new NameServer(player)}
-									${new TextComponent(player, player.nameETF2L)}
-									${new TextComponent(player, player.country)}
+									${new Etf2l(player)}
+									${new SteamIDLinks(player)}
 									${new Links(player)}
 									${new LogstfLink(player)}
 									${new Teams(player)}

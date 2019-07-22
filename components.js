@@ -44,7 +44,7 @@ class LogstfLink extends BaseComponent {
 	}
 
 	render() {
-		let url = `https://logs.tf/search/player?s=${this.props.steamID}`
+		let url = `https://logs.tf/search/player?s=${this.props.steamID64}`
 		return this.html`<td><a href="${url}">Logs.tf</a></td>`
 	}
 }
@@ -92,7 +92,7 @@ class NameServer extends BaseComponent {
 	}
 
 	render() {
-		let url = `http://steamcommunity.com/profiles/${this.props.steamID}`
+		let url = `http://steamcommunity.com/profiles/${this.props.steamID64}`
 		return this.html`<td><a href="${url}">${this.props.nameServer}</a></td>`
 	}
 }

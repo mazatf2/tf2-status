@@ -1,3 +1,14 @@
+import {SteamProfilePic} from './SteamProfilePic'
+import {NameServer} from './NameServer'
+import {Etf2l} from './Etf2l'
+import {SteamIDLinks} from './SteamIDLinks'
+import {Links} from './Links'
+import {LogstfLink} from './LogstfLink'
+import {Teams} from './Teams'
+import {GamesPlayed6on6} from './GamesPlayed6on6'
+import {GamesPlayedHL} from './GamesPlayedHL'
+import {GamesPlayedRest} from './GamesPlayedRest'
+
 let api_request_rate_ms = 200
 let players = {}
 let playerID = 0

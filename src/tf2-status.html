@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="theme-color" content="#000000">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+		  integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+		}
+
+		.App {
+			text-align: center;
+		}
+
+		.App-logo {
+			height: 80px;
+		}
+
+		.App-header {
+			background-color: #222;
+			height: 150px;
+			padding: 20px;
+			color: white;
+		}
+
+		.App-title {
+			font-size: 1.5em;
+		}
+
+		.App-intro {
+			font-size: large;
+		}
+
+		table {
+			text-align: left;
+		}
+
+		table td:nth-child(odd) {
+			background-color: #abc;
+		}
+
+		table p {
+			margin-bottom: 0.5rem;
+		}
+
+		.tableBackgroundWhite * {
+			background-color: white !important;
+		}
+
+		.tableBackgroundCustom * {
+			background-color: #abc !important;
+		}
+
+		.steamProfilePic {
+			width: 5em;
+			height: 5em;
+		}
+
+		.gamesPlayed td {
+			padding: 0;
+		}
+
+		.noBorder {
+			border: 0 !important;
+		}
+	</style>
+</head>
+<body>
+<script src="https://unpkg.com/hyperhtml@2.27.0/min.js"></script>
+<script src="https://unpkg.com/hyperhtml-app@1.0.1/min.js"></script>
+<script src="./libs/node-steamid.min.js"></script>
+
+<div class="App">
+	<header class="App-header">
+		<h1 class="App-title">TF2 Status</h1>
+	</header>
+	<br>
+
+	<div id="container"></div>
+</div>
+<script src="./main.js"></script>
+</body>
+</html>

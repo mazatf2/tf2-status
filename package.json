@@ -2,7 +2,7 @@
   "name": "tf2-status",
   "version": "0.0.0-git",
   "scripts": {
-    "build": "node build.js"
+    "build": "parcel build src/tf2-status.html"
   },
   "repository": {
     "type": "git",
@@ -13,5 +13,8 @@
   "bugs": {
     "url": "https://github.com/mazatf2/tf2-status/issues"
   },
-  "homepage": "https://github.com/mazatf2/tf2-status#readme"
+  "homepage": "https://github.com/mazatf2/tf2-status#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
 }

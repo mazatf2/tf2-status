@@ -1,3 +1,5 @@
+import hyperHTML from 'hyperhtml';
+
 import {BaseComponent} from './BaseComponent'
 
 export class Teams extends BaseComponent {

@@ -16,5 +16,10 @@
   "homepage": "https://github.com/mazatf2/tf2-status#readme",
   "devDependencies": {
     "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "hyperhtml": "^2.31.0",
+    "hyperhtml-app": "^1.0.1",
+    "steamid": "^1.1.3"
   }
 }

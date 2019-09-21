@@ -1,3 +1,5 @@
+import hyperHTML from 'hyperhtml';
+
 export class BaseComponent extends hyperHTML.Component {
 	constructor(props, data) {
 		super()

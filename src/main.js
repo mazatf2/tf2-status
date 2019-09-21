@@ -1,3 +1,7 @@
+import hyperHTML from 'hyperhtml';
+import Router from 'hyperhtml-app'
+const SteamID = require('steamid')
+
 import {SteamProfilePic} from './SteamProfilePic'
 import {NameServer} from './NameServer'
 import {Etf2l} from './Etf2l'
@@ -292,8 +296,7 @@ class FrontPage extends hyperHTML.Component {
 	}
 }
 
-const hyper = hyperHTML //needed for hyperHTML app router
-const router = hyperHTML.app()
+const router = Router()
 let frontPage = new FrontPage()
 
 let path = window.location.pathname

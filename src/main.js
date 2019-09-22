@@ -144,18 +144,18 @@ function getResults(id64, pageID, player) {
 
 function renderTable() {
 	if (!table) {
-		table = new Table()
+		table = new Table({players: players})
 		hyperHTML(tableContainer)`${table}`
 	} else {
+		table.editPlayers(players)
 		table.render()
 	}
 }
 
-class TextArea extends hyperHTML.Component {
+class TextArea extends BaseComponent {
 	constructor(props) {
 		super(props)
-		this.props = props || {}
-		this.props.value = this.props.value || ''
+		this.state = {value: ''}
 
 		this.init()
 	}
@@ -175,20 +175,20 @@ class TextArea extends hyperHTML.Component {
 					name = `"${name}"`.padEnd(32, ' ')
 					let result = `#  0 ${name} [${steamID}]`
 
-					this.props.value += '\r\n' + `#  0 ${name} [${steamID}]`
+					this.state.value += '\r\n' + `#  0 ${name} [${steamID}]`
 				}
 			}
 		}
 	}
 
 	onclick() {
-		main(this.props.value)
+		main(this.state.value)
 	}
 
 	oninput() {
-		this.props.value = document.querySelector('#input').value
+		this.state.value = document.querySelector('#input').value
 
-		let lines = this.props.value.split(/\r\n|\n/)
+		let lines = this.state.value.split(/\r\n|\n/)
 
 		let newHash = ''
 		lines.forEach((i) => {
@@ -208,7 +208,7 @@ class TextArea extends hyperHTML.Component {
 	}
 	render() {
 		return this.html`
-			<textarea id="input" placeholder="" rows="16" cols="80" oninput=${this}>${this.props.value}</textarea>
+			<textarea id="input" placeholder="" rows="16" cols="80" oninput=${this}>${this.state.value}</textarea>
 			<br>
 			<br>
 			<input type="button" onclick=${this} value="Check" class="btn btn-primary btn-lg ">
@@ -216,11 +216,13 @@ class TextArea extends hyperHTML.Component {
 	}
 }
 
-class Table extends hyperHTML.Component {
-	constructor() {
-		super()
+class Table extends BaseComponent {
+	constructor(props) {
+		super(props)
 
-		this.textArea = new TextArea()
+		this.state = {players: this.props.players || {}}
+
+		this.textArea = new TextArea({})
 		this.rows = []
 
 		//['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'links', 'logstfLink', 'teams', 'gamesPlayed6on6', 'gamesPlayedHL', 'gamesPlayedRest']
@@ -239,8 +241,12 @@ class Table extends hyperHTML.Component {
 		</tr>`
 	}
 
+	editPlayers(players){
+		this.state.players = players || {}
+	}
+
 	render() {
-		let data = players
+		let data = this.state.players
 		let rows = []
 		let tableHead = this.tableHead
 
@@ -286,7 +292,7 @@ let table
 class FrontPage extends hyperHTML.Component {
 	constructor() {
 		super()
-		this.table = new Table()
+		this.table = new Table({players: players})
 		table = this.table
 	}
 	render() {

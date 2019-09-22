@@ -1,7 +1,6 @@
-import hyperHTML from 'hyperhtml';
+import hyperHTML from 'hyperhtml'
 import Router from 'hyperhtml-app'
-const SteamID = require('steamid')
-
+import {BaseComponent} from './BaseComponent'
 import {SteamProfilePic} from './SteamProfilePic'
 import {NameServer} from './NameServer'
 import {Etf2l} from './Etf2l'
@@ -12,6 +11,9 @@ import {Teams} from './Teams'
 import {GamesPlayed6on6} from './GamesPlayed6on6'
 import {GamesPlayedHL} from './GamesPlayedHL'
 import {GamesPlayedRest} from './GamesPlayedRest'
+import {statusRE, steamIDRE} from './shared-regex'
+
+const SteamID = require('steamid')
 
 let api_request_rate_ms = 200
 let players = {}
@@ -42,10 +44,6 @@ class Player {
 		playerID++
 	}
 }
-
-//[ , name, steamID]
-const statusRE = /#\s*\d+\s"(.+)"\s*(\[U:1:\d+\])/
-const steamIDRE = /U:1:\d+/
 
 function main(logLines) {
 	players = {}

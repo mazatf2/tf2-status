@@ -1,17 +1,8 @@
 import hyperHTML from 'hyperhtml'
 import Router from 'hyperhtml-app'
-import {BaseComponent} from './BaseComponent'
-import {SteamProfilePic} from './SteamProfilePic'
-import {NameServer} from './NameServer'
-import {Etf2l} from './Etf2l'
-import {SteamIDLinks} from './SteamIDLinks'
-import {Links} from './Links'
-import {LogstfLink} from './LogstfLink'
-import {Teams} from './Teams'
-import {GamesPlayed6on6} from './GamesPlayed6on6'
-import {GamesPlayedHL} from './GamesPlayedHL'
-import {GamesPlayedRest} from './GamesPlayedRest'
-import {statusRE, steamIDRE} from './shared-regex'
+import {statusRE} from './shared-regex'
+import {Table} from './Table'
+import {TextArea} from './TextArea'
 
 const SteamID = require('steamid')
 
@@ -142,6 +133,7 @@ function getResults(id64, pageID, player) {
 	}, (wait += api_request_rate_ms))
 }
 
+let table
 function renderTable() {
 	if (!table) {
 		table = new Table({players: players})
@@ -152,151 +144,27 @@ function renderTable() {
 	}
 }
 
-class TextArea extends BaseComponent {
-	constructor(props) {
-		super(props)
-		this.state = {value: ''}
+class FrontPage extends hyperHTML.Component {
+	constructor() {
+		super()
 
-		this.init()
-	}
-	init() {
-		let hash = window.location.hash || ''
-		if (hash && hash.length > 1) {
-			hash = hash.substring(1, hash.length) //del #
-			let tuples = hash.split(',', 32 * 3)
-
-			if (tuples[tuples.length] === ',') {
-				tuples.splice(tuples.length - 1, 1)
-			}
-			for (let i = 0; i < tuples.length; i += 2) {
-				let steamID = tuples[i + 1]
-				if (steamID && steamID.match(steamIDRE)) {
-					let name = decodeURI(tuples[i]).substr(0, 32)
-					name = `"${name}"`.padEnd(32, ' ')
-					let result = `#  0 ${name} [${steamID}]`
-
-					this.state.value += '\r\n' + `#  0 ${name} [${steamID}]`
-				}
-			}
-		}
-	}
-
-	onclick() {
-		main(this.state.value)
-	}
-
-	oninput() {
-		this.state.value = document.querySelector('#input').value
-
-		let lines = this.state.value.split(/\r\n|\n/)
-
-		let newHash = ''
-		lines.forEach((i) => {
-			if (i.match(statusRE)) {
-				let result = statusRE.exec(i)
-
-				let nameServer = result[1]
-				let steamID = result[2].replace(/[\[|\]]/g, '')
-				newHash += `${nameServer},${steamID},`
-			}
-		})
-
-		if (newHash[newHash.length - 1] === ',') {
-			newHash = newHash.slice(0, -1)
-		}
-		window.location.hash = newHash
+		this.textArea = new TextArea({onClick: (logLines)=>{
+			main(logLines)
+			}})
+		this.table = new Table({players: players})
+		table = this.table
 	}
 	render() {
-		return this.html`
-			<textarea id="input" placeholder="" rows="16" cols="80" oninput=${this}>${this.state.value}</textarea>
-			<br>
-			<br>
-			<input type="button" onclick=${this} value="Check" class="btn btn-primary btn-lg ">
-		`
-	}
-}
-
-class Table extends BaseComponent {
-	constructor(props) {
-		super(props)
-
-		this.state = {players: this.props.players || {}}
-
-		this.textArea = new TextArea({})
-		this.rows = []
-
-		//['steamProfilePic', 'nameServer', 'nameETF2L', 'country', 'links', 'logstfLink', 'teams', 'gamesPlayed6on6', 'gamesPlayedHL', 'gamesPlayedRest']
-		this.tableHead = hyperHTML.wire()`
-		<tr>
-			<td></td>
-			<td>Nickname</td>
-			<td>ETF2L</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>Teams</td>
-			<td>6on6 played</td>
-			<td>HL played</td>
-			<td>Rest played</td>
-		</tr>`
-	}
-
-	editPlayers(players){
-		this.state.players = players || {}
-	}
-
-	render() {
-		let data = this.state.players
-		let rows = []
-		let tableHead = this.tableHead
-
-		let playerList = Object.values(data).filter(function() {
-			return true
-		})
-
-		return this.html`
+		return this.html`<div>
 			<p class="App-intro">
-			Copy the <code>status</code> console command output, from TF2, into the box below:
+				Copy the <code>status</code> console command output, from TF2, into the box below:
 			</p>
 			<div>
 				${this.textArea}
 			</div>
 			<br>
-			<div class="table-responsive">
-				<table align="center" class="table">
-					<thead>${tableHead}</thead>
-					<tbody>
-						${playerList.map(
-							(player) => hyperHTML.wire(player)`
-								<tr>
-									${new SteamProfilePic(player)}
-									${new NameServer(player)}
-									${new Etf2l(player)}
-									${new SteamIDLinks(player)}
-									${new Links(player)}
-									${new LogstfLink(player)}
-									${new Teams(player)}
-									${new GamesPlayed6on6(player)}
-									${new GamesPlayedHL(player)}
-									${new GamesPlayedRest(player)}
-								</tr>
-						`,
-						)}
-					</tbody>
-				</table>
-			</div>`
-	}
-}
-
-let table
-class FrontPage extends hyperHTML.Component {
-	constructor() {
-		super()
-		this.table = new Table({players: players})
-		table = this.table
-	}
-	render() {
-		return this.html`${this.table}`
+			${this.table}
+		</div>`
 	}
 }
 

@@ -179,3 +179,10 @@ router.get(path, (a) => {
 })
 
 router.navigate(path)
+
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', () => {
+		navigator.serviceWorker.register('/service-worker.js');
+	})
+}
+

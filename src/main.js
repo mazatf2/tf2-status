@@ -65,7 +65,7 @@ function main(logLines) {
 			fetch(`http://api.etf2l.org/player/${id64}.json`)
 				.then(function(response) {
 					response.json()
-						.then((json)=>{
+						.then((json) => {
 							if (json.status && json.status.message === 'OK' && json.player) {
 								let nameETF2L = json.player.name
 								let country = json.player.country
@@ -99,7 +99,7 @@ function getResults(id64, pageID, player) {
 		fetch(`http://api.etf2l.org/player/${id64}/results/${pageID}.json?since=0&per_page=100`)
 			.then(function(response) {
 				response.json()
-					.then((json)=>{
+					.then((json) => {
 
 						if (json.status && json.status.message === 'OK' && json.results) {
 							let results = json.results
@@ -134,6 +134,7 @@ function getResults(id64, pageID, player) {
 }
 
 let table
+
 function renderTable() {
 	if (!table) {
 		table = new Table({players: players})
@@ -148,12 +149,15 @@ class FrontPage extends hyperHTML.Component {
 	constructor() {
 		super()
 
-		this.textArea = new TextArea({onClick: (logLines)=>{
-			main(logLines)
-			}})
+		this.textArea = new TextArea({
+			onClick: (logLines) => {
+				main(logLines)
+			},
+		})
 		this.table = new Table({players: players})
 		table = this.table
 	}
+
 	render() {
 		return this.html`<div>
 			<p class="App-intro">
@@ -182,7 +186,7 @@ router.navigate(path)
 
 if ('serviceWorker' in navigator) {
 	window.addEventListener('load', () => {
-		navigator.serviceWorker.register('/service-worker.js');
+		navigator.serviceWorker.register('/service-worker.js')
 	})
 }
 

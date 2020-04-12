@@ -2,8 +2,8 @@
   "name": "tf2-status",
   "version": "0.0.0-git",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server"
+    "build": "parcel build src/tf2-status.html",
+    "dev": "parcel src/tf2-status.html"
   },
   "repository": {
     "type": "git",
@@ -16,20 +16,11 @@
   },
   "homepage": "https://github.com/mazatf2/tf2-status#readme",
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
-    "@webpack-cli/init": "^0.2.2",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "html-webpack-plugin": "^3.2.0",
-    "webpack": "^4.41.1",
-    "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.8.2",
-    "workbox-webpack-plugin": "^4.3.1"
+    "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
-    "hyperhtml": "^2.31.0",
-    "hyperhtml-app": "^1.0.1",
+    "a-route": "^0.1.1",
+    "hyperhtml": "^2.32.2",
     "steamid": "^1.1.3"
   }
 }

@@ -1,5 +1,5 @@
 import hyperHTML from 'hyperhtml'
-import Router from 'hyperhtml-app'
+import {app as router} from 'a-route'
 import {statusRE} from './shared-regex'
 import {Table} from './Table'
 import {TextArea} from './TextArea'
@@ -172,7 +172,6 @@ class FrontPage extends hyperHTML.Component {
 	}
 }
 
-const router = Router()
 let frontPage = new FrontPage()
 
 let path = window.location.pathname
@@ -183,10 +182,3 @@ router.get(path, (a) => {
 })
 
 router.navigate(path)
-
-if ('serviceWorker' in navigator) {
-	window.addEventListener('load', () => {
-		navigator.serviceWorker.register('/service-worker.js')
-	})
-}
-

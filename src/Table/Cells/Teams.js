@@ -1,6 +1,6 @@
 import hyperHTML from 'hyperhtml';
 
-import {BaseComponent} from './BaseComponent'
+import {BaseComponent} from '../BaseComponent'
 
 export class Teams extends BaseComponent {
 	constructor(props) {

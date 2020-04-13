@@ -1,4 +1,4 @@
-import {BaseComponent} from './BaseComponent'
+import {BaseComponent} from '../BaseComponent'
 
 export class SteamIDLinks extends BaseComponent {
 	constructor(props, data) {

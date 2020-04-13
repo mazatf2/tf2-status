@@ -1,4 +1,4 @@
-import {BaseComponent} from './BaseComponent'
+import {BaseComponent} from '../BaseComponent'
 
 export class Etf2l extends BaseComponent {
 	constructor(props, data) {

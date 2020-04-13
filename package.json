@@ -21,6 +21,7 @@
   "dependencies": {
     "a-route": "^0.1.1",
     "hyperhtml": "^2.32.2",
+    "smart-request-balancer": "^2.1.1",
     "steamid": "^1.1.3"
   }
 }

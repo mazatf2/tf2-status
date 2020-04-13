@@ -1,6 +1,6 @@
 import hyperHTML from 'hyperhtml';
 
-import {BaseComponent} from './BaseComponent'
+import {BaseComponent} from '../BaseComponent'
 
 export class NameServer extends BaseComponent {
 	constructor(props) {

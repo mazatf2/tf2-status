@@ -1,0 +1,3126 @@
+{
+	"6v6 Season": {
+		"Season 1": {
+			"name": "Season 1",
+			"url": "http://etf2l.org/etf2l/archives/1",
+			"id": "1"
+		},
+		"Season 2": {
+			"name": "Season 2",
+			"url": "http://etf2l.org/etf2l/archives/2",
+			"id": "2"
+		},
+		"Season 3": {
+			"name": "Season 3",
+			"url": "http://etf2l.org/etf2l/archives/10",
+			"id": "10"
+		},
+		"Season 4": {
+			"name": "Season 4",
+			"url": "http://etf2l.org/etf2l/archives/20",
+			"id": "20"
+		},
+		"Season 5": {
+			"name": "Season 5",
+			"url": "http://etf2l.org/etf2l/archives/29",
+			"id": "29"
+		},
+		"Season 6 powered by SteelSeries Xai": {
+			"name": "Season 6 powered by SteelSeries Xai",
+			"url": "http://etf2l.org/etf2l/archives/37",
+			"id": "37"
+		},
+		"Season 7 powered by SteelSeries": {
+			"name": "Season 7 powered by SteelSeries",
+			"url": "http://etf2l.org/etf2l/archives/43",
+			"id": "43"
+		},
+		"ETF2L AFS Season 2010": {
+			"name": "ETF2L AFS Season 2010",
+			"url": "http://etf2l.org/etf2l/archives/54",
+			"id": "54"
+		},
+		"Season 8 Powered by SteelSeries": {
+			"name": "Season 8 Powered by SteelSeries",
+			"url": "http://etf2l.org/etf2l/archives/60",
+			"id": "60"
+		},
+		"Season 9": {
+			"name": "Season 9",
+			"url": "http://etf2l.org/etf2l/archives/71",
+			"id": "71"
+		},
+		"Season 10!": {
+			"name": "Season 10!",
+			"url": "http://etf2l.org/etf2l/archives/91",
+			"id": "91"
+		},
+		"Season 11": {
+			"name": "Season 11",
+			"url": "http://etf2l.org/etf2l/archives/107",
+			"id": "107"
+		},
+		"Season 12 powered by Tt eSPORTS": {
+			"name": "Season 12 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/117",
+			"id": "117"
+		},
+		"Season 13 powered by Tt eSPORTS": {
+			"name": "Season 13 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/139",
+			"id": "139"
+		},
+		"Season 13 Premiership Qualifier": {
+			"name": "Season 13 Premiership Qualifier",
+			"url": "http://etf2l.org/etf2l/archives/151",
+			"id": "151"
+		},
+		"Season 13 Division 1 Qualifier": {
+			"name": "Season 13 Division 1 Qualifier",
+			"url": "http://etf2l.org/etf2l/archives/152",
+			"id": "152"
+		},
+		"Season 14 powered by Twitch": {
+			"name": "Season 14 powered by Twitch",
+			"url": "http://etf2l.org/etf2l/archives/170",
+			"id": "170"
+		},
+		"Season 14 powered by Twitch - Premiership Qualifier": {
+			"name": "Season 14 powered by Twitch - Premiership Qualifier",
+			"url": "http://etf2l.org/etf2l/archives/172",
+			"id": "172"
+		},
+		"Season 15 powered by BlackOut Gaming": {
+			"name": "Season 15 powered by BlackOut Gaming",
+			"url": "http://etf2l.org/etf2l/archives/208",
+			"id": "208"
+		},
+		"Season 15 powered by BlackOut Gaming - Premiership Qualifier": {
+			"name": "Season 15 powered by BlackOut Gaming - Premiership Qualifier",
+			"url": "http://etf2l.org/etf2l/archives/209",
+			"id": "209"
+		},
+		"Season 15 powered by BlackOut Gaming - Division 1 Qualifier": {
+			"name": "Season 15 powered by BlackOut Gaming - Division 1 Qualifier",
+			"url": "http://etf2l.org/etf2l/archives/210",
+			"id": "210"
+		},
+		"Season 16 powered by BlackOut Gaming": {
+			"name": "Season 16 powered by BlackOut Gaming",
+			"url": "http://etf2l.org/etf2l/archives/222",
+			"id": "222"
+		},
+		"Season 16 powered by BlackOut Gaming - Premiership Qualifier": {
+			"name": "Season 16 powered by BlackOut Gaming - Premiership Qualifier",
+			"url": "http://etf2l.org/etf2l/archives/225",
+			"id": "225"
+		},
+		"Season 16 powered by BlackOut Gaming - Division 1 Qualifier": {
+			"name": "Season 16 powered by BlackOut Gaming - Division 1 Qualifier",
+			"url": "http://etf2l.org/etf2l/archives/226",
+			"id": "226"
+		},
+		"Season 17 powered by Tt eSPORTS": {
+			"name": "Season 17 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/244",
+			"id": "244"
+		},
+		"Season 17 powered by Tt eSPORTS - Premiership Qualifier": {
+			"name": "Season 17 powered by Tt eSPORTS - Premiership Qualifier",
+			"url": "http://etf2l.org/etf2l/archives/245",
+			"id": "245"
+		},
+		"Season 18 powered by Tt eSPORTS": {
+			"name": "Season 18 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/253",
+			"id": "253"
+		},
+		"Season 19 powered by Tt eSPORTS": {
+			"name": "Season 19 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/275",
+			"id": "275"
+		},
+		"Season 19 powered by Tt eSPORTS: Premiership Playoffs Lower Bracket": {
+			"name": "Season 19 powered by Tt eSPORTS: Premiership Playoffs Lower Bracket",
+			"url": "http://etf2l.org/etf2l/archives/293",
+			"id": "293"
+		},
+		"Season 19 powered by Tt eSPORTS: Division 1 Playoffs Lower Bracket": {
+			"name": "Season 19 powered by Tt eSPORTS: Division 1 Playoffs Lower Bracket",
+			"url": "http://etf2l.org/etf2l/archives/294",
+			"id": "294"
+		},
+		"Season 19 Division 6 Playoffs": {
+			"name": "Season 19 Division 6 Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/296",
+			"id": "296"
+		},
+		"Season 19 Division 5 Playoffs broken": {
+			"name": "Season 19 Division 5 Playoffs broken",
+			"url": "http://etf2l.org/etf2l/archives/297",
+			"id": "297"
+		},
+		"Season 19 Division 4 Playoffs": {
+			"name": "Season 19 Division 4 Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/298",
+			"id": "298"
+		},
+		"Season 19 Division 3 Playoffs": {
+			"name": "Season 19 Division 3 Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/299",
+			"id": "299"
+		},
+		"Season 19 Division 2 Playoffs": {
+			"name": "Season 19 Division 2 Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/300",
+			"id": "300"
+		},
+		"Season 19 Division 5 Playoffs": {
+			"name": "Season 19 Division 5 Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/301",
+			"id": "301"
+		},
+		"Season 20 powered by Tt eSPORTS": {
+			"name": "Season 20 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/305",
+			"id": "305"
+		},
+		"Season 20 powered by Tt eSPORTS - Premiership Playoffs": {
+			"name": "Season 20 powered by Tt eSPORTS - Premiership Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/316",
+			"id": "316"
+		},
+		"Season 20 powered by Tt eSPORTS: Premiership Tier": {
+			"name": "Season 20 powered by Tt eSPORTS: Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/317",
+			"id": "317"
+		},
+		"Season 20 Open Playoffs": {
+			"name": "Season 20 Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/334",
+			"id": "334"
+		},
+		"Season 21 powered by Tt eSPORTS: Premiership Pre-Season Playoffs": {
+			"name": "Season 21 powered by Tt eSPORTS: Premiership Pre-Season Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/338",
+			"id": "338"
+		},
+		"Season 21 powered by Tt eSPORTS": {
+			"name": "Season 21 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/339",
+			"id": "339"
+		},
+		"Season 21 powered by Tt eSPORTS: Premiership Tier": {
+			"name": "Season 21 powered by Tt eSPORTS: Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/342",
+			"id": "342"
+		},
+		"Season 21 powered by Tt eSPORTS: High Playoffs": {
+			"name": "Season 21 powered by Tt eSPORTS: High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/344",
+			"id": "344"
+		},
+		"Season 21 powered by Tt eSPORTS: Mid Playoffs": {
+			"name": "Season 21 powered by Tt eSPORTS: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/345",
+			"id": "345"
+		},
+		"Season 21 powered by Tt eSPORTS: Open Playoffs": {
+			"name": "Season 21 powered by Tt eSPORTS: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/346",
+			"id": "346"
+		},
+		"Season 22 powered by saloon.tf": {
+			"name": "Season 22 powered by saloon.tf",
+			"url": "http://etf2l.org/etf2l/archives/352",
+			"id": "352"
+		},
+		"Season 22 powered by saloon.tf: Pre-Season Premiership Playoffs": {
+			"name": "Season 22 powered by saloon.tf: Pre-Season Premiership Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/354",
+			"id": "354"
+		},
+		"Season 22 powered by saloon.tf: Premiership Tier": {
+			"name": "Season 22 powered by saloon.tf: Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/355",
+			"id": "355"
+		},
+		"Season 22 powered by saloon.tf: Open Playoffs": {
+			"name": "Season 22 powered by saloon.tf: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/369",
+			"id": "369"
+		},
+		"Season 22 powered by saloon.tf: Mid Playoffs": {
+			"name": "Season 22 powered by saloon.tf: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/370",
+			"id": "370"
+		},
+		"Season 22 powered by saloon.tf: High Playoffs": {
+			"name": "Season 22 powered by saloon.tf: High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/371",
+			"id": "371"
+		},
+		"Season 23 powered by Tt eSPORTS": {
+			"name": "Season 23 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/377",
+			"id": "377"
+		},
+		"Season 23 powered by Tt eSPORTS: Premiership Tier": {
+			"name": "Season 23 powered by Tt eSPORTS: Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/386",
+			"id": "386"
+		},
+		"Season 23 powered by Tt eSPORTS: High Playoffs": {
+			"name": "Season 23 powered by Tt eSPORTS: High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/393",
+			"id": "393"
+		},
+		"Season 23 powered by Tt eSPORTS: Mid Playoffs": {
+			"name": "Season 23 powered by Tt eSPORTS: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/394",
+			"id": "394"
+		},
+		"Season 23 powered by Tt eSPORTS: Open Playoffs": {
+			"name": "Season 23 powered by Tt eSPORTS: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/395",
+			"id": "395"
+		},
+		"Season 24 powered by Tt eSPORTS": {
+			"name": "Season 24 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/410",
+			"id": "410"
+		},
+		"Season 24 powered by Tt eSPORTS: Premiership Tier": {
+			"name": "Season 24 powered by Tt eSPORTS: Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/411",
+			"id": "411"
+		},
+		"Season 24 powered by Tt eSPORTS: Premiership Pre-Season Playoffs": {
+			"name": "Season 24 powered by Tt eSPORTS: Premiership Pre-Season Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/415",
+			"id": "415"
+		},
+		"Season 24 powered by Tt eSPORTS: High Playoffs": {
+			"name": "Season 24 powered by Tt eSPORTS: High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/418",
+			"id": "418"
+		},
+		"Season 24 powered by Tt eSPORTS: Mid Playoffs": {
+			"name": "Season 24 powered by Tt eSPORTS: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/419",
+			"id": "419"
+		},
+		"Season 24 powered by Tt eSPORTS: Open Playoffs": {
+			"name": "Season 24 powered by Tt eSPORTS: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/420",
+			"id": "420"
+		},
+		"Season 25 powered by Tt eSPORTS": {
+			"name": "Season 25 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/428",
+			"id": "428"
+		},
+		"Season 25 powered by Tt eSPORTS: Premiership Tier": {
+			"name": "Season 25 powered by Tt eSPORTS: Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/429",
+			"id": "429"
+		},
+		"Season 25 powered by Tt eSPORTS: Premiership Preseason Playoffs": {
+			"name": "Season 25 powered by Tt eSPORTS: Premiership Preseason Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/430",
+			"id": "430"
+		},
+		"Season 25 powered by Tt eSPORTS: High Playoffs": {
+			"name": "Season 25 powered by Tt eSPORTS: High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/436",
+			"id": "436"
+		},
+		"Season 25 powered by Tt eSPORTS: Mid Playoffs": {
+			"name": "Season 25 powered by Tt eSPORTS: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/437",
+			"id": "437"
+		},
+		"Season 25 powered by Tt eSPORTS: Open Playoffs": {
+			"name": "Season 25 powered by Tt eSPORTS: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/438",
+			"id": "438"
+		},
+		"Season 26 powered by Tt eSPORTS": {
+			"name": "Season 26 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/450",
+			"id": "450"
+		},
+		"Season 26 powered by Tt eSPORTS: Premiership Preseason Playoffs": {
+			"name": "Season 26 powered by Tt eSPORTS: Premiership Preseason Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/455",
+			"id": "455"
+		},
+		"Season 26 powered by Tt eSPORTS: Premiership Tier": {
+			"name": "Season 26 powered by Tt eSPORTS: Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/456",
+			"id": "456"
+		},
+		"Season 26 powered by Tt eSPORTS: High Playoffs": {
+			"name": "Season 26 powered by Tt eSPORTS: High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/467",
+			"id": "467"
+		},
+		"Season 26 powered by Tt eSPORTS: Mid Playoffs": {
+			"name": "Season 26 powered by Tt eSPORTS: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/468",
+			"id": "468"
+		},
+		"Season 26 powered by Tt eSPORTS: Open Playoffs": {
+			"name": "Season 26 powered by Tt eSPORTS: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/469",
+			"id": "469"
+		},
+		"Season 27": {
+			"name": "Season 27",
+			"url": "http://etf2l.org/etf2l/archives/488",
+			"id": "488"
+		},
+		"Season 27: Premiership Tier": {
+			"name": "Season 27: Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/489",
+			"id": "489"
+		},
+		"Season 27: Premiership Preseason Playoffs": {
+			"name": "Season 27: Premiership Preseason Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/491",
+			"id": "491"
+		},
+		"Season 27: High Playoffs": {
+			"name": "Season 27: High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/501",
+			"id": "501"
+		},
+		"Season 27: Mid Playoffs": {
+			"name": "Season 27: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/502",
+			"id": "502"
+		},
+		"Season 27: Low Playoffs": {
+			"name": "Season 27: Low Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/503",
+			"id": "503"
+		},
+		"Season 27: Open Playoffs": {
+			"name": "Season 27: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/504",
+			"id": "504"
+		},
+		"Season 28": {
+			"name": "Season 28",
+			"url": "http://etf2l.org/etf2l/archives/524",
+			"id": "524"
+		},
+		"Season 28: Premiership Preseason Playoffs": {
+			"name": "Season 28: Premiership Preseason Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/525",
+			"id": "525"
+		},
+		"Season 28: Premiership Tier": {
+			"name": "Season 28: Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/526",
+			"id": "526"
+		},
+		"Season 28: High Playoffs": {
+			"name": "Season 28: High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/531",
+			"id": "531"
+		},
+		"Season 28: Mid Playoffs": {
+			"name": "Season 28: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/532",
+			"id": "532"
+		},
+		"Season 28: Open Playoffs": {
+			"name": "Season 28: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/533",
+			"id": "533"
+		},
+		"Season 29: Main Tiers": {
+			"name": "Season 29: Main Tiers",
+			"url": "http://etf2l.org/etf2l/archives/540",
+			"id": "540"
+		},
+		"Season 29: Premiership Qualifiers": {
+			"name": "Season 29: Premiership Qualifiers",
+			"url": "http://etf2l.org/etf2l/archives/541",
+			"id": "541"
+		},
+		"Season 29: Top Tiers": {
+			"name": "Season 29: Top Tiers",
+			"url": "http://etf2l.org/etf2l/archives/542",
+			"id": "542"
+		},
+		"Season 29: Division 2 Playoffs": {
+			"name": "Season 29: Division 2 Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/552",
+			"id": "552"
+		},
+		"Season 29: Mid Playoffs": {
+			"name": "Season 29: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/553",
+			"id": "553"
+		},
+		"Season 29: Low Playoffs": {
+			"name": "Season 29: Low Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/554",
+			"id": "554"
+		},
+		"Season 29: Open Playoffs": {
+			"name": "Season 29: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/555",
+			"id": "555"
+		},
+		"Season 30: Premiership Qualifiers": {
+			"name": "Season 30: Premiership Qualifiers",
+			"url": "http://etf2l.org/etf2l/archives/563",
+			"id": "563"
+		},
+		"Season 30 powered by STN-Trading and scrap.tf!: Main Tiers": {
+			"name": "Season 30 powered by STN-Trading and scrap.tf!: Main Tiers",
+			"url": "http://etf2l.org/etf2l/archives/564",
+			"id": "564"
+		},
+		"Season 30 powered by STN-Trading and scrap.tf!: Top Tiers": {
+			"name": "Season 30 powered by STN-Trading and scrap.tf!: Top Tiers",
+			"url": "http://etf2l.org/etf2l/archives/565",
+			"id": "565"
+		},
+		"Season 30: Division 2 Playoffs": {
+			"name": "Season 30: Division 2 Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/574",
+			"id": "574"
+		},
+		"Season 30: Mid Playoffs": {
+			"name": "Season 30: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/575",
+			"id": "575"
+		},
+		"Season 30: Low Playoffs": {
+			"name": "Season 30: Low Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/576",
+			"id": "576"
+		},
+		"Season 30: Open Playoffs": {
+			"name": "Season 30: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/577",
+			"id": "577"
+		},
+		"Season 30: Division 1 Playoffs": {
+			"name": "Season 30: Division 1 Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/578",
+			"id": "578"
+		},
+		"Season 31 Premiership Qualifiers": {
+			"name": "Season 31 Premiership Qualifiers",
+			"url": "http://etf2l.org/etf2l/archives/582",
+			"id": "582"
+		},
+		"Season 31 powered by Copenhagen Games & STN.tf": {
+			"name": "Season 31 powered by Copenhagen Games & STN.tf",
+			"url": "http://etf2l.org/etf2l/archives/583",
+			"id": "583"
+		},
+		"Season 31 powered by Copenhagen Games & STN.tf: Top Tiers": {
+			"name": "Season 31 powered by Copenhagen Games & STN.tf: Top Tiers",
+			"url": "http://etf2l.org/etf2l/archives/584",
+			"id": "584"
+		},
+		"Season 31: Division 2 Playoffs": {
+			"name": "Season 31: Division 2 Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/588",
+			"id": "588"
+		},
+		"Season 31: Mid Playoffs": {
+			"name": "Season 31: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/589",
+			"id": "589"
+		},
+		"Season 31: Low Playoffs": {
+			"name": "Season 31: Low Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/590",
+			"id": "590"
+		},
+		"Season 31: Open Playoffs": {
+			"name": "Season 31: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/591",
+			"id": "591"
+		},
+		"Season 32": {
+			"name": "Season 32",
+			"url": "http://etf2l.org/etf2l/archives/605",
+			"id": "605"
+		},
+		"Season 32 Premiership Qualifiers": {
+			"name": "Season 32 Premiership Qualifiers",
+			"url": "http://etf2l.org/etf2l/archives/606",
+			"id": "606"
+		},
+		"Season 32: Top Tiers": {
+			"name": "Season 32: Top Tiers",
+			"url": "http://etf2l.org/etf2l/archives/607",
+			"id": "607"
+		},
+		"Season 32: Division 2 Playoffs": {
+			"name": "Season 32: Division 2 Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/612",
+			"id": "612"
+		},
+		"Season 32: Mid Playoffs": {
+			"name": "Season 32: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/613",
+			"id": "613"
+		},
+		"Season 32: Low Playoffs": {
+			"name": "Season 32: Low Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/614",
+			"id": "614"
+		},
+		"Season 32: Open Playoffs": {
+			"name": "Season 32: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/615",
+			"id": "615"
+		},
+		"Season 33": {
+			"name": "Season 33",
+			"url": "http://etf2l.org/etf2l/archives/628",
+			"id": "628"
+		},
+		"Season 33: Premiership Qualifiers": {
+			"name": "Season 33: Premiership Qualifiers",
+			"url": "http://etf2l.org/etf2l/archives/629",
+			"id": "629"
+		},
+		"Season 33: Top Tiers": {
+			"name": "Season 33: Top Tiers",
+			"url": "http://etf2l.org/etf2l/archives/630",
+			"id": "630"
+		},
+		"Season 33: Division 2 Playoffs": {
+			"name": "Season 33: Division 2 Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/638",
+			"id": "638"
+		},
+		"Season 33: Mid Playoffs": {
+			"name": "Season 33: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/639",
+			"id": "639"
+		},
+		"Season 33: Low Playoffs": {
+			"name": "Season 33: Low Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/640",
+			"id": "640"
+		},
+		"Season 33: Open Playoffs": {
+			"name": "Season 33: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/641",
+			"id": "641"
+		},
+		"Season 34 Preseason Premiership Qualifiers": {
+			"name": "Season 34 Preseason Premiership Qualifiers",
+			"url": "http://etf2l.org/etf2l/archives/654",
+			"id": "654"
+		},
+		"Season 34: Powered by The Community": {
+			"name": "Season 34: Powered by The Community",
+			"url": "http://etf2l.org/etf2l/archives/655",
+			"id": "655"
+		},
+		"Season 34 Top Tiers: Powered by The Community": {
+			"name": "Season 34 Top Tiers: Powered by The Community",
+			"url": "http://etf2l.org/etf2l/archives/656",
+			"id": "656"
+		},
+		"Season 34: Open Playoffs": {
+			"name": "Season 34: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/661",
+			"id": "661"
+		},
+		"Season 34: Low Playoffs": {
+			"name": "Season 34: Low Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/662",
+			"id": "662"
+		},
+		"Season 34: Mid Playoffs": {
+			"name": "Season 34: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/663",
+			"id": "663"
+		},
+		"Season 34: Division 2 Playoffs": {
+			"name": "Season 34: Division 2 Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/664",
+			"id": "664"
+		}
+	},
+	"Highlander Season": {
+		"Highlander Season 1": {
+			"name": "Highlander Season 1",
+			"url": "http://etf2l.org/etf2l/archives/92",
+			"id": "92"
+		},
+		"Highlander Season 2": {
+			"name": "Highlander Season 2",
+			"url": "http://etf2l.org/etf2l/archives/114",
+			"id": "114"
+		},
+		"Highlander Season 3": {
+			"name": "Highlander Season 3",
+			"url": "http://etf2l.org/etf2l/archives/156",
+			"id": "156"
+		},
+		"Highlander Season 3: Secondary Playoffs": {
+			"name": "Highlander Season 3: Secondary Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/168",
+			"id": "168"
+		},
+		"Highlander Season 3 Secondary Playoffs: Consolation Final": {
+			"name": "Highlander Season 3 Secondary Playoffs: Consolation Final",
+			"url": "http://etf2l.org/etf2l/archives/174",
+			"id": "174"
+		},
+		"Highlander Season 4 powered by BlackOut Gaming": {
+			"name": "Highlander Season 4 powered by BlackOut Gaming",
+			"url": "http://etf2l.org/etf2l/archives/184",
+			"id": "184"
+		},
+		"Highlander Season 5 powered by BlackOut Gaming": {
+			"name": "Highlander Season 5 powered by BlackOut Gaming",
+			"url": "http://etf2l.org/etf2l/archives/236",
+			"id": "236"
+		},
+		"Highlander Season 6 powered by Tt eSPORTS": {
+			"name": "Highlander Season 6 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/252",
+			"id": "252"
+		},
+		"Highlander Season 7 powered by Tt eSPORTS": {
+			"name": "Highlander Season 7 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/295",
+			"id": "295"
+		},
+		"Highlander Season 8 powered by Tt eSPORTS": {
+			"name": "Highlander Season 8 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/331",
+			"id": "331"
+		},
+		"Highlander Season 8 powered by Tt eSPORTS - Premiership Playoffs": {
+			"name": "Highlander Season 8 powered by Tt eSPORTS - Premiership Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/332",
+			"id": "332"
+		},
+		"Highlander Season 8 powered by Tt eSPORTS - Premiership Tier": {
+			"name": "Highlander Season 8 powered by Tt eSPORTS - Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/333",
+			"id": "333"
+		},
+		"Highlander Season 9 powered by marketplace.tf": {
+			"name": "Highlander Season 9 powered by marketplace.tf",
+			"url": "http://etf2l.org/etf2l/archives/366",
+			"id": "366"
+		},
+		"Highlander Season 9 powered by marketplace.tf - Premiership Playoffs Qualifiers": {
+			"name": "Highlander Season 9 powered by marketplace.tf - Premiership Playoffs Qualifiers",
+			"url": "http://etf2l.org/etf2l/archives/367",
+			"id": "367"
+		},
+		"Highlander Season 9 powered by marketplace.tf - Premiership Tier": {
+			"name": "Highlander Season 9 powered by marketplace.tf - Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/368",
+			"id": "368"
+		},
+		"Highlander Season 9 powered by marketplace.tf : Open Playoffs": {
+			"name": "Highlander Season 9 powered by marketplace.tf : Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/372",
+			"id": "372"
+		},
+		"Highlander Season 9 powered by marketplace.tf : Mid Playoffs": {
+			"name": "Highlander Season 9 powered by marketplace.tf : Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/373",
+			"id": "373"
+		},
+		"Highlander Season 9 powered by marketplace.tf : High Playoffs": {
+			"name": "Highlander Season 9 powered by marketplace.tf : High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/374",
+			"id": "374"
+		},
+		"Highlander Season 9 powered by Marketplace.tf: Premiership Relegation Playoff": {
+			"name": "Highlander Season 9 powered by Marketplace.tf: Premiership Relegation Playoff",
+			"url": "http://etf2l.org/etf2l/archives/387",
+			"id": "387"
+		},
+		"Highlander Season 10 powered by Tt eSPORTS": {
+			"name": "Highlander Season 10 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/391",
+			"id": "391"
+		},
+		"Highlander Season 10 powered by Tt eSPORTS - Premiership Tier": {
+			"name": "Highlander Season 10 powered by Tt eSPORTS - Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/392",
+			"id": "392"
+		},
+		"Highlander Season 10 powered by Tt eSPORTS - Preseason Playoffs": {
+			"name": "Highlander Season 10 powered by Tt eSPORTS - Preseason Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/397",
+			"id": "397"
+		},
+		"Highlander Season 10 powered by Tt eSPORTS: Open Playoffs": {
+			"name": "Highlander Season 10 powered by Tt eSPORTS: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/412",
+			"id": "412"
+		},
+		"Highlander Season 10 powered by Tt eSPORTS: Mid Playoffs": {
+			"name": "Highlander Season 10 powered by Tt eSPORTS: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/413",
+			"id": "413"
+		},
+		"Highlander Season 10 powered by Tt eSPORTS: High Playoffs": {
+			"name": "Highlander Season 10 powered by Tt eSPORTS: High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/414",
+			"id": "414"
+		},
+		"Highlander Season 11 powered by Tt eSPORTS": {
+			"name": "Highlander Season 11 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/433",
+			"id": "433"
+		},
+		"Highlander Season 11 powered by Tt eSPORTS - Premiership Tier": {
+			"name": "Highlander Season 11 powered by Tt eSPORTS - Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/434",
+			"id": "434"
+		},
+		"Highlander Season 11 powered by Tt eSPORTS - Preseason Playoffs": {
+			"name": "Highlander Season 11 powered by Tt eSPORTS - Preseason Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/435",
+			"id": "435"
+		},
+		"Highlander Season 11 powered by Tt eSPORTS: High Playoffs": {
+			"name": "Highlander Season 11 powered by Tt eSPORTS: High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/445",
+			"id": "445"
+		},
+		"Highlander Season 11 powered by Tt eSPORTS: Mid Playoffs": {
+			"name": "Highlander Season 11 powered by Tt eSPORTS: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/446",
+			"id": "446"
+		},
+		"Highlander Season 11 powered by Tt eSPORTS: Open Playoffs": {
+			"name": "Highlander Season 11 powered by Tt eSPORTS: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/447",
+			"id": "447"
+		},
+		"Highlander Season 12: Preseason playoffs": {
+			"name": "Highlander Season 12: Preseason playoffs",
+			"url": "http://etf2l.org/etf2l/archives/470",
+			"id": "470"
+		},
+		"Highlander Season 12": {
+			"name": "Highlander Season 12",
+			"url": "http://etf2l.org/etf2l/archives/471",
+			"id": "471"
+		},
+		"Highlander Season 12: Premiership Tier": {
+			"name": "Highlander Season 12: Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/472",
+			"id": "472"
+		},
+		"Highlander Season 12: High Playoffs": {
+			"name": "Highlander Season 12: High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/485",
+			"id": "485"
+		},
+		"Highlander Season 12: Mid Playoffs": {
+			"name": "Highlander Season 12: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/486",
+			"id": "486"
+		},
+		"Highlander Season 12: Open Playoffs": {
+			"name": "Highlander Season 12: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/487",
+			"id": "487"
+		},
+		"Highlander Season 13: Preseason Playoffs": {
+			"name": "Highlander Season 13: Preseason Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/498",
+			"id": "498"
+		},
+		"Highlander Season 13": {
+			"name": "Highlander Season 13",
+			"url": "http://etf2l.org/etf2l/archives/499",
+			"id": "499"
+		},
+		"Highlander Season 13: Premiership Tier": {
+			"name": "Highlander Season 13: Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/500",
+			"id": "500"
+		},
+		"Highlander Season 13: High Playoffs": {
+			"name": "Highlander Season 13: High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/521",
+			"id": "521"
+		},
+		"Highlander Season 13: Mid Playoffs": {
+			"name": "Highlander Season 13: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/522",
+			"id": "522"
+		},
+		"Highlander Season 13: Open Playoffs": {
+			"name": "Highlander Season 13: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/523",
+			"id": "523"
+		},
+		"Highlander Season 14 Premiership Qualifiers": {
+			"name": "Highlander Season 14 Premiership Qualifiers",
+			"url": "http://etf2l.org/etf2l/archives/529",
+			"id": "529"
+		},
+		"Highlander Season 14": {
+			"name": "Highlander Season 14",
+			"url": "http://etf2l.org/etf2l/archives/530",
+			"id": "530"
+		},
+		"Highlander Season 14: Premiership & High Tiers": {
+			"name": "Highlander Season 14: Premiership & High Tiers",
+			"url": "http://etf2l.org/etf2l/archives/534",
+			"id": "534"
+		},
+		"Highlander Season 14: High Playoffs": {
+			"name": "Highlander Season 14: High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/535",
+			"id": "535"
+		},
+		"Highlander Season 14: Mid Playoffs": {
+			"name": "Highlander Season 14: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/536",
+			"id": "536"
+		},
+		"Highlander Season 14: Open Playoffs": {
+			"name": "Highlander Season 14: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/537",
+			"id": "537"
+		},
+		"Highlander Season 15": {
+			"name": "Highlander Season 15",
+			"url": "http://etf2l.org/etf2l/archives/549",
+			"id": "549"
+		},
+		"Highlander Season 15: Premiership Qualifiers": {
+			"name": "Highlander Season 15: Premiership Qualifiers",
+			"url": "http://etf2l.org/etf2l/archives/550",
+			"id": "550"
+		},
+		"Highlander Season 15: Top Tiers": {
+			"name": "Highlander Season 15: Top Tiers",
+			"url": "http://etf2l.org/etf2l/archives/551",
+			"id": "551"
+		},
+		"Highlander Season 15: Open Playoffs": {
+			"name": "Highlander Season 15: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/558",
+			"id": "558"
+		},
+		"Highlander Season 15: Mid Playoffs": {
+			"name": "Highlander Season 15: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/559",
+			"id": "559"
+		},
+		"Highlander Season 15: High Playoffs": {
+			"name": "Highlander Season 15: High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/560",
+			"id": "560"
+		},
+		"Highlander Season 16": {
+			"name": "Highlander Season 16",
+			"url": "http://etf2l.org/etf2l/archives/571",
+			"id": "571"
+		},
+		"Highlander Season 16: Premiership Qualifiers": {
+			"name": "Highlander Season 16: Premiership Qualifiers",
+			"url": "http://etf2l.org/etf2l/archives/572",
+			"id": "572"
+		},
+		"Highlander Season 16: Top Tiers": {
+			"name": "Highlander Season 16: Top Tiers",
+			"url": "http://etf2l.org/etf2l/archives/573",
+			"id": "573"
+		},
+		"Highlander Season 16: Mid Playoffs": {
+			"name": "Highlander Season 16: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/579",
+			"id": "579"
+		},
+		"Highlander Season 16: Low Playoffs": {
+			"name": "Highlander Season 16: Low Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/580",
+			"id": "580"
+		},
+		"Highlander Season 16: Open Playoffs": {
+			"name": "Highlander Season 16: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/581",
+			"id": "581"
+		},
+		"Highlander Season 17: Premiership Qualifiers": {
+			"name": "Highlander Season 17: Premiership Qualifiers",
+			"url": "http://etf2l.org/etf2l/archives/585",
+			"id": "585"
+		},
+		"Highlander Season 17": {
+			"name": "Highlander Season 17",
+			"url": "http://etf2l.org/etf2l/archives/586",
+			"id": "586"
+		},
+		"Highlander Season 17: Top Tiers": {
+			"name": "Highlander Season 17: Top Tiers",
+			"url": "http://etf2l.org/etf2l/archives/587",
+			"id": "587"
+		},
+		"Highlander Season 17: Open Playoffs": {
+			"name": "Highlander Season 17: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/596",
+			"id": "596"
+		},
+		"Highlander Season 17: Mid Playoffs": {
+			"name": "Highlander Season 17: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/597",
+			"id": "597"
+		},
+		"Highlander Season 18: Open": {
+			"name": "Highlander Season 18: Open",
+			"url": "http://etf2l.org/etf2l/archives/609",
+			"id": "609"
+		},
+		"Highlander Season 18: Premiership Qualifiers": {
+			"name": "Highlander Season 18: Premiership Qualifiers",
+			"url": "http://etf2l.org/etf2l/archives/610",
+			"id": "610"
+		},
+		"Highlander Season 18": {
+			"name": "Highlander Season 18",
+			"url": "http://etf2l.org/etf2l/archives/611",
+			"id": "611"
+		},
+		"Highlander Season 18: Open Playoffs": {
+			"name": "Highlander Season 18: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/618",
+			"id": "618"
+		},
+		"Highlander Season 19": {
+			"name": "Highlander Season 19",
+			"url": "http://etf2l.org/etf2l/archives/635",
+			"id": "635"
+		},
+		"Highlander Season 19: Premiership Qualifiers": {
+			"name": "Highlander Season 19: Premiership Qualifiers",
+			"url": "http://etf2l.org/etf2l/archives/637",
+			"id": "637"
+		},
+		"Highlander Season 19: Top Tiers": {
+			"name": "Highlander Season 19: Top Tiers",
+			"url": "http://etf2l.org/etf2l/archives/642",
+			"id": "642"
+		},
+		"Highlander Season 19: Division 2 Playoffs": {
+			"name": "Highlander Season 19: Division 2 Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/650",
+			"id": "650"
+		},
+		"Highlander Season 19: Mid Playoffs": {
+			"name": "Highlander Season 19: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/651",
+			"id": "651"
+		},
+		"Highlander Season 19: Open Playoffs": {
+			"name": "Highlander Season 19: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/652",
+			"id": "652"
+		},
+		"Highlander Season 20": {
+			"name": "Highlander Season 20",
+			"url": "http://etf2l.org/etf2l/archives/660",
+			"id": "660"
+		},
+		"Highlander Season 20: Top Tiers": {
+			"name": "Highlander Season 20: Top Tiers",
+			"url": "http://etf2l.org/etf2l/archives/665",
+			"id": "665"
+		},
+		"Highlander Season 20: Open Playoffs": {
+			"name": "Highlander Season 20: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/666",
+			"id": "666"
+		},
+		"Highlander Season 20: Mid Playoffs": {
+			"name": "Highlander Season 20: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/667",
+			"id": "667"
+		}
+	},
+	"Nations' Cup": {
+		"Nations Cup: Group Phase": {
+			"name": "Nations Cup: Group Phase",
+			"url": "http://etf2l.org/etf2l/archives/7",
+			"id": "7"
+		},
+		"Nations Cup: Playoff Phase": {
+			"name": "Nations Cup: Playoff Phase",
+			"url": "http://etf2l.org/etf2l/archives/8",
+			"id": "8"
+		},
+		"Nations Cup #2: Group Phase": {
+			"name": "Nations Cup #2: Group Phase",
+			"url": "http://etf2l.org/etf2l/archives/38",
+			"id": "38"
+		},
+		"Nations Cup #2: Playoff Phase": {
+			"name": "Nations Cup #2: Playoff Phase",
+			"url": "http://etf2l.org/etf2l/archives/39",
+			"id": "39"
+		},
+		"Highlander Nations Cup #1 : Group Phase": {
+			"name": "Highlander Nations Cup #1 : Group Phase",
+			"url": "http://etf2l.org/etf2l/archives/124",
+			"id": "124"
+		},
+		"Nations Cup #3: Group Phase": {
+			"name": "Nations Cup #3: Group Phase",
+			"url": "http://etf2l.org/etf2l/archives/125",
+			"id": "125"
+		},
+		"Highlander Nations Cup #1 : Playoffs": {
+			"name": "Highlander Nations Cup #1 : Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/128",
+			"id": "128"
+		},
+		"Nations Cup #3: Playoffs": {
+			"name": "Nations Cup #3: Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/137",
+			"id": "137"
+		},
+		"HL Nations Cup #1 Bronze Match": {
+			"name": "HL Nations Cup #1 Bronze Match",
+			"url": "http://etf2l.org/etf2l/archives/138",
+			"id": "138"
+		},
+		"Highlander Nations Cup #2: Group Phase": {
+			"name": "Highlander Nations Cup #2: Group Phase",
+			"url": "http://etf2l.org/etf2l/archives/217",
+			"id": "217"
+		},
+		"Nations Cup #4 powered by BlackOut Gaming : Group Phase": {
+			"name": "Nations Cup #4 powered by BlackOut Gaming : Group Phase",
+			"url": "http://etf2l.org/etf2l/archives/218",
+			"id": "218"
+		},
+		"Highlander Nations Cup #2: Playoffs": {
+			"name": "Highlander Nations Cup #2: Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/219",
+			"id": "219"
+		},
+		"Nations Cup #4 powered by BlackOut Gaming : Playoffs": {
+			"name": "Nations Cup #4 powered by BlackOut Gaming : Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/220",
+			"id": "220"
+		},
+		"Highlander Nations Cup #2: Bronze Match": {
+			"name": "Highlander Nations Cup #2: Bronze Match",
+			"url": "http://etf2l.org/etf2l/archives/221",
+			"id": "221"
+		},
+		"Nations Cup #4: Bronze Match": {
+			"name": "Nations Cup #4: Bronze Match",
+			"url": "http://etf2l.org/etf2l/archives/227",
+			"id": "227"
+		},
+		"Highlander Nations Cup #3 powered by Tt eSPORTS: Group Phase": {
+			"name": "Highlander Nations Cup #3 powered by Tt eSPORTS: Group Phase",
+			"url": "http://etf2l.org/etf2l/archives/270",
+			"id": "270"
+		},
+		"Nations Cup #5 powered by Tt eSPORTS: Group Phase": {
+			"name": "Nations Cup #5 powered by Tt eSPORTS: Group Phase",
+			"url": "http://etf2l.org/etf2l/archives/271",
+			"id": "271"
+		},
+		"Highlander Nations Cup #3 powered by Tt eSPORTS: Playoffs": {
+			"name": "Highlander Nations Cup #3 powered by Tt eSPORTS: Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/272",
+			"id": "272"
+		},
+		"Highlander Nations Cup #3 powered by Tt eSPORTS: Bronze Match": {
+			"name": "Highlander Nations Cup #3 powered by Tt eSPORTS: Bronze Match",
+			"url": "http://etf2l.org/etf2l/archives/274",
+			"id": "274"
+		},
+		"Nations Cup #5: Playoffs": {
+			"name": "Nations Cup #5: Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/276",
+			"id": "276"
+		},
+		"Nations Cup #5 powered by Tt eSPORTS: Bronze Match": {
+			"name": "Nations Cup #5 powered by Tt eSPORTS: Bronze Match",
+			"url": "http://etf2l.org/etf2l/archives/290",
+			"id": "290"
+		},
+		"Highlander Nations Cup #4 powered by Tt eSPORTS": {
+			"name": "Highlander Nations Cup #4 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/347",
+			"id": "347"
+		},
+		"Highlander Nations Cup #4 powered by Tt eSPORTS: Playoffs": {
+			"name": "Highlander Nations Cup #4 powered by Tt eSPORTS: Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/351",
+			"id": "351"
+		},
+		"Highlander Nations Cup #4 powered by Tt eSPORTS: Bronze Match": {
+			"name": "Highlander Nations Cup #4 powered by Tt eSPORTS: Bronze Match",
+			"url": "http://etf2l.org/etf2l/archives/353",
+			"id": "353"
+		},
+		"Nations Cup #6 powered by Tt eSPORTS - Group Stage": {
+			"name": "Nations Cup #6 powered by Tt eSPORTS - Group Stage",
+			"url": "http://etf2l.org/etf2l/archives/421",
+			"id": "421"
+		},
+		"Nations Cup #6 powered by Tt eSPORTS - Playoff Stage": {
+			"name": "Nations Cup #6 powered by Tt eSPORTS - Playoff Stage",
+			"url": "http://etf2l.org/etf2l/archives/422",
+			"id": "422"
+		},
+		"Nations Cup #6 powered by Tt eSPORTS - Bronze Match": {
+			"name": "Nations Cup #6 powered by Tt eSPORTS - Bronze Match",
+			"url": "http://etf2l.org/etf2l/archives/427",
+			"id": "427"
+		},
+		"Highlander Nations Cup #5": {
+			"name": "Highlander Nations Cup #5",
+			"url": "http://etf2l.org/etf2l/archives/493",
+			"id": "493"
+		},
+		"Highlander Nations Cup #5: Playoffs": {
+			"name": "Highlander Nations Cup #5: Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/494",
+			"id": "494"
+		},
+		"Highlander Nations Cup #5: 3rd Place Match": {
+			"name": "Highlander Nations Cup #5: 3rd Place Match",
+			"url": "http://etf2l.org/etf2l/archives/495",
+			"id": "495"
+		},
+		"Nations Cup #7 - Group Stage": {
+			"name": "Nations Cup #7 - Group Stage",
+			"url": "http://etf2l.org/etf2l/archives/568",
+			"id": "568"
+		},
+		"Nations Cup #7 - Playoff Stage": {
+			"name": "Nations Cup #7 - Playoff Stage",
+			"url": "http://etf2l.org/etf2l/archives/569",
+			"id": "569"
+		},
+		"Nations Cup #7 - Bronze Match": {
+			"name": "Nations Cup #7 - Bronze Match",
+			"url": "http://etf2l.org/etf2l/archives/570",
+			"id": "570"
+		},
+		"Highlander Nations Cup #6": {
+			"name": "Highlander Nations Cup #6",
+			"url": "http://etf2l.org/etf2l/archives/631",
+			"id": "631"
+		},
+		"Highlander Nations Cup #6: Playoffs": {
+			"name": "Highlander Nations Cup #6: Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/632",
+			"id": "632"
+		},
+		"Highlander Nations Cup #6: 3rd Place Match": {
+			"name": "Highlander Nations Cup #6: 3rd Place Match",
+			"url": "http://etf2l.org/etf2l/archives/636",
+			"id": "636"
+		}
+	},
+	"Community Highlander Challenge": {
+		"Highlander Challenge Group Stage": {
+			"name": "Highlander Challenge Group Stage",
+			"url": "http://etf2l.org/etf2l/archives/57",
+			"id": "57"
+		},
+		"Highlander Challenge Cup Stage": {
+			"name": "Highlander Challenge Cup Stage",
+			"url": "http://etf2l.org/etf2l/archives/63",
+			"id": "63"
+		},
+		"Highlander Challenge Bronze Match": {
+			"name": "Highlander Challenge Bronze Match",
+			"url": "http://etf2l.org/etf2l/archives/74",
+			"id": "74"
+		}
+	},
+	"6v6 Cup": {
+		"ETF2L 2nd Cup": {
+			"name": "ETF2L 2nd Cup",
+			"url": "http://etf2l.org/etf2l/archives/3",
+			"id": "3"
+		},
+		"ETF2L 3rd Cup": {
+			"name": "ETF2L 3rd Cup",
+			"url": "http://etf2l.org/etf2l/archives/4",
+			"id": "4"
+		},
+		"ETF2L Starting Cup": {
+			"name": "ETF2L Starting Cup",
+			"url": "http://etf2l.org/etf2l/archives/12",
+			"id": "12"
+		},
+		"ETF2L 4th Cup": {
+			"name": "ETF2L 4th Cup",
+			"url": "http://etf2l.org/etf2l/archives/17",
+			"id": "17"
+		},
+		"ETF2L 5th Cup": {
+			"name": "ETF2L 5th Cup",
+			"url": "http://etf2l.org/etf2l/archives/27",
+			"id": "27"
+		},
+		"ETF2L 6th Cup - BO1 Stage": {
+			"name": "ETF2L 6th Cup - BO1 Stage",
+			"url": "http://etf2l.org/etf2l/archives/161",
+			"id": "161"
+		},
+		"ETF2L 6th Cup": {
+			"name": "ETF2L 6th Cup",
+			"url": "http://etf2l.org/etf2l/archives/169",
+			"id": "169"
+		},
+		"Season 17 powered by Tt eSPORTS - Premiership/Division 1 Qualifier": {
+			"name": "Season 17 powered by Tt eSPORTS - Premiership/Division 1 Qualifier",
+			"url": "http://etf2l.org/etf2l/archives/246",
+			"id": "246"
+		},
+		"Season 19 powered by Tt eSPORTS: Premiership Playoffs": {
+			"name": "Season 19 powered by Tt eSPORTS: Premiership Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/288",
+			"id": "288"
+		},
+		"Season 19 powered by Tt eSPORTS: Division 1 Playoffs": {
+			"name": "Season 19 powered by Tt eSPORTS: Division 1 Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/289",
+			"id": "289"
+		},
+		"Sunshine Cup: Top Bracket": {
+			"name": "Sunshine Cup: Top Bracket",
+			"url": "http://etf2l.org/etf2l/archives/308",
+			"id": "308"
+		},
+		"Sunshine Cup: High Bracket": {
+			"name": "Sunshine Cup: High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/309",
+			"id": "309"
+		},
+		"Sunshine Cup: Mid-High Bracket": {
+			"name": "Sunshine Cup: Mid-High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/310",
+			"id": "310"
+		},
+		"Sunshine Cup: Mid Bracket": {
+			"name": "Sunshine Cup: Mid Bracket",
+			"url": "http://etf2l.org/etf2l/archives/311",
+			"id": "311"
+		},
+		"Sunshine Cup: Mid-Low Bracket": {
+			"name": "Sunshine Cup: Mid-Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/312",
+			"id": "312"
+		},
+		"Sunshine Cup: Low Bracket": {
+			"name": "Sunshine Cup: Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/313",
+			"id": "313"
+		},
+		"Sunshine Cup: Lower Bracket": {
+			"name": "Sunshine Cup: Lower Bracket",
+			"url": "http://etf2l.org/etf2l/archives/314",
+			"id": "314"
+		},
+		"Sunshine Cup: Lowest Bracket": {
+			"name": "Sunshine Cup: Lowest Bracket",
+			"url": "http://etf2l.org/etf2l/archives/315",
+			"id": "315"
+		},
+		"TF2C Archimedes Cup powered by scrap.tf 3rd place tiebreaker": {
+			"name": "TF2C Archimedes Cup powered by scrap.tf 3rd place tiebreaker",
+			"url": "http://etf2l.org/etf2l/archives/318",
+			"id": "318"
+		},
+		"Forsaken Cup - Fun Teams": {
+			"name": "Forsaken Cup - Fun Teams",
+			"url": "http://etf2l.org/etf2l/archives/350",
+			"id": "350"
+		},
+		"ETF2L 6v6 Preseason 23 Cup": {
+			"name": "ETF2L 6v6 Preseason 23 Cup",
+			"url": "http://etf2l.org/etf2l/archives/375",
+			"id": "375"
+		},
+		"ETF2L Preseason 23 6v6 Cup": {
+			"name": "ETF2L Preseason 23 6v6 Cup",
+			"url": "http://etf2l.org/etf2l/archives/376",
+			"id": "376"
+		},
+		"ETF2L Preseason 23 6v6 Cup - Top Bracket": {
+			"name": "ETF2L Preseason 23 6v6 Cup - Top Bracket",
+			"url": "http://etf2l.org/etf2l/archives/378",
+			"id": "378"
+		},
+		"ETF2L Preseason 23 6v6 Cup - High Bracket": {
+			"name": "ETF2L Preseason 23 6v6 Cup - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/379",
+			"id": "379"
+		},
+		"ETF2L Preseason 23 6v6 Cup - Mid #1 Bracket ": {
+			"name": "ETF2L Preseason 23 6v6 Cup - Mid #1 Bracket ",
+			"url": "http://etf2l.org/etf2l/archives/380",
+			"id": "380"
+		},
+		"ETF2L Preseason 23 6v6 Cup - Mid #2 Bracket": {
+			"name": "ETF2L Preseason 23 6v6 Cup - Mid #2 Bracket",
+			"url": "http://etf2l.org/etf2l/archives/381",
+			"id": "381"
+		},
+		"ETF2L Preseason 23 6v6 Cup - Open #1 Bracket": {
+			"name": "ETF2L Preseason 23 6v6 Cup - Open #1 Bracket",
+			"url": "http://etf2l.org/etf2l/archives/382",
+			"id": "382"
+		},
+		"ETF2L Preseason 23 6v6 Cup - Open #2 Bracket": {
+			"name": "ETF2L Preseason 23 6v6 Cup - Open #2 Bracket",
+			"url": "http://etf2l.org/etf2l/archives/383",
+			"id": "383"
+		},
+		"ETF2L Preseason 23 6v6 Cup - Open #3 Bracket": {
+			"name": "ETF2L Preseason 23 6v6 Cup - Open #3 Bracket",
+			"url": "http://etf2l.org/etf2l/archives/384",
+			"id": "384"
+		},
+		"ETF2L Preseason 23 6v6 Cup - Top Bracket - Bronze Match": {
+			"name": "ETF2L Preseason 23 6v6 Cup - Top Bracket - Bronze Match",
+			"url": "http://etf2l.org/etf2l/archives/385",
+			"id": "385"
+		},
+		"ETF2L Season 24 Preseason Cup - Round Robin": {
+			"name": "ETF2L Season 24 Preseason Cup - Round Robin",
+			"url": "http://etf2l.org/etf2l/archives/398",
+			"id": "398"
+		},
+		"ETF2L Season 24 Preseason Cup - Round Robin (Fun Teams)": {
+			"name": "ETF2L Season 24 Preseason Cup - Round Robin (Fun Teams)",
+			"url": "http://etf2l.org/etf2l/archives/399",
+			"id": "399"
+		},
+		"ETF2L Season 24 Preseason Cup - Winners Bracket": {
+			"name": "ETF2L Season 24 Preseason Cup - Winners Bracket",
+			"url": "http://etf2l.org/etf2l/archives/400",
+			"id": "400"
+		},
+		"ETF2L Season 24 Preseason Cup - Losers Bracket Round 1A": {
+			"name": "ETF2L Season 24 Preseason Cup - Losers Bracket Round 1A",
+			"url": "http://etf2l.org/etf2l/archives/401",
+			"id": "401"
+		},
+		"ETF2L Season 24 Preseason Cup - Losers Bracket Round 1B": {
+			"name": "ETF2L Season 24 Preseason Cup - Losers Bracket Round 1B",
+			"url": "http://etf2l.org/etf2l/archives/402",
+			"id": "402"
+		},
+		"ETF2L Season 24 Preseason Cup - Losers Bracket Round 2": {
+			"name": "ETF2L Season 24 Preseason Cup - Losers Bracket Round 2",
+			"url": "http://etf2l.org/etf2l/archives/403",
+			"id": "403"
+		},
+		"ETF2L Preseason 24 Cup - Premiership": {
+			"name": "ETF2L Preseason 24 Cup - Premiership",
+			"url": "http://etf2l.org/etf2l/archives/405",
+			"id": "405"
+		},
+		"ETF2L Season 24 Preseason Cup - Open Playoffs": {
+			"name": "ETF2L Season 24 Preseason Cup - Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/406",
+			"id": "406"
+		},
+		"ETF2L Season 24 Preseason Cup - Mid Playoffs": {
+			"name": "ETF2L Season 24 Preseason Cup - Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/407",
+			"id": "407"
+		},
+		"ETF2L Season 24 Preseason Cup - High Playoffs": {
+			"name": "ETF2L Season 24 Preseason Cup - High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/408",
+			"id": "408"
+		},
+		"ETF2L Preseason 24 Cup - Mid Grand Finals": {
+			"name": "ETF2L Preseason 24 Cup - Mid Grand Finals",
+			"url": "http://etf2l.org/etf2l/archives/409",
+			"id": "409"
+		},
+		"Season 25 Preseason Cup": {
+			"name": "Season 25 Preseason Cup",
+			"url": "http://etf2l.org/etf2l/archives/424",
+			"id": "424"
+		},
+		"Season 25 Preseason Cup (Fun Teams)": {
+			"name": "Season 25 Preseason Cup (Fun Teams)",
+			"url": "http://etf2l.org/etf2l/archives/425",
+			"id": "425"
+		},
+		"Winter Map Cup": {
+			"name": "Winter Map Cup",
+			"url": "http://etf2l.org/etf2l/archives/439",
+			"id": "439"
+		},
+		"Winter Map Cup(Fun Teams)": {
+			"name": "Winter Map Cup(Fun Teams)",
+			"url": "http://etf2l.org/etf2l/archives/440",
+			"id": "440"
+		},
+		"Winter Map Cup Premiership Group Playoffs": {
+			"name": "Winter Map Cup Premiership Group Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/441",
+			"id": "441"
+		},
+		"Winter Map Cup High Group Playoffs": {
+			"name": "Winter Map Cup High Group Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/442",
+			"id": "442"
+		},
+		"Winter Cup Map Mid Group Playoffs": {
+			"name": "Winter Cup Map Mid Group Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/443",
+			"id": "443"
+		},
+		"Winter Cup Map Open Group Playoffs": {
+			"name": "Winter Cup Map Open Group Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/444",
+			"id": "444"
+		},
+		"Season 26 Preseason Cup": {
+			"name": "Season 26 Preseason Cup",
+			"url": "http://etf2l.org/etf2l/archives/448",
+			"id": "448"
+		},
+		"Season 26 Preseason Cup (Fun Teams)": {
+			"name": "Season 26 Preseason Cup (Fun Teams)",
+			"url": "http://etf2l.org/etf2l/archives/449",
+			"id": "449"
+		},
+		"Season 26 Preseason Cup Premiership Playoffs": {
+			"name": "Season 26 Preseason Cup Premiership Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/451",
+			"id": "451"
+		},
+		"Season 26 Preseason Cup High Playoffs": {
+			"name": "Season 26 Preseason Cup High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/452",
+			"id": "452"
+		},
+		"Season 26 Preseason Cup Mid Playoffs": {
+			"name": "Season 26 Preseason Cup Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/453",
+			"id": "453"
+		},
+		"Season 26 Preseason Cup Open Playoffs": {
+			"name": "Season 26 Preseason Cup Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/454",
+			"id": "454"
+		},
+		"The Fresh Meat Challenge sponsored by Scrap.tf and MarketPlace.tf": {
+			"name": "The Fresh Meat Challenge sponsored by Scrap.tf and MarketPlace.tf",
+			"url": "http://etf2l.org/etf2l/archives/479",
+			"id": "479"
+		},
+		"The Fresh Meat Challenge sponsored by Scrap.tf and MarketPlace.tf (Fun Teams)": {
+			"name": "The Fresh Meat Challenge sponsored by Scrap.tf and MarketPlace.tf (Fun Teams)",
+			"url": "http://etf2l.org/etf2l/archives/480",
+			"id": "480"
+		},
+		"The Fresh Meat Challenge sponsored by Scrap.tf and MarketPlace.tf: Playoffs": {
+			"name": "The Fresh Meat Challenge sponsored by Scrap.tf and MarketPlace.tf: Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/490",
+			"id": "490"
+		},
+		"The Fresh Meat Challenge sponsored by Scrap.tf and MarketPlace.tf: 3rd Place Match": {
+			"name": "The Fresh Meat Challenge sponsored by Scrap.tf and MarketPlace.tf: 3rd Place Match",
+			"url": "http://etf2l.org/etf2l/archives/492",
+			"id": "492"
+		},
+		"Prolands Cup powered by serveme.tf": {
+			"name": "Prolands Cup powered by serveme.tf",
+			"url": "http://etf2l.org/etf2l/archives/506",
+			"id": "506"
+		},
+		"Prolands Cup powered by serveme.tf (Fun Teams)": {
+			"name": "Prolands Cup powered by serveme.tf (Fun Teams)",
+			"url": "http://etf2l.org/etf2l/archives/507",
+			"id": "507"
+		},
+		"Prolands Cup powered by serveme.tf - Top Bracket": {
+			"name": "Prolands Cup powered by serveme.tf - Top Bracket",
+			"url": "http://etf2l.org/etf2l/archives/510",
+			"id": "510"
+		},
+		"Prolands Cup powered by serveme.tf - Top Bracket: Third Place Match": {
+			"name": "Prolands Cup powered by serveme.tf - Top Bracket: Third Place Match",
+			"url": "http://etf2l.org/etf2l/archives/511",
+			"id": "511"
+		},
+		"Prolands Cup powered by serveme.tf - High Bracket": {
+			"name": "Prolands Cup powered by serveme.tf - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/512",
+			"id": "512"
+		},
+		"Prolands Cup powered by serveme.tf - Mid Bracket": {
+			"name": "Prolands Cup powered by serveme.tf - Mid Bracket",
+			"url": "http://etf2l.org/etf2l/archives/513",
+			"id": "513"
+		},
+		"Prolands Cup powered by serveme.tf - Open Bracket": {
+			"name": "Prolands Cup powered by serveme.tf - Open Bracket",
+			"url": "http://etf2l.org/etf2l/archives/514",
+			"id": "514"
+		},
+		"Global Whitelist Test Cup #1 ": {
+			"name": "Global Whitelist Test Cup #1 ",
+			"url": "http://etf2l.org/etf2l/archives/538",
+			"id": "538"
+		},
+		"Global Whitelist Test Cup #1 (Fun teams)": {
+			"name": "Global Whitelist Test Cup #1 (Fun teams)",
+			"url": "http://etf2l.org/etf2l/archives/539",
+			"id": "539"
+		},
+		"Global Whitelist Test Cup #1 Open Playoffs": {
+			"name": "Global Whitelist Test Cup #1 Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/543",
+			"id": "543"
+		},
+		"Global Whitelist Test Cup #1 Top Playoffs": {
+			"name": "Global Whitelist Test Cup #1 Top Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/544",
+			"id": "544"
+		},
+		"Global Whitelist Test Cup #1 Mid Playoffs": {
+			"name": "Global Whitelist Test Cup #1 Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/545",
+			"id": "545"
+		},
+		"Global Whitelist Test Cup #1 Top Group 3rd Place Match": {
+			"name": "Global Whitelist Test Cup #1 Top Group 3rd Place Match",
+			"url": "http://etf2l.org/etf2l/archives/546",
+			"id": "546"
+		},
+		"Christmas Newbie Weekend Cup": {
+			"name": "Christmas Newbie Weekend Cup",
+			"url": "http://etf2l.org/etf2l/archives/592",
+			"id": "592"
+		},
+		"Season 32 Preseason Map Cup": {
+			"name": "Season 32 Preseason Map Cup",
+			"url": "http://etf2l.org/etf2l/archives/598",
+			"id": "598"
+		},
+		"Season 32 Preseason Map Cup (Fun Teams)": {
+			"name": "Season 32 Preseason Map Cup (Fun Teams)",
+			"url": "http://etf2l.org/etf2l/archives/599",
+			"id": "599"
+		},
+		"Season 32 Preseason Map Cup Playoffs Top Tier": {
+			"name": "Season 32 Preseason Map Cup Playoffs Top Tier",
+			"url": "http://etf2l.org/etf2l/archives/600",
+			"id": "600"
+		},
+		"Season 32 Preseason Map Cup Playoffs Mid Tier": {
+			"name": "Season 32 Preseason Map Cup Playoffs Mid Tier",
+			"url": "http://etf2l.org/etf2l/archives/601",
+			"id": "601"
+		},
+		"Season 32 Preseason Map Cup Playoffs Mid-Low Tier": {
+			"name": "Season 32 Preseason Map Cup Playoffs Mid-Low Tier",
+			"url": "http://etf2l.org/etf2l/archives/602",
+			"id": "602"
+		},
+		"Season 32 Preseason Map Cup Playoffs Low Tier": {
+			"name": "Season 32 Preseason Map Cup Playoffs Low Tier",
+			"url": "http://etf2l.org/etf2l/archives/603",
+			"id": "603"
+		},
+		"Season 32 Preseason Map Cup Playoffs Fresh Tier": {
+			"name": "Season 32 Preseason Map Cup Playoffs Fresh Tier",
+			"url": "http://etf2l.org/etf2l/archives/604",
+			"id": "604"
+		},
+		"The Fresh Meat Challenge #2": {
+			"name": "The Fresh Meat Challenge #2",
+			"url": "http://etf2l.org/etf2l/archives/616",
+			"id": "616"
+		},
+		"The Fresh Meat Challenge #2 (Fun teams)": {
+			"name": "The Fresh Meat Challenge #2 (Fun teams)",
+			"url": "http://etf2l.org/etf2l/archives/617",
+			"id": "617"
+		},
+		"Fresh Meat Challenge #2: Playoffs": {
+			"name": "Fresh Meat Challenge #2: Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/619",
+			"id": "619"
+		},
+		"Season 33 Preseason Map Cup": {
+			"name": "Season 33 Preseason Map Cup",
+			"url": "http://etf2l.org/etf2l/archives/620",
+			"id": "620"
+		},
+		"Season 33 Preseason Map Cup (Fun teams)": {
+			"name": "Season 33 Preseason Map Cup (Fun teams)",
+			"url": "http://etf2l.org/etf2l/archives/621",
+			"id": "621"
+		},
+		"Season 33 Preseason Map Cup: High Bracket": {
+			"name": "Season 33 Preseason Map Cup: High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/622",
+			"id": "622"
+		},
+		"Season 33 Preseason Map Cup: Mid Bracket": {
+			"name": "Season 33 Preseason Map Cup: Mid Bracket",
+			"url": "http://etf2l.org/etf2l/archives/623",
+			"id": "623"
+		},
+		"Season 33 Preseason Map Cup: Mid-Low Bracket": {
+			"name": "Season 33 Preseason Map Cup: Mid-Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/624",
+			"id": "624"
+		},
+		"Season 33 Preseason Map Cup: Low Bracket": {
+			"name": "Season 33 Preseason Map Cup: Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/625",
+			"id": "625"
+		},
+		"Season 33 Preseason Map Cup: Open Bracket": {
+			"name": "Season 33 Preseason Map Cup: Open Bracket",
+			"url": "http://etf2l.org/etf2l/archives/626",
+			"id": "626"
+		},
+		"Fresh Meat Challenge #2: 3rd Place Match": {
+			"name": "Fresh Meat Challenge #2: 3rd Place Match",
+			"url": "http://etf2l.org/etf2l/archives/627",
+			"id": "627"
+		},
+		"Season 34 Preseason Propaganda Cup": {
+			"name": "Season 34 Preseason Propaganda Cup",
+			"url": "http://etf2l.org/etf2l/archives/643",
+			"id": "643"
+		},
+		"Season 34 Preseason Propaganda Cup Bracket #6": {
+			"name": "Season 34 Preseason Propaganda Cup Bracket #6",
+			"url": "http://etf2l.org/etf2l/archives/644",
+			"id": "644"
+		},
+		"Season 34 Preseason Propaganda Cup Bracket #5": {
+			"name": "Season 34 Preseason Propaganda Cup Bracket #5",
+			"url": "http://etf2l.org/etf2l/archives/645",
+			"id": "645"
+		},
+		"Season 34 Preseason Propaganda Cup Bracket #4": {
+			"name": "Season 34 Preseason Propaganda Cup Bracket #4",
+			"url": "http://etf2l.org/etf2l/archives/646",
+			"id": "646"
+		},
+		"Season 34 Preseason Propaganda Cup Bracket #3": {
+			"name": "Season 34 Preseason Propaganda Cup Bracket #3",
+			"url": "http://etf2l.org/etf2l/archives/647",
+			"id": "647"
+		},
+		"Season 34 Preseason Propaganda Cup Bracket #2": {
+			"name": "Season 34 Preseason Propaganda Cup Bracket #2",
+			"url": "http://etf2l.org/etf2l/archives/648",
+			"id": "648"
+		},
+		"Season 34 Preseason Propaganda Cup Bracket #1": {
+			"name": "Season 34 Preseason Propaganda Cup Bracket #1",
+			"url": "http://etf2l.org/etf2l/archives/649",
+			"id": "649"
+		},
+		"Season 34 Preseason Propaganda Cup (Fun teams)": {
+			"name": "Season 34 Preseason Propaganda Cup (Fun teams)",
+			"url": "http://etf2l.org/etf2l/archives/657",
+			"id": "657"
+		}
+	},
+	"Ultiduo Cup": {
+		"Ultiduo Cup #1": {
+			"name": "Ultiduo Cup #1",
+			"url": "http://etf2l.org/etf2l/archives/76",
+			"id": "76"
+		},
+		"Ultiduo Cup #2": {
+			"name": "Ultiduo Cup #2",
+			"url": "http://etf2l.org/etf2l/archives/89",
+			"id": "89"
+		},
+		"Ultiduo Cup #3 - Group Phase": {
+			"name": "Ultiduo Cup #3 - Group Phase",
+			"url": "http://etf2l.org/etf2l/archives/90",
+			"id": "90"
+		},
+		"Ultiduo Cup #3 - Knockout Stage": {
+			"name": "Ultiduo Cup #3 - Knockout Stage",
+			"url": "http://etf2l.org/etf2l/archives/93",
+			"id": "93"
+		},
+		"Ultiduo Cup #4 by nervousENERGY & ETF2L - Group Stage": {
+			"name": "Ultiduo Cup #4 by nervousENERGY & ETF2L - Group Stage",
+			"url": "http://etf2l.org/etf2l/archives/160",
+			"id": "160"
+		},
+		"Ultiduo Cup #4 by nervousENERGY & ETF2L - Knockout Stage": {
+			"name": "Ultiduo Cup #4 by nervousENERGY & ETF2L - Knockout Stage",
+			"url": "http://etf2l.org/etf2l/archives/163",
+			"id": "163"
+		},
+		"Ultiduo Cup #4 by nervousENERGY & ETF2L - Consolation Final": {
+			"name": "Ultiduo Cup #4 by nervousENERGY & ETF2L - Consolation Final",
+			"url": "http://etf2l.org/etf2l/archives/167",
+			"id": "167"
+		},
+		"Ultiduo Cup #5 Powered By: Tt eSPORTS": {
+			"name": "Ultiduo Cup #5 Powered By: Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/335",
+			"id": "335"
+		},
+		"Ultiduo Cup #5 Powered by: Tt eSPORTS - Knockout Stage": {
+			"name": "Ultiduo Cup #5 Powered by: Tt eSPORTS - Knockout Stage",
+			"url": "http://etf2l.org/etf2l/archives/336",
+			"id": "336"
+		},
+		"Ultiduo Cup #5 Powered by: Tt eSPORTS - Third Place Tiebreakers": {
+			"name": "Ultiduo Cup #5 Powered by: Tt eSPORTS - Third Place Tiebreakers",
+			"url": "http://etf2l.org/etf2l/archives/337",
+			"id": "337"
+		},
+		"Ultiduo Cup #6 Knockout Stage Powered By: Serveme.tf": {
+			"name": "Ultiduo Cup #6 Knockout Stage Powered By: Serveme.tf",
+			"url": "http://etf2l.org/etf2l/archives/463",
+			"id": "463"
+		},
+		"Ultiduo Cup #6 Group Stage Powered By: Serveme.tf": {
+			"name": "Ultiduo Cup #6 Group Stage Powered By: Serveme.tf",
+			"url": "http://etf2l.org/etf2l/archives/464",
+			"id": "464"
+		},
+		"Ultiduo Cup #6 3rd Place Match": {
+			"name": "Ultiduo Cup #6 3rd Place Match",
+			"url": "http://etf2l.org/etf2l/archives/473",
+			"id": "473"
+		}
+	},
+	"Basketball Cup": {
+		"Basketball 2on2 Cup #1": {
+			"name": "Basketball 2on2 Cup #1",
+			"url": "http://etf2l.org/etf2l/archives/5",
+			"id": "5"
+		},
+		"Basketball 2on2 Cup #2": {
+			"name": "Basketball 2on2 Cup #2",
+			"url": "http://etf2l.org/etf2l/archives/23",
+			"id": "23"
+		},
+		"Basketball 2on2 Cup #3": {
+			"name": "Basketball 2on2 Cup #3",
+			"url": "http://etf2l.org/etf2l/archives/55",
+			"id": "55"
+		},
+		"Basketball 2on2 Cup #4": {
+			"name": "Basketball 2on2 Cup #4",
+			"url": "http://etf2l.org/etf2l/archives/113",
+			"id": "113"
+		},
+		"Basketball 2on2 Cup #5 powered by Tt eSPORTS - Group Stage": {
+			"name": "Basketball 2on2 Cup #5 powered by Tt eSPORTS - Group Stage",
+			"url": "http://etf2l.org/etf2l/archives/171",
+			"id": "171"
+		},
+		"Basketball 2on2 Cup #5 powered by Tt eSPORTS": {
+			"name": "Basketball 2on2 Cup #5 powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/181",
+			"id": "181"
+		},
+		"Basketball 2on2 Cup #5 powered by Tt eSPORTS (Tie Breaker)": {
+			"name": "Basketball 2on2 Cup #5 powered by Tt eSPORTS (Tie Breaker)",
+			"url": "http://etf2l.org/etf2l/archives/182",
+			"id": "182"
+		},
+		"Basketball 2on2 Cup #5 powered by Tt eSPORTS - Consolation Final": {
+			"name": "Basketball 2on2 Cup #5 powered by Tt eSPORTS - Consolation Final",
+			"url": "http://etf2l.org/etf2l/archives/188",
+			"id": "188"
+		},
+		"Basketball 2on2 Cup #6": {
+			"name": "Basketball 2on2 Cup #6",
+			"url": "http://etf2l.org/etf2l/archives/505",
+			"id": "505"
+		},
+		"Basketball 2on2 Cup #6 - Knockout Stage": {
+			"name": "Basketball 2on2 Cup #6 - Knockout Stage",
+			"url": "http://etf2l.org/etf2l/archives/508",
+			"id": "508"
+		},
+		"Basketball 2on2 Cup #6 - 3rd place match": {
+			"name": "Basketball 2on2 Cup #6 - 3rd place match",
+			"url": "http://etf2l.org/etf2l/archives/509",
+			"id": "509"
+		}
+	},
+	"Fun Cup": {
+		"Soldier 1on1 Cup": {
+			"name": "Soldier 1on1 Cup",
+			"url": "http://etf2l.org/etf2l/archives/6",
+			"id": "6"
+		},
+		"Arena Cup #1": {
+			"name": "Arena Cup #1",
+			"url": "http://etf2l.org/etf2l/archives/15",
+			"id": "15"
+		},
+		"Highlander Cup": {
+			"name": "Highlander Cup",
+			"url": "http://etf2l.org/etf2l/archives/16",
+			"id": "16"
+		},
+		"Scout 1on1 Cup": {
+			"name": "Scout 1on1 Cup",
+			"url": "http://etf2l.org/etf2l/archives/18",
+			"id": "18"
+		},
+		"Demoman 1on1 Cup": {
+			"name": "Demoman 1on1 Cup",
+			"url": "http://etf2l.org/etf2l/archives/19",
+			"id": "19"
+		},
+		"Instagib CTF Cup": {
+			"name": "Instagib CTF Cup",
+			"url": "http://etf2l.org/etf2l/archives/24",
+			"id": "24"
+		},
+		"Highlander Cup #2": {
+			"name": "Highlander Cup #2",
+			"url": "http://etf2l.org/etf2l/archives/25",
+			"id": "25"
+		},
+		"Scout 2on2 Cup": {
+			"name": "Scout 2on2 Cup",
+			"url": "http://etf2l.org/etf2l/archives/26",
+			"id": "26"
+		},
+		"Soldier 1on1 Cup #2 (50 Euro)": {
+			"name": "Soldier 1on1 Cup #2 (50 Euro)",
+			"url": "http://etf2l.org/etf2l/archives/28",
+			"id": "28"
+		},
+		"Pyro 3on3 Paintball Cup": {
+			"name": "Pyro 3on3 Paintball Cup",
+			"url": "http://etf2l.org/etf2l/archives/32",
+			"id": "32"
+		},
+		"Soldier 1on1 Cup #3 (cp_turris)": {
+			"name": "Soldier 1on1 Cup #3 (cp_turris)",
+			"url": "http://etf2l.org/etf2l/archives/33",
+			"id": "33"
+		},
+		"King of the Hill 4on4 Cup powered by n1ping": {
+			"name": "King of the Hill 4on4 Cup powered by n1ping",
+			"url": "http://etf2l.org/etf2l/archives/40",
+			"id": "40"
+		},
+		"NA Rules Cup - HIGHEST": {
+			"name": "NA Rules Cup - HIGHEST",
+			"url": "http://etf2l.org/etf2l/archives/131",
+			"id": "131"
+		},
+		"NA Rules Cup - HIGH": {
+			"name": "NA Rules Cup - HIGH",
+			"url": "http://etf2l.org/etf2l/archives/132",
+			"id": "132"
+		},
+		"NA Rules Cup - HIGH-ish": {
+			"name": "NA Rules Cup - HIGH-ish",
+			"url": "http://etf2l.org/etf2l/archives/133",
+			"id": "133"
+		},
+		"NA Rules Cup - LOW-ish": {
+			"name": "NA Rules Cup - LOW-ish",
+			"url": "http://etf2l.org/etf2l/archives/134",
+			"id": "134"
+		},
+		"NA Rules Cup - LOW": {
+			"name": "NA Rules Cup - LOW",
+			"url": "http://etf2l.org/etf2l/archives/135",
+			"id": "135"
+		},
+		"NA Rules Cup - LOWEST": {
+			"name": "NA Rules Cup - LOWEST",
+			"url": "http://etf2l.org/etf2l/archives/136",
+			"id": "136"
+		},
+		"Team Colonslash Cup #1 HIGH": {
+			"name": "Team Colonslash Cup #1 HIGH",
+			"url": "http://etf2l.org/etf2l/archives/199",
+			"id": "199"
+		},
+		"Team Colonslash Cup #1 LOW": {
+			"name": "Team Colonslash Cup #1 LOW",
+			"url": "http://etf2l.org/etf2l/archives/200",
+			"id": "200"
+		},
+		"Team Colonslash High Finals": {
+			"name": "Team Colonslash High Finals",
+			"url": "http://etf2l.org/etf2l/archives/201",
+			"id": "201"
+		},
+		"Team Colonslash Cup #1 3rd place": {
+			"name": "Team Colonslash Cup #1 3rd place",
+			"url": "http://etf2l.org/etf2l/archives/203",
+			"id": "203"
+		},
+		"Turbine Cup powered by Tt eSPORTS": {
+			"name": "Turbine Cup powered by Tt eSPORTS",
+			"url": "http://etf2l.org/etf2l/archives/254",
+			"id": "254"
+		},
+		"Turbine Cup powered by Tt eSPORTS - Fun Teams": {
+			"name": "Turbine Cup powered by Tt eSPORTS - Fun Teams",
+			"url": "http://etf2l.org/etf2l/archives/255",
+			"id": "255"
+		},
+		"Turbine Cup powered by Tt eSPORTS - Top Bracket": {
+			"name": "Turbine Cup powered by Tt eSPORTS - Top Bracket",
+			"url": "http://etf2l.org/etf2l/archives/257",
+			"id": "257"
+		},
+		"Turbine Cup powered by Tt eSPORTS - Higher Bracket": {
+			"name": "Turbine Cup powered by Tt eSPORTS - Higher Bracket",
+			"url": "http://etf2l.org/etf2l/archives/258",
+			"id": "258"
+		},
+		"Turbine Cup powered by Tt eSPORTS - High Bracket": {
+			"name": "Turbine Cup powered by Tt eSPORTS - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/259",
+			"id": "259"
+		},
+		"Turbine Cup powered by Tt eSPORTS - Mid-High Bracket": {
+			"name": "Turbine Cup powered by Tt eSPORTS - Mid-High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/260",
+			"id": "260"
+		},
+		"Turbine Cup powered by Tt eSPORTS - Mid-Low Bracket": {
+			"name": "Turbine Cup powered by Tt eSPORTS - Mid-Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/261",
+			"id": "261"
+		},
+		"Turbine Cup powered by Tt eSPORTS - Low Bracket": {
+			"name": "Turbine Cup powered by Tt eSPORTS - Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/262",
+			"id": "262"
+		},
+		"Turbine Cup powered by Tt eSPORTS - Lower Bracket": {
+			"name": "Turbine Cup powered by Tt eSPORTS - Lower Bracket",
+			"url": "http://etf2l.org/etf2l/archives/263",
+			"id": "263"
+		},
+		"Turbine Cup powered by Tt eSPORTS - Lowest Bracket": {
+			"name": "Turbine Cup powered by Tt eSPORTS - Lowest Bracket",
+			"url": "http://etf2l.org/etf2l/archives/264",
+			"id": "264"
+		},
+		"Experimental Highlander Cup #5 - High Bracket": {
+			"name": "Experimental Highlander Cup #5 - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/268",
+			"id": "268"
+		},
+		"Experimental Highlander Cup #5 - Low Bracket": {
+			"name": "Experimental Highlander Cup #5 - Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/269",
+			"id": "269"
+		},
+		"Logjam Cup": {
+			"name": "Logjam Cup",
+			"url": "http://etf2l.org/etf2l/archives/278",
+			"id": "278"
+		},
+		"Logjam Cup - Top Bracket": {
+			"name": "Logjam Cup - Top Bracket",
+			"url": "http://etf2l.org/etf2l/archives/279",
+			"id": "279"
+		},
+		"Logjam Cup - Higher Bracket": {
+			"name": "Logjam Cup - Higher Bracket",
+			"url": "http://etf2l.org/etf2l/archives/280",
+			"id": "280"
+		},
+		"Logjam Cup - High Bracket": {
+			"name": "Logjam Cup - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/281",
+			"id": "281"
+		},
+		"Logjam Cup - Mid-High Bracket": {
+			"name": "Logjam Cup - Mid-High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/282",
+			"id": "282"
+		},
+		"Logjam Cup - Mid Bracket": {
+			"name": "Logjam Cup - Mid Bracket",
+			"url": "http://etf2l.org/etf2l/archives/283",
+			"id": "283"
+		},
+		"Logjam Cup - Mid-Low Bracket": {
+			"name": "Logjam Cup - Mid-Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/284",
+			"id": "284"
+		},
+		"Logjam Cup - Low Bracket": {
+			"name": "Logjam Cup - Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/285",
+			"id": "285"
+		},
+		"Logjam Cup - Lower Bracket": {
+			"name": "Logjam Cup - Lower Bracket",
+			"url": "http://etf2l.org/etf2l/archives/286",
+			"id": "286"
+		},
+		"Logjam Cup - Lowest Bracket": {
+			"name": "Logjam Cup - Lowest Bracket",
+			"url": "http://etf2l.org/etf2l/archives/287",
+			"id": "287"
+		},
+		"TF2C Archimedes Cup powered by scrap.tf": {
+			"name": "TF2C Archimedes Cup powered by scrap.tf",
+			"url": "http://etf2l.org/etf2l/archives/302",
+			"id": "302"
+		},
+		"TF2C Archimedes Cup powered by scrap.tf - Fun Teams": {
+			"name": "TF2C Archimedes Cup powered by scrap.tf - Fun Teams",
+			"url": "http://etf2l.org/etf2l/archives/303",
+			"id": "303"
+		},
+		"TF2C Archimedes Cup powered by scrap.tf - Knockout Stages": {
+			"name": "TF2C Archimedes Cup powered by scrap.tf - Knockout Stages",
+			"url": "http://etf2l.org/etf2l/archives/304",
+			"id": "304"
+		},
+		"Sunshine Cup": {
+			"name": "Sunshine Cup",
+			"url": "http://etf2l.org/etf2l/archives/306",
+			"id": "306"
+		},
+		"Sunshine Cup - Fun Teams": {
+			"name": "Sunshine Cup - Fun Teams",
+			"url": "http://etf2l.org/etf2l/archives/307",
+			"id": "307"
+		},
+		"Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf:": {
+			"name": "Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf:",
+			"url": "http://etf2l.org/etf2l/archives/320",
+			"id": "320"
+		},
+		"Forsaken Cup": {
+			"name": "Forsaken Cup",
+			"url": "http://etf2l.org/etf2l/archives/348",
+			"id": "348"
+		},
+		"Forsaken Cup - Knockout Stage": {
+			"name": "Forsaken Cup - Knockout Stage",
+			"url": "http://etf2l.org/etf2l/archives/349",
+			"id": "349"
+		},
+		"Experimental Highlander One-Night-Cup #7 ": {
+			"name": "Experimental Highlander One-Night-Cup #7 ",
+			"url": "http://etf2l.org/etf2l/archives/356",
+			"id": "356"
+		},
+		"Experimental Highlander One-Night-Cup #7 Fun Teams": {
+			"name": "Experimental Highlander One-Night-Cup #7 Fun Teams",
+			"url": "http://etf2l.org/etf2l/archives/357",
+			"id": "357"
+		},
+		"Highlander S10 Map Test Cup": {
+			"name": "Highlander S10 Map Test Cup",
+			"url": "http://etf2l.org/etf2l/archives/388",
+			"id": "388"
+		},
+		"Highlander S10 Map Test Cup: Premiership Tier": {
+			"name": "Highlander S10 Map Test Cup: Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/389",
+			"id": "389"
+		},
+		"Highlander S10 Map Test Cup: Fun Teams": {
+			"name": "Highlander S10 Map Test Cup: Fun Teams",
+			"url": "http://etf2l.org/etf2l/archives/390",
+			"id": "390"
+		},
+		"HL S10 Map Test Cup Premiership Tier: Bronze Match": {
+			"name": "HL S10 Map Test Cup Premiership Tier: Bronze Match",
+			"url": "http://etf2l.org/etf2l/archives/396",
+			"id": "396"
+		},
+		"Experimental Highlander Cup #8": {
+			"name": "Experimental Highlander Cup #8",
+			"url": "http://etf2l.org/etf2l/archives/457",
+			"id": "457"
+		},
+		"Experimental Highlander Cup #8 (Fun Teams)": {
+			"name": "Experimental Highlander Cup #8 (Fun Teams)",
+			"url": "http://etf2l.org/etf2l/archives/458",
+			"id": "458"
+		},
+		"Experimental Highlander Cup #8: Open Playoffs": {
+			"name": "Experimental Highlander Cup #8: Open Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/459",
+			"id": "459"
+		},
+		"Experimental Highlander Cup #8: Mid Playoffs": {
+			"name": "Experimental Highlander Cup #8: Mid Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/460",
+			"id": "460"
+		},
+		"Experimental Highlander Cup #8: High Playoffs": {
+			"name": "Experimental Highlander Cup #8: High Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/461",
+			"id": "461"
+		},
+		"Experimental Highlander Cup #8: Premiership Playoffs": {
+			"name": "Experimental Highlander Cup #8: Premiership Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/462",
+			"id": "462"
+		},
+		"Highlander Season 12 Preseason Cup": {
+			"name": "Highlander Season 12 Preseason Cup",
+			"url": "http://etf2l.org/etf2l/archives/465",
+			"id": "465"
+		},
+		"Highlander Season 12 Preseason Cup (Fun teams)": {
+			"name": "Highlander Season 12 Preseason Cup (Fun teams)",
+			"url": "http://etf2l.org/etf2l/archives/466",
+			"id": "466"
+		},
+		"Highlander Season 12 Preseason Cup: Premiership Bracket": {
+			"name": "Highlander Season 12 Preseason Cup: Premiership Bracket",
+			"url": "http://etf2l.org/etf2l/archives/474",
+			"id": "474"
+		},
+		"Highlander Season 12 Preseason Cup: High Bracket": {
+			"name": "Highlander Season 12 Preseason Cup: High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/475",
+			"id": "475"
+		},
+		"Highlander Season 12 Preseason Cup: Mid Bracket": {
+			"name": "Highlander Season 12 Preseason Cup: Mid Bracket",
+			"url": "http://etf2l.org/etf2l/archives/476",
+			"id": "476"
+		},
+		"Highlander Season 12 Preseason Cup: Open Bracket #1": {
+			"name": "Highlander Season 12 Preseason Cup: Open Bracket #1",
+			"url": "http://etf2l.org/etf2l/archives/477",
+			"id": "477"
+		},
+		"Highlander Season 12 Preseason Cup: Open Bracket #2": {
+			"name": "Highlander Season 12 Preseason Cup: Open Bracket #2",
+			"url": "http://etf2l.org/etf2l/archives/478",
+			"id": "478"
+		},
+		"Highlander Season 13 Preseason Cup": {
+			"name": "Highlander Season 13 Preseason Cup",
+			"url": "http://etf2l.org/etf2l/archives/496",
+			"id": "496"
+		},
+		"Highlander Season 13 Preseason Cup (fun teams)": {
+			"name": "Highlander Season 13 Preseason Cup (fun teams)",
+			"url": "http://etf2l.org/etf2l/archives/497",
+			"id": "497"
+		},
+		"Reverse Map Cup": {
+			"name": "Reverse Map Cup",
+			"url": "http://etf2l.org/etf2l/archives/515",
+			"id": "515"
+		},
+		"Reverse Map Cup (fun teams)": {
+			"name": "Reverse Map Cup (fun teams)",
+			"url": "http://etf2l.org/etf2l/archives/516",
+			"id": "516"
+		},
+		"Reverse Map Cup Playoffs": {
+			"name": "Reverse Map Cup Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/517",
+			"id": "517"
+		},
+		"Highlander Season 14 Preseason Cup": {
+			"name": "Highlander Season 14 Preseason Cup",
+			"url": "http://etf2l.org/etf2l/archives/527",
+			"id": "527"
+		},
+		"Highlander Season 14 Preseason Cup (fun teams)": {
+			"name": "Highlander Season 14 Preseason Cup (fun teams)",
+			"url": "http://etf2l.org/etf2l/archives/528",
+			"id": "528"
+		},
+		"Highlander Season 15 Preseason Cup": {
+			"name": "Highlander Season 15 Preseason Cup",
+			"url": "http://etf2l.org/etf2l/archives/547",
+			"id": "547"
+		},
+		"Highlander Season 15 Preseason Cup (fun teams)": {
+			"name": "Highlander Season 15 Preseason Cup (fun teams)",
+			"url": "http://etf2l.org/etf2l/archives/548",
+			"id": "548"
+		},
+		"Beater Presents: Meet Your Map Cup!": {
+			"name": "Beater Presents: Meet Your Map Cup!",
+			"url": "http://etf2l.org/etf2l/archives/556",
+			"id": "556"
+		},
+		"Beater Presents: Meet Your Map Cup! (fun teams)": {
+			"name": "Beater Presents: Meet Your Map Cup! (fun teams)",
+			"url": "http://etf2l.org/etf2l/archives/557",
+			"id": "557"
+		},
+		"Beater Presents: Meet Your Map Cup! Upper Bracket": {
+			"name": "Beater Presents: Meet Your Map Cup! Upper Bracket",
+			"url": "http://etf2l.org/etf2l/archives/561",
+			"id": "561"
+		},
+		"Beater Presents: Meet Your Map Cup! Lower Bracket": {
+			"name": "Beater Presents: Meet Your Map Cup! Lower Bracket",
+			"url": "http://etf2l.org/etf2l/archives/562",
+			"id": "562"
+		},
+		"Highlander Season 16 Preseason Cup (fun teams)": {
+			"name": "Highlander Season 16 Preseason Cup (fun teams)",
+			"url": "http://etf2l.org/etf2l/archives/567",
+			"id": "567"
+		},
+		"Christmas Newbie Weekend Cup (fun teams)": {
+			"name": "Christmas Newbie Weekend Cup (fun teams)",
+			"url": "http://etf2l.org/etf2l/archives/593",
+			"id": "593"
+		},
+		"Christmas Newbie Weekend Cup: Playoffs": {
+			"name": "Christmas Newbie Weekend Cup: Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/594",
+			"id": "594"
+		},
+		"ETF2L Christmas Newbie Weekend Cup: 3rd place match": {
+			"name": "ETF2L Christmas Newbie Weekend Cup: 3rd place match",
+			"url": "http://etf2l.org/etf2l/archives/595",
+			"id": "595"
+		},
+		"Highlander Season 18 Preseason Cup": {
+			"name": "Highlander Season 18 Preseason Cup",
+			"url": "http://etf2l.org/etf2l/archives/608",
+			"id": "608"
+		},
+		"Highlander Season 19 Preseason Cup": {
+			"name": "Highlander Season 19 Preseason Cup",
+			"url": "http://etf2l.org/etf2l/archives/633",
+			"id": "633"
+		},
+		"Highlander Season 19 Preseason Cup (Fun Teams)": {
+			"name": "Highlander Season 19 Preseason Cup (Fun Teams)",
+			"url": "http://etf2l.org/etf2l/archives/634",
+			"id": "634"
+		},
+		"Highlander Season 20 Preseason Cup": {
+			"name": "Highlander Season 20 Preseason Cup",
+			"url": "http://etf2l.org/etf2l/archives/658",
+			"id": "658"
+		},
+		"Highlander Season 20 Preseason Cup (Fun Teams)": {
+			"name": "Highlander Season 20 Preseason Cup (Fun Teams)",
+			"url": "http://etf2l.org/etf2l/archives/659",
+			"id": "659"
+		}
+	},
+	"1 Day Cup": {
+		"Fastlane-1-Day-Cup": {
+			"name": "Fastlane-1-Day-Cup",
+			"url": "http://etf2l.org/etf2l/archives/9",
+			"id": "9"
+		},
+		"Freight-1-Day-Cup": {
+			"name": "Freight-1-Day-Cup",
+			"url": "http://etf2l.org/etf2l/archives/13",
+			"id": "13"
+		},
+		"Watchtower-Arena-1-Day-Cup": {
+			"name": "Watchtower-Arena-1-Day-Cup",
+			"url": "http://etf2l.org/etf2l/archives/14",
+			"id": "14"
+		},
+		"TFTrue-1-Day-Cup": {
+			"name": "TFTrue-1-Day-Cup",
+			"url": "http://etf2l.org/etf2l/archives/21",
+			"id": "21"
+		},
+		"Division-1-Promotion-1-Day-Cup": {
+			"name": "Division-1-Promotion-1-Day-Cup",
+			"url": "http://etf2l.org/etf2l/archives/22",
+			"id": "22"
+		},
+		"Sniper 1on1 1-Day-Cup": {
+			"name": "Sniper 1on1 1-Day-Cup",
+			"url": "http://etf2l.org/etf2l/archives/31",
+			"id": "31"
+		},
+		"cp_obscure 1 Day Cup": {
+			"name": "cp_obscure 1 Day Cup",
+			"url": "http://etf2l.org/etf2l/archives/42",
+			"id": "42"
+		},
+		"Monday Night Madness #1 - LOW": {
+			"name": "Monday Night Madness #1 - LOW",
+			"url": "http://etf2l.org/etf2l/archives/44",
+			"id": "44"
+		},
+		"Monday Night Madness #1 - HIGH": {
+			"name": "Monday Night Madness #1 - HIGH",
+			"url": "http://etf2l.org/etf2l/archives/45",
+			"id": "45"
+		},
+		"Monday Night Madness #2 - LOW": {
+			"name": "Monday Night Madness #2 - LOW",
+			"url": "http://etf2l.org/etf2l/archives/46",
+			"id": "46"
+		},
+		"Monday Night Madness #2 - HIGH": {
+			"name": "Monday Night Madness #2 - HIGH",
+			"url": "http://etf2l.org/etf2l/archives/47",
+			"id": "47"
+		},
+		"Monday Night Madness #3 - LOW": {
+			"name": "Monday Night Madness #3 - LOW",
+			"url": "http://etf2l.org/etf2l/archives/48",
+			"id": "48"
+		},
+		"Monday Night Madness #3 - HIGH": {
+			"name": "Monday Night Madness #3 - HIGH",
+			"url": "http://etf2l.org/etf2l/archives/49",
+			"id": "49"
+		},
+		"Monday Night Madness #4 - LOW": {
+			"name": "Monday Night Madness #4 - LOW",
+			"url": "http://etf2l.org/etf2l/archives/50",
+			"id": "50"
+		},
+		"Monday Night Madness #4 - HIGH": {
+			"name": "Monday Night Madness #4 - HIGH",
+			"url": "http://etf2l.org/etf2l/archives/51",
+			"id": "51"
+		},
+		"Monday Night Madness #5 - LOW": {
+			"name": "Monday Night Madness #5 - LOW",
+			"url": "http://etf2l.org/etf2l/archives/52",
+			"id": "52"
+		},
+		"Monday Night Madness #5 - HIGH": {
+			"name": "Monday Night Madness #5 - HIGH",
+			"url": "http://etf2l.org/etf2l/archives/53",
+			"id": "53"
+		},
+		"Experimental Ordnance Cup #1 - LOW": {
+			"name": "Experimental Ordnance Cup #1 - LOW",
+			"url": "http://etf2l.org/etf2l/archives/58",
+			"id": "58"
+		},
+		"Experimental Ordnance Cup #1 - HIGH": {
+			"name": "Experimental Ordnance Cup #1 - HIGH",
+			"url": "http://etf2l.org/etf2l/archives/59",
+			"id": "59"
+		},
+		"Monday Night Madness #6 - HIGH": {
+			"name": "Monday Night Madness #6 - HIGH",
+			"url": "http://etf2l.org/etf2l/archives/61",
+			"id": "61"
+		},
+		"Monday Night Madness #6 - LOW": {
+			"name": "Monday Night Madness #6 - LOW",
+			"url": "http://etf2l.org/etf2l/archives/62",
+			"id": "62"
+		},
+		"Experimental Ordnance Cup #2 - Low": {
+			"name": "Experimental Ordnance Cup #2 - Low",
+			"url": "http://etf2l.org/etf2l/archives/64",
+			"id": "64"
+		},
+		"Experimental Ordnance Cup #2 - High": {
+			"name": "Experimental Ordnance Cup #2 - High",
+			"url": "http://etf2l.org/etf2l/archives/65",
+			"id": "65"
+		},
+		"Experimental Ordnance Cup #3": {
+			"name": "Experimental Ordnance Cup #3",
+			"url": "http://etf2l.org/etf2l/archives/66",
+			"id": "66"
+		},
+		"Monday Night Madness #7 - HIGH": {
+			"name": "Monday Night Madness #7 - HIGH",
+			"url": "http://etf2l.org/etf2l/archives/67",
+			"id": "67"
+		},
+		"Monday Night Madness #7 - LOW": {
+			"name": "Monday Night Madness #7 - LOW",
+			"url": "http://etf2l.org/etf2l/archives/68",
+			"id": "68"
+		},
+		"Monday Night Madness #8 - HIGH": {
+			"name": "Monday Night Madness #8 - HIGH",
+			"url": "http://etf2l.org/etf2l/archives/69",
+			"id": "69"
+		},
+		"Monday Night Madness #8 - LOW": {
+			"name": "Monday Night Madness #8 - LOW",
+			"url": "http://etf2l.org/etf2l/archives/70",
+			"id": "70"
+		},
+		"Experimental Ordnance Cup #4": {
+			"name": "Experimental Ordnance Cup #4",
+			"url": "http://etf2l.org/etf2l/archives/72",
+			"id": "72"
+		},
+		"One Night Cup: cp_grack": {
+			"name": "One Night Cup: cp_grack",
+			"url": "http://etf2l.org/etf2l/archives/75",
+			"id": "75"
+		},
+		"EO#5: Quick Fix Cup - High bracket": {
+			"name": "EO#5: Quick Fix Cup - High bracket",
+			"url": "http://etf2l.org/etf2l/archives/77",
+			"id": "77"
+		},
+		"EO#6: Medigun Cup - Highest Bracket": {
+			"name": "EO#6: Medigun Cup - Highest Bracket",
+			"url": "http://etf2l.org/etf2l/archives/78",
+			"id": "78"
+		},
+		"EO#5: Quick Fix Cup - Mid bracket": {
+			"name": "EO#5: Quick Fix Cup - Mid bracket",
+			"url": "http://etf2l.org/etf2l/archives/79",
+			"id": "79"
+		},
+		"EO#5: Quick Fix Cup - Low bracket": {
+			"name": "EO#5: Quick Fix Cup - Low bracket",
+			"url": "http://etf2l.org/etf2l/archives/80",
+			"id": "80"
+		},
+		"EO#6: Medigun Cup - High Bracket": {
+			"name": "EO#6: Medigun Cup - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/81",
+			"id": "81"
+		},
+		"EO#6: Medigun Cup - Mid Bracket": {
+			"name": "EO#6: Medigun Cup - Mid Bracket",
+			"url": "http://etf2l.org/etf2l/archives/82",
+			"id": "82"
+		},
+		"EO#6: Medigun Cup - Low Bracket": {
+			"name": "EO#6: Medigun Cup - Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/83",
+			"id": "83"
+		},
+		"EO#7: Mirror Maps - High Bracket": {
+			"name": "EO#7: Mirror Maps - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/84",
+			"id": "84"
+		},
+		"EO#7: Mirror Maps - Mid Bracket": {
+			"name": "EO#7: Mirror Maps - Mid Bracket",
+			"url": "http://etf2l.org/etf2l/archives/86",
+			"id": "86"
+		},
+		"EO#7: Mirror Maps - Low Bracket": {
+			"name": "EO#7: Mirror Maps - Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/87",
+			"id": "87"
+		},
+		"One Night Cup: Croissant! HIGHEST": {
+			"name": "One Night Cup: Croissant! HIGHEST",
+			"url": "http://etf2l.org/etf2l/archives/96",
+			"id": "96"
+		},
+		"One Night Cup: Croissant! HIGH": {
+			"name": "One Night Cup: Croissant! HIGH",
+			"url": "http://etf2l.org/etf2l/archives/97",
+			"id": "97"
+		},
+		"One Night Cup: Croissant! MID": {
+			"name": "One Night Cup: Croissant! MID",
+			"url": "http://etf2l.org/etf2l/archives/98",
+			"id": "98"
+		},
+		"One Night Cup: Croissant! LOW": {
+			"name": "One Night Cup: Croissant! LOW",
+			"url": "http://etf2l.org/etf2l/archives/100",
+			"id": "100"
+		},
+		"One Night Cup: Foundry! HIGHEST": {
+			"name": "One Night Cup: Foundry! HIGHEST",
+			"url": "http://etf2l.org/etf2l/archives/101",
+			"id": "101"
+		},
+		"One Night Cup: Foundry! HIGH": {
+			"name": "One Night Cup: Foundry! HIGH",
+			"url": "http://etf2l.org/etf2l/archives/102",
+			"id": "102"
+		},
+		"One Night Cup: Foundry! MID": {
+			"name": "One Night Cup: Foundry! MID",
+			"url": "http://etf2l.org/etf2l/archives/103",
+			"id": "103"
+		},
+		"One Night Cup: Foundry! LOW": {
+			"name": "One Night Cup: Foundry! LOW",
+			"url": "http://etf2l.org/etf2l/archives/104",
+			"id": "104"
+		},
+		"One Night Cup: Foundry! LOWEST": {
+			"name": "One Night Cup: Foundry! LOWEST",
+			"url": "http://etf2l.org/etf2l/archives/105",
+			"id": "105"
+		},
+		"One Night Cup: Konkreet - High Bracket": {
+			"name": "One Night Cup: Konkreet - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/108",
+			"id": "108"
+		},
+		"One Night Cup: Konkreet - Low Bracket": {
+			"name": "One Night Cup: Konkreet - Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/109",
+			"id": "109"
+		},
+		"Experimental Highlander cup #1 LOW BRACKET": {
+			"name": "Experimental Highlander cup #1 LOW BRACKET",
+			"url": "http://etf2l.org/etf2l/archives/110",
+			"id": "110"
+		},
+		"Experimental Highlander cup #1 MID BRACKET": {
+			"name": "Experimental Highlander cup #1 MID BRACKET",
+			"url": "http://etf2l.org/etf2l/archives/111",
+			"id": "111"
+		},
+		"Experimental Highlander cup #1 - High Bracket": {
+			"name": "Experimental Highlander cup #1 - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/112",
+			"id": "112"
+		},
+		"One Night Cup: Saffron Unlocks": {
+			"name": "One Night Cup: Saffron Unlocks",
+			"url": "http://etf2l.org/etf2l/archives/118",
+			"id": "118"
+		},
+		"Experimental Highlander cup #2 - Low": {
+			"name": "Experimental Highlander cup #2 - Low",
+			"url": "http://etf2l.org/etf2l/archives/122",
+			"id": "122"
+		},
+		"Experimental Highlander cup #2 - High ": {
+			"name": "Experimental Highlander cup #2 - High ",
+			"url": "http://etf2l.org/etf2l/archives/123",
+			"id": "123"
+		},
+		"One Night Cup: Quick Fix - Low Bracket": {
+			"name": "One Night Cup: Quick Fix - Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/126",
+			"id": "126"
+		},
+		"One Night Cup: Quick Fix - High Bracket": {
+			"name": "One Night Cup: Quick Fix - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/127",
+			"id": "127"
+		},
+		"One Night Cup: cp_toxic - Low Bracket": {
+			"name": "One Night Cup: cp_toxic - Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/129",
+			"id": "129"
+		},
+		"One Night Cup: cp_toxic - High Bracket": {
+			"name": "One Night Cup: cp_toxic - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/130",
+			"id": "130"
+		},
+		"CP_Process Cup: Highest Bracket": {
+			"name": "CP_Process Cup: Highest Bracket",
+			"url": "http://etf2l.org/etf2l/archives/142",
+			"id": "142"
+		},
+		"CP_Process Cup: Higher Bracket": {
+			"name": "CP_Process Cup: Higher Bracket",
+			"url": "http://etf2l.org/etf2l/archives/143",
+			"id": "143"
+		},
+		"CP_Process Cup: High Bracket": {
+			"name": "CP_Process Cup: High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/144",
+			"id": "144"
+		},
+		"CP_Process Cup: Middle Bracket": {
+			"name": "CP_Process Cup: Middle Bracket",
+			"url": "http://etf2l.org/etf2l/archives/145",
+			"id": "145"
+		},
+		"CP_Process Cup: Low Bracket": {
+			"name": "CP_Process Cup: Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/146",
+			"id": "146"
+		},
+		"CP_Process Cup: Lower Bracket": {
+			"name": "CP_Process Cup: Lower Bracket",
+			"url": "http://etf2l.org/etf2l/archives/147",
+			"id": "147"
+		},
+		"CP_Process Cup: Lowest Bracket": {
+			"name": "CP_Process Cup: Lowest Bracket",
+			"url": "http://etf2l.org/etf2l/archives/148",
+			"id": "148"
+		},
+		"Highlander Experimental Cup #3: High Bracket": {
+			"name": "Highlander Experimental Cup #3: High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/154",
+			"id": "154"
+		},
+		"Highlander Experimental Cup #3: Low Bracket": {
+			"name": "Highlander Experimental Cup #3: Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/155",
+			"id": "155"
+		},
+		"Vaccinator Cup - High Bracket": {
+			"name": "Vaccinator Cup - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/177",
+			"id": "177"
+		},
+		"Vaccinator Cup - Middle Bracket": {
+			"name": "Vaccinator Cup - Middle Bracket",
+			"url": "http://etf2l.org/etf2l/archives/178",
+			"id": "178"
+		},
+		"Vaccinator Cup - Low Bracket": {
+			"name": "Vaccinator Cup - Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/180",
+			"id": "180"
+		},
+		"Vaccinator Cup - Second Edition!": {
+			"name": "Vaccinator Cup - Second Edition!",
+			"url": "http://etf2l.org/etf2l/archives/185",
+			"id": "185"
+		},
+		"Experimental Highlander Cup #4 - Lowest Bracket #1": {
+			"name": "Experimental Highlander Cup #4 - Lowest Bracket #1",
+			"url": "http://etf2l.org/etf2l/archives/193",
+			"id": "193"
+		},
+		"Experimental Highlander Cup #4 - Lowest Bracket #2": {
+			"name": "Experimental Highlander Cup #4 - Lowest Bracket #2",
+			"url": "http://etf2l.org/etf2l/archives/194",
+			"id": "194"
+		},
+		"Experimental Highlander Cup #4 - Low Bracket": {
+			"name": "Experimental Highlander Cup #4 - Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/195",
+			"id": "195"
+		},
+		"Experimental Highlander Cup #4 - Mid Bracket": {
+			"name": "Experimental Highlander Cup #4 - Mid Bracket",
+			"url": "http://etf2l.org/etf2l/archives/196",
+			"id": "196"
+		},
+		"Experimental Highlander Cup #4 - High Bracket": {
+			"name": "Experimental Highlander Cup #4 - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/197",
+			"id": "197"
+		},
+		"Experimental Highlander Cup #4 - Highest Bracket": {
+			"name": "Experimental Highlander Cup #4 - Highest Bracket",
+			"url": "http://etf2l.org/etf2l/archives/198",
+			"id": "198"
+		},
+		"Metalworks One Night Cup - 6v6 Teams": {
+			"name": "Metalworks One Night Cup - 6v6 Teams",
+			"url": "http://etf2l.org/etf2l/archives/223",
+			"id": "223"
+		},
+		"Metalworks One Night Cup - Fun Teams": {
+			"name": "Metalworks One Night Cup - Fun Teams",
+			"url": "http://etf2l.org/etf2l/archives/224",
+			"id": "224"
+		},
+		"Metalworks One Night Cup - Highest Bracket": {
+			"name": "Metalworks One Night Cup - Highest Bracket",
+			"url": "http://etf2l.org/etf2l/archives/228",
+			"id": "228"
+		},
+		"Metalworks One Night Cup - High Bracket": {
+			"name": "Metalworks One Night Cup - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/229",
+			"id": "229"
+		},
+		"Metalworks One Night Cup - High-ISH Bracket": {
+			"name": "Metalworks One Night Cup - High-ISH Bracket",
+			"url": "http://etf2l.org/etf2l/archives/230",
+			"id": "230"
+		},
+		"Metalworks One Night Cup - Medium Bracket": {
+			"name": "Metalworks One Night Cup - Medium Bracket",
+			"url": "http://etf2l.org/etf2l/archives/231",
+			"id": "231"
+		},
+		"Metalworks One Night Cup - Low Bracket": {
+			"name": "Metalworks One Night Cup - Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/232",
+			"id": "232"
+		},
+		"Metalworks One Night Cup - Lower Bracket": {
+			"name": "Metalworks One Night Cup - Lower Bracket",
+			"url": "http://etf2l.org/etf2l/archives/233",
+			"id": "233"
+		},
+		"Metalworks One Night Cup - Lowest Bracket #1": {
+			"name": "Metalworks One Night Cup - Lowest Bracket #1",
+			"url": "http://etf2l.org/etf2l/archives/234",
+			"id": "234"
+		},
+		"Metalworks One Night Cup - Lowest Bracket #2": {
+			"name": "Metalworks One Night Cup - Lowest Bracket #2",
+			"url": "http://etf2l.org/etf2l/archives/235",
+			"id": "235"
+		},
+		"Blast from the Past - One Night Cup": {
+			"name": "Blast from the Past - One Night Cup",
+			"url": "http://etf2l.org/etf2l/archives/237",
+			"id": "237"
+		},
+		"Blast from the Past - One Night Cup (Fun Teams)": {
+			"name": "Blast from the Past - One Night Cup (Fun Teams)",
+			"url": "http://etf2l.org/etf2l/archives/238",
+			"id": "238"
+		},
+		"Blast from the Past One Night Cup - Low Bracket": {
+			"name": "Blast from the Past One Night Cup - Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/239",
+			"id": "239"
+		},
+		"Blast from the Past One Night Cup - Medium Bracket - 1": {
+			"name": "Blast from the Past One Night Cup - Medium Bracket - 1",
+			"url": "http://etf2l.org/etf2l/archives/240",
+			"id": "240"
+		},
+		"Blast from the Past One Night Cup - Medium Bracket - 2": {
+			"name": "Blast from the Past One Night Cup - Medium Bracket - 2",
+			"url": "http://etf2l.org/etf2l/archives/241",
+			"id": "241"
+		},
+		"Blast from the Past One Night Cup - High Bracket": {
+			"name": "Blast from the Past One Night Cup - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/242",
+			"id": "242"
+		},
+		"One Night Cup: Sunshine": {
+			"name": "One Night Cup: Sunshine",
+			"url": "http://etf2l.org/etf2l/archives/248",
+			"id": "248"
+		},
+		"One Night Cup: Sunshine - Low Bracket": {
+			"name": "One Night Cup: Sunshine - Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/249",
+			"id": "249"
+		},
+		"One Night Cup: Sunshine - Medium Bracket": {
+			"name": "One Night Cup: Sunshine - Medium Bracket",
+			"url": "http://etf2l.org/etf2l/archives/250",
+			"id": "250"
+		},
+		"One Night Cup: Sunshine - High Bracket": {
+			"name": "One Night Cup: Sunshine - High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/251",
+			"id": "251"
+		},
+		"Experimental Highlander Cup #5": {
+			"name": "Experimental Highlander Cup #5",
+			"url": "http://etf2l.org/etf2l/archives/265",
+			"id": "265"
+		},
+		"Experimental Highlander Cup #5 - Fun Teams": {
+			"name": "Experimental Highlander Cup #5 - Fun Teams",
+			"url": "http://etf2l.org/etf2l/archives/266",
+			"id": "266"
+		},
+		"Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Top Bracket": {
+			"name": "Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Top Bracket",
+			"url": "http://etf2l.org/etf2l/archives/321",
+			"id": "321"
+		},
+		"Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: High Bracket": {
+			"name": "Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/322",
+			"id": "322"
+		},
+		"Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Mid-High Bracket": {
+			"name": "Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Mid-High Bracket",
+			"url": "http://etf2l.org/etf2l/archives/323",
+			"id": "323"
+		},
+		"Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Mid Bracket": {
+			"name": "Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Mid Bracket",
+			"url": "http://etf2l.org/etf2l/archives/324",
+			"id": "324"
+		},
+		"Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Mid #2 Bracket": {
+			"name": "Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Mid #2 Bracket",
+			"url": "http://etf2l.org/etf2l/archives/325",
+			"id": "325"
+		},
+		"Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Mid #3 Bracket": {
+			"name": "Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Mid #3 Bracket",
+			"url": "http://etf2l.org/etf2l/archives/326",
+			"id": "326"
+		},
+		"Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Mid-Low Bracket": {
+			"name": "Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Mid-Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/327",
+			"id": "327"
+		},
+		"Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Low Bracket": {
+			"name": "Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Low Bracket",
+			"url": "http://etf2l.org/etf2l/archives/328",
+			"id": "328"
+		},
+		"Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Lower Bracket": {
+			"name": "Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Lower Bracket",
+			"url": "http://etf2l.org/etf2l/archives/329",
+			"id": "329"
+		},
+		"Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Lowest Bracket": {
+			"name": "Experimental Highlander One-Night-Cup #6 sponsored by scrap.tf: Lowest Bracket",
+			"url": "http://etf2l.org/etf2l/archives/330",
+			"id": "330"
+		},
+		"Experimental Highlander One-Night-Cup #7 Premiership Tier": {
+			"name": "Experimental Highlander One-Night-Cup #7 Premiership Tier",
+			"url": "http://etf2l.org/etf2l/archives/358",
+			"id": "358"
+		},
+		"Experimental Highlander One-Night-Cup #7 High Tier": {
+			"name": "Experimental Highlander One-Night-Cup #7 High Tier",
+			"url": "http://etf2l.org/etf2l/archives/359",
+			"id": "359"
+		},
+		"Experimental Highlander One-Night-Cup #7 Mid-High Tier": {
+			"name": "Experimental Highlander One-Night-Cup #7 Mid-High Tier",
+			"url": "http://etf2l.org/etf2l/archives/360",
+			"id": "360"
+		},
+		"Experimental Highlander One-Night-Cup #7 Open Tier 1": {
+			"name": "Experimental Highlander One-Night-Cup #7 Open Tier 1",
+			"url": "http://etf2l.org/etf2l/archives/361",
+			"id": "361"
+		},
+		"Experimental Highlander One-Night-Cup #7 Open Tier 2": {
+			"name": "Experimental Highlander One-Night-Cup #7 Open Tier 2",
+			"url": "http://etf2l.org/etf2l/archives/362",
+			"id": "362"
+		},
+		"Experimental Highlander One-Night-Cup #7 Open Tier 3": {
+			"name": "Experimental Highlander One-Night-Cup #7 Open Tier 3",
+			"url": "http://etf2l.org/etf2l/archives/363",
+			"id": "363"
+		},
+		"Experimental Highlander One-Night-Cup #7 Mid Tier 1": {
+			"name": "Experimental Highlander One-Night-Cup #7 Mid Tier 1",
+			"url": "http://etf2l.org/etf2l/archives/364",
+			"id": "364"
+		},
+		"Experimental Highlander One-Night-Cup #7 Mid Tier 2": {
+			"name": "Experimental Highlander One-Night-Cup #7 Mid Tier 2",
+			"url": "http://etf2l.org/etf2l/archives/365",
+			"id": "365"
+		},
+		"Experimental Highlander One-Night-Cup #8 ": {
+			"name": "Experimental Highlander One-Night-Cup #8 ",
+			"url": "http://etf2l.org/etf2l/archives/431",
+			"id": "431"
+		},
+		"Experimental Highlander One-Night-Cup #8 Fun Teams": {
+			"name": "Experimental Highlander One-Night-Cup #8 Fun Teams",
+			"url": "http://etf2l.org/etf2l/archives/432",
+			"id": "432"
+		},
+		"One Night Cup: Episode 1 The Maps": {
+			"name": "One Night Cup: Episode 1 The Maps",
+			"url": "http://etf2l.org/etf2l/archives/481",
+			"id": "481"
+		},
+		"One Night Cup: Episode 1 The Maps (Fun Teams)": {
+			"name": "One Night Cup: Episode 1 The Maps (Fun Teams)",
+			"url": "http://etf2l.org/etf2l/archives/482",
+			"id": "482"
+		},
+		"One Night Cup: Episode 2 The Whitelist": {
+			"name": "One Night Cup: Episode 2 The Whitelist",
+			"url": "http://etf2l.org/etf2l/archives/483",
+			"id": "483"
+		},
+		"One Night Cup: Episode 2 The Whitelist (Fun Teams)": {
+			"name": "One Night Cup: Episode 2 The Whitelist (Fun Teams)",
+			"url": "http://etf2l.org/etf2l/archives/484",
+			"id": "484"
+		},
+		"Highlander Season 16 Preseason Cup": {
+			"name": "Highlander Season 16 Preseason Cup",
+			"url": "http://etf2l.org/etf2l/archives/566",
+			"id": "566"
+		}
+	},
+	"The Highlander Open": {
+		"The Highlander Open": {
+			"name": "The Highlander Open",
+			"url": "http://etf2l.org/etf2l/archives/256",
+			"id": "256"
+		},
+		"The Highlander Open - Fun Teams": {
+			"name": "The Highlander Open - Fun Teams",
+			"url": "http://etf2l.org/etf2l/archives/267",
+			"id": "267"
+		},
+		"The Highlander Open - Cup Stage": {
+			"name": "The Highlander Open - Cup Stage",
+			"url": "http://etf2l.org/etf2l/archives/273",
+			"id": "273"
+		},
+		"Highlander Open: 3rd Place Tiebraker": {
+			"name": "Highlander Open: 3rd Place Tiebraker",
+			"url": "http://etf2l.org/etf2l/archives/292",
+			"id": "292"
+		},
+		"The Highlander Open #2 Sponsored by Essentials.tf and Whitelist.tf": {
+			"name": "The Highlander Open #2 Sponsored by Essentials.tf and Whitelist.tf",
+			"url": "http://etf2l.org/etf2l/archives/416",
+			"id": "416"
+		},
+		"The Highlander Open #2 Sponsored by Essentials.tf and Whitelist.tf (Fun Teams)": {
+			"name": "The Highlander Open #2 Sponsored by Essentials.tf and Whitelist.tf (Fun Teams)",
+			"url": "http://etf2l.org/etf2l/archives/417",
+			"id": "417"
+		},
+		"The Highlander Open #2 Sponsored by Essentials.tf and Whitelist.tf: Playoffs": {
+			"name": "The Highlander Open #2 Sponsored by Essentials.tf and Whitelist.tf: Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/423",
+			"id": "423"
+		},
+		"The Highlander Open #2 Sponsored by Essentials.tf and Whitelist.tf: Bronze Match": {
+			"name": "The Highlander Open #2 Sponsored by Essentials.tf and Whitelist.tf: Bronze Match",
+			"url": "http://etf2l.org/etf2l/archives/426",
+			"id": "426"
+		}
+	},
+	"MGE Cup": {
+		"AVerMedia MGE Cup": {
+			"name": "AVerMedia MGE Cup",
+			"url": "http://etf2l.org/etf2l/archives/166",
+			"id": "166"
+		},
+		"AVerMedia MGE Monthly Cup: Soldier April 2013 - Qualifying Bracket #1": {
+			"name": "AVerMedia MGE Monthly Cup: Soldier April 2013 - Qualifying Bracket #1",
+			"url": "http://etf2l.org/etf2l/archives/205",
+			"id": "205"
+		},
+		"AVerMedia MGE Monthly Cup: Soldier April 2013 - Qualifying Bracket #2": {
+			"name": "AVerMedia MGE Monthly Cup: Soldier April 2013 - Qualifying Bracket #2",
+			"url": "http://etf2l.org/etf2l/archives/206",
+			"id": "206"
+		},
+		"AVerMedia MGE Monthly Cup: Soldier April 2013 - Monthly Final": {
+			"name": "AVerMedia MGE Monthly Cup: Soldier April 2013 - Monthly Final",
+			"url": "http://etf2l.org/etf2l/archives/207",
+			"id": "207"
+		},
+		"AVerMedia MGE Monthly Cup: Scout May 2013 - Qualifying Bracket #1": {
+			"name": "AVerMedia MGE Monthly Cup: Scout May 2013 - Qualifying Bracket #1",
+			"url": "http://etf2l.org/etf2l/archives/211",
+			"id": "211"
+		},
+		"AVerMedia MGE Monthly Cup: Scout May 2013 - Qualifying Bracket #2": {
+			"name": "AVerMedia MGE Monthly Cup: Scout May 2013 - Qualifying Bracket #2",
+			"url": "http://etf2l.org/etf2l/archives/212",
+			"id": "212"
+		},
+		"AVerMedia MGE Monthly Cup: Scout May 2013 - Monthly Final": {
+			"name": "AVerMedia MGE Monthly Cup: Scout May 2013 - Monthly Final",
+			"url": "http://etf2l.org/etf2l/archives/213",
+			"id": "213"
+		},
+		"AVerMedia MGE Monthly Cup: Demoman June 2013 - Qualifying Bracket #1": {
+			"name": "AVerMedia MGE Monthly Cup: Demoman June 2013 - Qualifying Bracket #1",
+			"url": "http://etf2l.org/etf2l/archives/214",
+			"id": "214"
+		},
+		"AVerMedia MGE Monthly Cup: Demoman June 2013 - Qualifying Bracket #2": {
+			"name": "AVerMedia MGE Monthly Cup: Demoman June 2013 - Qualifying Bracket #2",
+			"url": "http://etf2l.org/etf2l/archives/215",
+			"id": "215"
+		},
+		"AVerMedia MGE Monthly Cup: Demoman June 2013 - Monthly Final": {
+			"name": "AVerMedia MGE Monthly Cup: Demoman June 2013 - Monthly Final",
+			"url": "http://etf2l.org/etf2l/archives/216",
+			"id": "216"
+		},
+		"Scout 1v1 Cup Group Stage": {
+			"name": "Scout 1v1 Cup Group Stage",
+			"url": "http://etf2l.org/etf2l/archives/340",
+			"id": "340"
+		},
+		"Scout 1v1 Knockout Stage": {
+			"name": "Scout 1v1 Knockout Stage",
+			"url": "http://etf2l.org/etf2l/archives/341",
+			"id": "341"
+		},
+		"Scout 1v1 3rd Place Tiebreaker": {
+			"name": "Scout 1v1 3rd Place Tiebreaker",
+			"url": "http://etf2l.org/etf2l/archives/343",
+			"id": "343"
+		},
+		"Soldier 1v1 MGE Cup - Group Stage": {
+			"name": "Soldier 1v1 MGE Cup - Group Stage",
+			"url": "http://etf2l.org/etf2l/archives/518",
+			"id": "518"
+		},
+		"Soldier 1v1 MGE Cup - Knockout Stage": {
+			"name": "Soldier 1v1 MGE Cup - Knockout Stage",
+			"url": "http://etf2l.org/etf2l/archives/519",
+			"id": "519"
+		},
+		"Soldier 1v1 MGE Cup - 3rd Place Match": {
+			"name": "Soldier 1v1 MGE Cup - 3rd Place Match",
+			"url": "http://etf2l.org/etf2l/archives/520",
+			"id": "520"
+		}
+	},
+	"The Community Lan": {
+		"TCL - Golden Tournament": {
+			"name": "TCL - Golden Tournament",
+			"url": "http://etf2l.org/etf2l/archives/30",
+			"id": "30"
+		},
+		"TCL - Golden playoffs": {
+			"name": "TCL - Golden playoffs",
+			"url": "http://etf2l.org/etf2l/archives/35",
+			"id": "35"
+		},
+		"TCL - Silver Playoffs": {
+			"name": "TCL - Silver Playoffs",
+			"url": "http://etf2l.org/etf2l/archives/36",
+			"id": "36"
+		}
+	}
+}

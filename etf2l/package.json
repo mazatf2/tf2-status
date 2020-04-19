@@ -1,0 +1,11 @@
+{
+  "name": "etf2l",
+  "version": "1.0.0",
+  "description": "",
+  "main": "competitions.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^16.2.2"
+  }
+}
